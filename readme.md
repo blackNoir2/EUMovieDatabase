@@ -205,4 +205,6 @@ Deleting an Account:
 If you need to delete an account while registering a new one, the application provides a pop-up alert that allows you to do so. Follow the on-screen instructions in the pop-up alert to delete the account.
 
 
-
+This site is hosted using Netlify instead of GitHub Pages due to the structure of the application. GitHub Pages requires starting from the index page and working outwards, which doesn't align with the design of the site. Netlify works more effectively and aligns with the intended design.
+   
+To use this site visit this link: https://fluffy-sprite-0bc5c8.netlify.app
