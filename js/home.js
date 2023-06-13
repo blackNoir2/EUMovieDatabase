@@ -11,7 +11,7 @@ const logoutLink  = getQuery(".logout");
 const url         = window.location.pathname.includes("/home.html");
 
 const session     = new UserSession();
-const username    = sessionStorage.getItem(session.getSession("username"));
+const username    = session.getSession("username");
 
 
 
