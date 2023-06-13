@@ -207,4 +207,4 @@ If you need to delete an account while registering a new one, the application pr
 
 This site is hosted using Netlify instead of GitHub Pages due to the structure of the application. GitHub Pages requires starting from the index page and working outwards, which doesn't align with the design of the site. Netlify works more effectively and aligns with the intended design.
    
-To use this site visit this link: https://fluffy-sprite-0bc5c8.netlify.app/login.html
+To use this site visit this link: https://fluffy-sprite-0bc5c8.netlify.app
