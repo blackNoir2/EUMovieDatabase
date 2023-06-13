@@ -205,4 +205,4 @@ Deleting an Account:
 If you need to delete an account while registering a new one, the application provides a pop-up alert that allows you to do so. Follow the on-screen instructions in the pop-up alert to delete the account.
 
 
-
+To use this site visit this link: https://fluffy-sprite-0bc5c8.netlify.app/login.html
