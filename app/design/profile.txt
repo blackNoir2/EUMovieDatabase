@@ -1,0 +1,26 @@
+------------------------------------------------------------------------------------------
+                                 Nav 
+-------------------------------------------------------------------------------------------
+
+- Left-hand side logo and title on all pages regardless of being logged in or not:
+  - When clicked:
+    - If logged in:
+      - Takes the user to the home page.
+    - If logged out:
+      - Redirects the user to the login screen.
+
+Home Page:
+- Home icon on the left-hand side of the page.
+- Movie Database title in the center.
+
+Other Pages (Logged in):
+- Icon on the left-hand side (clickable to the home page).
+- Movie Database in the middle.
+- Profile Icon greeting (e.g., "Hi, <username> (logged in)"):
+  - When clicked, displays:
+    - My Profile
+    - Edit Profile
+    - Logout.
+
+Not Logged In:
+- Not accessible!

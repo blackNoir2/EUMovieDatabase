@@ -1,0 +1,1013 @@
+---------------------------------------- REGISTRATION TEST SUITES -------------------------------------------------- 
+
+Goal: 
+
+The goal of the registration testing is to ensure a smooth and reliable process for users to create new 
+accounts within the system. The testing aims to verify that the registration functionality works as intended, 
+allowing users to successfully sign up and gain access to the system's features and functionalities.
+
+The goal is to validate that the registration process captures and validates user input accurately and securely. 
+This includes verifying that the required fields are properly enforced, such as username, email address, 
+and password, and that any additional optional fields are handled correctly. 
+The testing should also ensure that the registration form handles potential errors, such as invalid or 
+a registered account, adding links, special characters, or missing required information, and provides appropriate
+error messages to guide users in correcting their inputs.
+
+Furthermore, the testing should cover scenarios where the user has correctly registered displaying the
+appropriate message.
+
+Additionally, the testing should verify that user data entered during registration is stored correctly in the
+local storage and associated with the newly created account. 
+
+Overall, the goal of registration testing is to provide users with a seamless and secure account creation 
+experience, allowing them to easily join the system and start utilizing its features.
+
+
+------------------------------------------------------------------------
+Test case 1 -  Successful registration
+------------------------------------------------------------------------
+
+Test Case 1:
+
+    Title         : Successful Registration
+    Preconditions : The registration form is accessible.
+
+Inputs:
+
+    Username        : "johnsmith"
+    Email           : "johnsmith@example.com"
+    Password        : "password123"
+    Confirm Password: "password123"
+
+Expected Results: 
+    - A message with a green background should appear informing the user that they have successfully been registered
+    - The message should disappears after a few seconds
+    - The user should then be redirect to the login page
+
+
+Test Steps:
+-------------
+
+Open the registration form.
+
+    1. Enter the username "johnsmith".
+    2. Enter the email "johnsmith@example.com".
+    3. Enter the password "password123".
+    4. Enter the confirm password "password123".
+    5. Click on the register button.
+
+Actual Results: 
+    - A message with a green background appears on the top of the page informing the user that registeration is successfully.
+    - The message disappears after a few seconds
+    - The user is then directed to the login page
+
+Test -> Pass
+
+
+
+----------------------------------------------------
+Test Case 2 - Invalid Email Format
+-----------------------------------------------------
+
+Title        : Invalid Email Format
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "janesmith"
+    Email           : "invalidemail"
+    Password        : "password123"
+    Confirm Password: "Password123"
+
+Expected Results: 
+    - User should see an error message on the email field indicating a valid email should be entered.
+    - The form doesn't submit
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter the username "janesmith".
+    3. Enter the invalid email "invalidemail".
+    4. Enter the password "Password123".
+    5. Enter the confirm password "Password123".
+    6. Click on the submit button.
+
+Actual Results:
+    - User sees an error message on the email field indicating an invalid email format.
+    - The form doesn't submit
+
+Test -> Pass
+
+
+--------------------------------------------------------------------------------------
+Test Case 3 - Correct email address format but exceeds 30 chars
+--------------------------------------------------------------------------------------
+
+Title        : Correct Email Format but exceed the required length of 30 characters
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "michaelsylarsthewind"
+    Email           : "michaelsylarsthewindblower@example.com"
+    Password        : "password123"
+    Confirm Password: "Password123"
+
+Expected Results: 
+
+    - User should shouldn't be able to add any more characters after the twenty char "michaelsylarsthewind".
+    - When the user hits submit an invalid email message should be displayed on the email field form
+    - The message should disappear after a few seconds
+    - The form should not submit
+
+Test Steps:
+
+    1. Open the registration form.
+    2. Enter the username "michaelsylarsthewind".
+    3. Enter the email "michaelsylarsthewindblower@example.com".
+    4. Enter the password "password123".
+    5. Enter the confirm password "password123".
+    6. Click on the submit button.
+
+Actual Results: 
+     - User wasn't able to add any more characters after "michaelsylarsthewindblower@exam" 
+     
+Test -> Pass
+
+
+
+----------------------------------------------------------------------------
+Test Case 4 - Correct username but exceeds 20 chars
+----------------------------------------------------------------------------
+
+Title        : Username is correct but exceed maximum length of 20 characters
+Preconditions:  
+            - The registration form is accessible.
+            - There is no other account registered with this account
+
+Inputs:
+
+    Username        : "michaelsylarsthewindblower3"
+    Email           : "michaelsylars@example.com"
+    Password        : "password123"
+    Confirm Password: "Password123"
+
+Expected Results: 
+
+    - User should shouldn't be able to add any more characters after the twenty char "michaelsylarsthewind".
+    - The message should disappear after a few seconds
+    - User should still be able to submit the form
+
+Test Steps:
+
+    1. Open the registration form.
+    2. Enter the username "michaelsylarsthewind3".
+    3. Enter the email "michaelsylars@example.com".
+    4. Enter the password "password123".
+    5. Enter the confirm password "password123".
+    6. Click on the submit button.
+
+Actual Results: 
+     - User wasn't able to add any more characters after "michaelsylarsthewind"
+     - The form submits
+     - A message with a green background appears informing the user that registeration is successfully.
+     - The message disappears after a few seconds
+     - The user is then directed to the login page
+
+Test -> Pass
+
+
+
+
+----------------------------------------------------------------------------
+Test Case 5 - Correct username but doesn't met required minimum length of 4
+----------------------------------------------------------------------------
+
+Title        : Correct username but doesn't met required minimum length of 4
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "mi"
+    Email           : "michaelsylars@example.com"
+    Password        : "password123"
+    Confirm Password: "Password123"
+
+Expected Results: 
+
+    - A message pops informing the user that they need to add more characters to meet the required minimum length
+    - The form doesn't submit
+
+Test Steps:
+
+    1. Open the registration form.
+    2. Enter the username "mi".
+    3. Enter the email "michaelsylars@example.com".
+    4. Enter the password "password123".
+    5. Enter the confirm password "password123".
+    6. Click on the submit button.
+
+Actual Results: 
+
+     - Message informs the user that they need to add more characters to meet the required minimum length
+     - Form didn't submit
+
+Test -> Pass
+
+
+----------------------------------------------------
+Test Case 6 - Password exceeds 20 chars 
+-----------------------------------------------------
+
+Title        : password exceeds maximum length of 20
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "michaelsylarsthewindblower3"
+    Email           : "michaelsylars@example.com"
+    Password        : "password12345678920212124"
+    Confirm Password: "password12345678920212124"
+
+Expected Results: 
+    - User shouldn't be able to add any more characters after the twenty char.
+    - The message should disappear after a few seconds
+    - When the user hits submit the form should still submit since only twenty characters are used from the password
+
+Test Steps:
+
+    1. Open the registration form.
+    2. Enter the username "michaelsylarsthewind3".
+    3. Enter the email "michaelsylars@example.com".
+    4. Enter the password "password12345678920212124".
+    5. Enter the confirm password "password12345678920212124".
+    6. Click on the submit button.
+
+Actual Results: 
+
+    - User wasn't able to add any more characters after twenty character of the password
+    - The form submits
+    - A message with a green background appears informing the user that registeration is successfully.
+    - The message disappears after a few seconds
+    - The user is then directed to the login page
+
+Test -> Pass
+
+
+
+
+----------------------------------------------------
+Test Case 7 - Confirm Password exceeds 20 chars 
+-----------------------------------------------------
+
+Title        : Password exceeds maximum length of 20
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "michaelsylarsthewindblower3"
+    Email           : "michaelsylars@example.com"
+    Password        : "password12345678920212124"
+    Confirm Password: "password12345678920212124"
+
+Expected Results: 
+    - User should shouldn't be able to add any more characters after the twenty char.
+    - The message should disappears after a few seconds
+    - When the user hits submit the form should still submit since only twenty characters are used
+
+Test Steps:
+
+    1. Open the registration form.
+    2. Enter the username "michaelsylarsthewind3".
+    3. Enter the email "michaelsylars@example.com".
+    4. Enter the password "password12345678920212124".
+    5. Enter the confirm password "password12345678920212124".
+    6. Click on the submit button.
+
+Actual Results: 
+
+    - User wasn't able to add any more characters after twenty character of the password
+    - The form submits
+    - A message with a green background appears informing the user that registeration is successfully.
+    - The message disappears after a few seconds
+    - The user is then directed to the login page
+
+Test -> Pass
+
+
+
+----------------------------------------------------------------------
+Test Case 8 - Password doesn't meet minimum length of 6 characters
+-------------------------------------------------------------------
+
+Title        : Password doesn't meet minimum length of 6 characters
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "michaelsylarsthewindblower3"
+    Email           : "michaelsylars@example.com"
+    Password        : "12345"
+    Confirm Password: "123456"
+
+Expected Results: 
+    - A message pops up underneath the password and informs the user that the password doesn't meet the minimum length
+    - The form doesn't submit
+
+Test Steps:
+
+    1. Open the registration form.
+    2. Enter the username "michaelsylarsthewind3".
+    3. Enter the email "michaelsylars@example.com".
+    4. Enter the password "12345".
+    5. Enter the confirm password "123456".
+    6. Click on the submit button.
+
+Actual Results: 
+
+    - A message pops informing the user that password doesn't meet the required minimum length
+    - The form doesn't submit
+ 
+Test -> Pass
+
+
+----------------------------------------------------------------------
+Test Case 9 - Confirm Password doesn't meet minimum length of 6 characters
+-------------------------------------------------------------------
+
+Title        : Confirm password doesn't meet minimum length of 6 characters
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "michaelsylarsthewindblower3"
+    Email           : "michaelsylars@example.com"
+    Password        : "123456"
+    Confirm Password: "12345"
+
+Expected Results: 
+    - A message pops up underneath the confirm password and informs the user that the password doesn't meet the minimum length
+    - The form doesn't submit
+
+Test Steps:
+
+    1. Open the registration form.
+    2. Enter the username "michaelsylarsthewind3".
+    3. Enter the email "michaelsylars@example.com".
+    4. Enter the password "123456".
+    5. Enter the confirm password "12345".
+    6. Click on the submit button.
+
+Actual Results: 
+
+    - A message pops informing the user that the confirm password doesn't meet the required minimum length
+    - The form doesn't submit
+ 
+Test -> Pass
+
+
+
+-----------------------------------------------------------
+Test Case 10 - Password and confirm password doesn't match
+-----------------------------------------------------------
+
+Title        : passwords doesn't match
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "michaelsylarsthewindblower3"
+    Email           : "michaelsylars@example.com"
+    Password        : "password123"
+    Confirm Password: "password1234"
+
+Expected Results: 
+    - A popup alert should appear informing the user that passwords doesn't match
+    - The form should not submit
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter the username "michaelsylarsthewind3".
+    3. Enter the email "michaelsylars@example.com".
+    4. Enter the password "password123".
+    5. Enter the confirm password "password1234".
+    6. Click on the submit button.
+
+Actual Results: 
+    - A pop alert appears informing the user that the passwords doesn't match
+    - The form doesn't submit 
+  
+Test -> Pass
+
+
+
+
+-----------------------------------------------------------
+Test Case 11 - All the fields are empty
+-----------------------------------------------------------
+
+Title        : All the fields are empty
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : ""
+    Email           : ""
+    Password        : ""
+    Confirm Password: ""
+
+Expected Results: 
+    - The form should not submit since the all the fields are required but are empty
+    - A popup alert should pop telling the user that the fields are should not be empty
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter nothing for the username.
+    3. Enter nothing for the email.
+    4. Enter nothing for the password.
+    5. Enter nothing for the confirm password.
+    6. Click on the submit button.
+
+Actual Results: 
+    - The form doesn't submit 
+    - A popup message informs the user that fields should not be empty
+  
+Test -> Pass
+
+
+
+
+-----------------------------------------------------------------------
+Test Case 12 - Username field is empty but all the other fields are correct
+----------------------------------------------------------------------
+
+Title        : Username field is empty but all the other fields are correct
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : ""
+    Email           : "test@example.com"
+    Password        : "123456"
+    Confirm Password: "123456"
+
+Expected Results: 
+    - A popup should appear under the username field with a message to fill in the field
+    - The form doesn't submit
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter nothing for the username.
+    3. Enter the email "test@example.com".
+    4. Enter the password "123456".
+    5. Enter the confirm password "123456".
+    6. Click on the submit button.
+
+Actual Results: 
+    - A popup appears under the username field with a message to fill in the field
+    - The form doesn't submit 
+  
+Test -> Pass
+
+
+
+
+-----------------------------------------------------------------------
+Test Case 13 - Email field is empty but all the other fields are correct
+----------------------------------------------------------------------
+
+Title        : Email field is empty but all the other fields are correct
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "testusername"
+    Email           : ""
+    Password        : "123456"
+    Confirm Password: "123456"
+
+Expected Results: 
+    - A popup should appear under the email field with a message to fill in the field
+    - The form doesn't submit
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter the username "testusername".
+    3. Enter nothing for email "".
+    4. Enter the password "123456".
+    5. Enter the confirm password "123456".
+    6. Click on the submit button.
+
+Actual Results: 
+    - A popup appears under the email field with a message to fill in the field
+    - The form doesn't submit 
+  
+Test -> Pass
+
+
+
+-----------------------------------------------------------------------
+Test Case 14 - password field is empty but all the other fields are correct
+----------------------------------------------------------------------
+
+Title        : password field is empty but all the other fields are correct
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "testusername"
+    Email           : "test@example.com"
+    Password        : ""
+    Confirm Password: "123456"
+
+Expected Results: 
+    - A popup should appear under the passwrd field with a message to fill in the field
+    - The form doesn't submit
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter the username "testusername".
+    3. Enter the email "test@example.com".
+    4. Enter nothing for the password "".
+    5. Enter the confirm password "123456".
+    6. Click on the submit button.
+
+Actual Results: 
+    - A popup appears under the password field with a message to fill in the field
+    - The form doesn't submit 
+  
+Test -> Pass
+
+
+
+-----------------------------------------------------------------------
+Test Case 15 - Confirm password field is empty but all the other fields are correct
+----------------------------------------------------------------------
+
+Title        : Confirm password field is empty but all the other fields are correct
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "testusername"
+    Email           : "test@example.com"
+    Password        : "123456"
+    Confirm Password: ""
+
+Expected Results: 
+    - A popup should appear under the passwrd field with a message to fill in the field
+    - The form doesn't submit
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter the username for "testusername".
+    3. Enter the email "test@example.com".
+    4. Enter the password "123456".
+    5. Enter nothing for confirm password "".
+    6. Click on the submit button.
+
+Actual Results: 
+    - A popup appears under the confirm password field with a message to fill in the field
+    - The form doesn't submit 
+  
+Test -> Pass
+
+
+
+
+
+-----------------------------------------------------------------------
+Test Case 16 - User paste a link in the username field
+----------------------------------------------------------------------
+
+Title        : User paste a link in the username field
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "http://youtube.com"
+    Email           : "test@example.com"
+    Password        : "123456"
+    Confirm Password: "123456"
+
+Expected Results: 
+    - A alert should popup inform the user that "links or images are not allowed
+    - The username field should then be cleared
+    - The form doesn't submit
+
+Test Steps:
+    1. Open the registration form.
+    2. Paste ""http://youtube.com" in the username field.
+    3. Enter the email "test@example.com".
+    4. Enter the password "123456".
+    5. Enter the confirm password "123456".
+    6. Click on the submit button.
+
+Actual Results: 
+    - A alert popup inform the user that "links or images are not allowed
+    - The username is cleared
+    - The form doesn't submit 
+  
+Test -> Pass
+
+
+
+-----------------------------------------------------------------------
+Test Case 17 - User paste an image in the username field
+----------------------------------------------------------------------
+
+Title        : User paste a link in the username field
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "paste a path to some image on your folder or computer"
+    Email           : "test@example.com"
+    Password        : "123456"
+    Confirm Password: "123456"
+
+Expected Results: 
+    - A alert should popup inform the user that "links or images are not allowed
+    - The username field should then be cleared
+    - The form doesn't submit
+
+Test Steps:
+    1. Open the registration form.
+    2. Paste the url of an image either from your computer or online to the username field.
+    3. Enter the email "test@example.com".
+    4. Enter the password "123456".
+    5. Enter the confirm password "123456".
+    6. Click on the submit button.
+
+Actual Results: 
+    - A alert popup inform the user that "special characters are not allowed"
+    - The username is cleared
+    - The form doesn't submit 
+  
+Test -> Pass
+
+
+
+-----------------------------------------------------------------------
+Test Case 18 - User paste an series of special characters in the username field
+----------------------------------------------------------------------
+
+Title        : User paste a series of special characters in the username field
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "????????????...//"
+    Email           : "test@example.com"
+    Password        : "123456"
+    Confirm Password: "123456"
+
+Expected Results: 
+    - A alert should popup alert inform the user that special characters are not allowed
+    - The username field should then be cleared
+    - The form doesn't submit
+
+Test Steps:
+    1. Open the registration form.
+    2. "Paste" - (????????????...//)  in the username field.
+    3. Enter the email "test@example.com".
+    4. Enter the password "123456".
+    5. Enter the confirm password "123456".
+    6. Click on the submit button.
+
+Actual Results: 
+    - A alert popup inform the user that special characters are not allowed
+    - The username field is cleared
+    - The form doesn't submit 
+  
+Test -> Pass
+
+
+
+
+-----------------------------------------------------------------------
+Test Case 20 - Paste a series of special character in the username field. The first character should be a letter, the rest should be
+               special characters and the ending character should be a letter in order to trick the field
+----------------------------------------------------------------------
+
+Title        : User paste a series of special characters in the username field
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "d????????????...//e"
+    Email           : "test@example.com"
+    Password        : "123456"
+    Confirm Password: "123456"
+
+Expected Results: 
+    - A alert should popup alert inform the user that special characters are not allowed
+    - The username field should then be cleared
+    - The form doesn't submit
+
+Test Steps:
+    1. Open the registration form.
+    2. "Paste" - (????????????...//)  in the username field.
+    3. Enter the email "test@example.com".
+    4. Enter the password "123456".
+    5. Enter the confirm password "123456".
+    6. Click on the submit button.
+
+Actual Results: 
+    - A alert popup inform the user that special characters are not allowed
+    - The username field is cleared
+    - The form doesn't submit 
+  
+Test -> Pass
+
+
+
+-----------------------------------------------------------------------
+Test Case 20 - Type a special character in the username field
+----------------------------------------------------------------------
+
+Title        : Type a special characters in the username field
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "?"
+    Email           : "test@example.com"
+    Password        : "123456"
+    Confirm Password: "123456"
+
+Expected Results: 
+    - A alert should popup alert inform the user that special characters are not allowed
+    - The username field should then be cleared
+    - The form doesn't submit
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter a special character in the username field - "?".
+    3. Enter the email "test@example.com".
+    4. Enter the password "123456".
+    5. Enter the confirm password "123456".
+    6. Click on the submit button.
+
+Actual Results: 
+    - A alert popup inform the user that links or images are not allowed
+    - The username field is cleared
+    - The form doesn't submit 
+  
+Test -> Pass
+
+
+
+
+-----------------------------------------------------------------------
+Test Case 22 - Username with space between them
+----------------------------------------------------------------------
+
+Title        : Username with space between them
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "John smith"
+    Email           : "test@example.com"
+    Password        : "123456"
+    Confirm Password: "123456"
+
+Expected Results: 
+    - A alert should popup alert inform the user that special characters are not allowed
+    - The username field should then be cleared
+    - The form doesn't submit
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter the username "John smith" in the username field.
+    3. Enter the email "test@example.com".
+    4. Enter the password "123456".
+    5. Enter the confirm password "123456".
+    6. Click on the submit button.
+
+Actual Results: 
+    - A alert popup informing the user that special characters are not allowed
+    - The username field is cleared
+    - The form doesn't submit 
+  
+Test -> Pass
+
+
+-----------------------------------------------------------------------
+Test Case 23 - User checks the show password button
+----------------------------------------------------------------------
+
+Title        : User checks the show password button
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "Johnsmith"
+    Email           : "test@example.com"
+    Password        : "123456"
+    Confirm Password: "123456"
+
+Expected Results: 
+    - The password and the confirm password should now be visible
+    
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter the username "Johnsmith" in the username field.
+    3. Enter the email "test@example.com".
+    4. Enter the password "123456".
+    5. Enter the confirm password "123456".
+    6. UnChecks the show password
+
+Actual Results: 
+    - Both the password are visible
+
+Test -> Pass
+
+
+
+-----------------------------------------------------------------------
+Test Case 24 - User unchecks the show password button
+----------------------------------------------------------------------
+
+Title        : User unchecks the show password button
+Preconditions: The registration form is accessible.
+
+Inputs:
+
+    Username        : "Johnsmith"
+    Email           : "test@example.com"
+    Password        : "123456"
+    Confirm Password: "123456"
+
+Expected Results: 
+    - The password and the confirm password should now be hidden
+    
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter the username "Johnsmith" in the username field.
+    3. Enter the email "test@example.com".
+    4. Enter the password "123456".
+    5. Enter the confirm password "123456".
+    6. UnChecks the show password
+
+Actual Results: 
+    - Both the password are now hidden
+
+Test -> Pass
+
+---------------------------------------------------------------------------------------------------------
+Test Case 24: User tries to register an account but already has an account associated with that browser
+---------------------------------------------------------------------------------------------------------
+
+Title: User tries to register an account but already has an account associated with that browser
+
+Preconditions:
+  - There is already a registered account associated with that browser.
+
+Inputs:
+  Username        : "johnsmith"
+  Email           : "johnsmith@example.com"
+  Password        : "Password123"
+  Confirm Password: "Password123"
+
+Expected Results:
+  - A popup alert is displayed informing the user that a new account cannot be created because there is already an account associated with the given browser.
+  - The popup alert contains a "cancel" and a "confirm" button.
+
+Validations:
+  - Verify that the popup alert informs the user that in order to proceed, they have to delete the previous registered account.
+
+Test Steps:
+  1. Open the registration page.
+  2. Enter the username, email, password, and confirm password.
+  3. Click the "Register" button.
+
+Actual Results:
+  - A popup alert is displayed informing the user that a new account cannot be 
+    created because there is already an account associated with the given browser.
+
+Test Result: Pass
+
+
+---------------------------------------------------------------------------------------------------------
+Test Case 26: User tries to register an account but already has an 
+             account associated with that browser and clicks cancel on the popup alert
+             to not delete account
+---------------------------------------------------------------------------------------------------------
+
+Title: User clicks cancel on the popup alert to not delete account
+
+Preconditions:
+  - There is already a registered account associated with that browser.
+
+Inputs:
+  Username        : "johnsmith"
+  Email           : "johnsmith@example.com"
+  Password        : "Password123"
+  Confirm Password: "Password123"
+
+Expected Results:
+  - A popup alert is displayed informing the user that a new account cannot be created because there is already an account associated with the given browser.
+  - The popup alert contains a "cancel" and a "confirm" button.
+  - The page displays the registration form again after the user clicks the cancel button.
+
+Validations:
+  - Verify that the registration form is shown after the user clicks the cancel button.
+
+Test Steps:
+  1. Open the registration page.
+  2. Enter the username, email, password, and confirm password.
+  3. Click the "Register" button.
+  4. Click the "cancel" button on the popup alert.
+
+Actual Results:
+  - The page displays the registration form again after the user clicks the cancel button.
+
+Test Result: Pass
+
+
+
+---------------------------------------------------------------------------------------------------------
+Test Case 27: User tries to register an account but already has an account associated with that browser and 
+             clicks confirm on the popup alert to delete account
+---------------------------------------------------------------------------------------------------------
+
+Title: User clicks confirm on the popup alert to delete account
+
+Preconditions:
+  - There is already a registered account associated with that browser.
+
+Inputs:
+  Username        : "johnsmith"
+  Email           : "johnsmith@example.com"
+  Password        : "Password123"
+  Confirm Password: "Password123"
+
+Expected Results:
+  - A popup alert is displayed informing the user that a new account cannot be created because there is already an account associated with the given browser.
+  - The popup alert contains a "cancel" and a "confirm" button.
+  - A message pops up informing the user that the account has been deleted.
+  - The login form is displayed again.
+
+Validations:
+  - Verify that the login form is shown after the user clicks the confirm button.
+
+Test Steps:
+  1. Open the registration page.
+  2. Enter the username, email, password, and confirm password.
+  3. Click the "Register" button.
+  4. Click the "confirm" button on the popup alert.
+
+Actual Results:
+  - A message pops up informing the user that the account has been deleted.
+  - The page displays the login form again after the user clicks the confirm button.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 28 - Show Password feature during registration
+------------------------------------------------------------------------
+
+Title: Show Password during Registration
+
+Preconditions:
+    - The registration form is accessible.
+
+Inputs:
+    - Username: "johnsmith"
+    - Email: "johnsmith@example.com"
+    - Password: "Password123"
+
+Expected Results:
+    - The password field should initially be hidden, displaying asterisks or dots.
+    - When the user clicks on the "Show Password" button, the password field should change to plain text, displaying the actual password.
+    - Clicking the "Show Password" button again should toggle the password visibility back to hidden.
+
+Test Steps:
+    1. Open the registration form.
+    2. Enter the username "johnsmith".
+    3. Enter the email "johnsmith@example.com".
+    4. Enter the password "Password123".
+    5. Verify that the password field is initially hidden, displaying asterisks or dots.
+    6. Click on the "Show Password" button.
+    7. Verify that the password field changes to plain text, displaying the actual password.
+    8. Click on the "Show Password" button again.
+    9. Verify that the password field toggles back to hidden, displaying asterisks or dots.
+    10. Click on the register button.
+
+Actual Results:
+    - The password field is initially hidden, displaying asterisks or dots.
+    - Clicking the "Show Password" button changes the password field to plain text, displaying the actual password.
+    - Clicking the "Show Password" button again toggles the password field back to hidden, displaying asterisks or dots.
+    - The user is able to register successfully.
+
+Validations:
+    - Verify that the password field is hidden initially.
+    - Verify that clicking the "Show Password" button toggles password visibility correctly.
+
+Test Result: Pass
+

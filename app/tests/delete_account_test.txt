@@ -1,0 +1,94 @@
+
+--------------------------- DELETE ACCOUNT TEST SUITE ------------------------------------------------
+
+Goal: 
+
+The goal of the account deletion testing suite is to ensure that the system provides a secure and
+reliable process for users to delete their accounts. The testing suite aims to verify that the account 
+deletion functionality works as intended, allowing users to permanently remove their accounts 
+and associated data from the system. The goal is to validate that the deletion process follows 
+the necessary security protocols, such as requiring user authentication and providing 
+confirmation prompts to prevent accidental deletions. 
+
+The testing should also verify that all user data is properly removed from the system, ensuring 
+that no residual information remains after the account deletion. Additionally, the testing should handle 
+scenarios where users encounter errors or issues during the account deletion process, such as authentication 
+failures or technical glitches, to ensure that appropriate error messages are displayed and 
+the system maintains its integrity and user-friendliness.
+
+
+----------------------------------------------------------------------------------
+Test case 1 - Successful account deletion
+----------------------------------------------------------------------------------
+
+Title: Delete account
+
+Preconditions:
+
+    - The user is successfully logged in.
+    - The user has the following registration details:
+
+        - Email             -> test@email.com 
+        - Username          -> testusername
+        - Password          -> password
+        - Confirm Password  -> password
+    
+Inputs: None
+
+Expected Results:
+    - A popup alert should appear with the following message: "Are you sure you want to permanently delete this account?"
+    - The popup alert offers the user two options: "cancel" and "confirm."
+    - When the user clicks the "confirm" button, a message should pop up stating "Your account has been permanently deleted."
+    - The page redirects to the login screen.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Click on "delete" under the edit button in profile page.
+    5. Click the confirm button on the popup alert.
+
+Actual Results:
+    - The page accurately displays the correct message.
+    - The page redirects to the login screen.
+
+Validations:
+    - Verify that the account no longer exists by attempting to log in using the registered email and password.
+    - Verify that the message received is "Incorrect username and password."
+
+Test Result: Pass
+
+----------------------------------------------------------------------------------
+Test case 2 - Check that "cancel" button doesn't delete the account
+----------------------------------------------------------------------------------
+
+Title: Check that "cancel" button doesn't delete the account
+
+Preconditions:
+    - The user is successfully logged in.
+
+Inputs: None
+
+Expected Results:
+    - A popup alert should appear with the following message: "Are you sure you want to permanently delete this account?"
+    - The popup alert offers the user two options: "cancel" and "confirm."
+    - When the user clicks the "cancel" button, the alert should move out of sight.
+    - The account is not deleted.
+    - The page should remain on the same page.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Click on "delete" under the edit button in the profile page.
+    5. Click the cancel button on the popup alert.
+
+Actual Results:
+    - The alert button moves out of sight.
+    - The page remains on the same page.
+
+Validations:
+    - Verify that the account is not deleted.
+    - Verify that the page is on the same page.
+
+Test Result: Pass

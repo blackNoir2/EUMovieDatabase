@@ -1,0 +1,1592 @@
+------------------------------------ EDIT PROFILE TEST SUITES ------------------------------
+
+Goal: 
+
+The goal of the profile editing testing is to ensure that users can effectively modify 
+their profile information and that the system accurately updates and reflects these changes. 
+The testing aims to verify that the profile editing functionality works as intended, 
+allowing users to update their personal details, such as name, email, bio,
+and other relevant information. 
+ 
+The goal is to validate that the system properly handles user input, performs necessary
+data validation, and securely saves the updated profile information. 
+Additionally, the testing should verify that the updated profile information is 
+accurately displayed across the system, including user profiles and to also verify that
+the fields containg the socials IG, Facebook, TikTok, Youtube links are in the correct form. 
+
+The testing hopes to cover different scenarios, such as updating single or multiple fields, 
+handling edge cases, and validating the behavior such as when a social media link does not
+match is given field e.g. if a youtube link is entered in Instagram field link,
+when invalid or conflicting data is entered. Furthermore, the testing should ensure that any
+associated data does not cause conflict with any other fields.
+
+------------------------------------------------------------------------
+Test case 1 - Successful edit profile
+------------------------------------------------------------------------
+
+Title: Successful edit profile
+Preconditions:
+- The user is logged in with valid credentials.
+
+Inputs:
+    - New username    : new username
+    - First name      : Test first name
+    - Surname         : Surname
+    - About me        : lorem lorem lorem
+    - Birthday        : 01/01/2011
+    - Gender          : Male
+    - Country         : United Kingdom
+    - Instagram       : https://www.instagram.com/test-name
+    - Facebook        : https://www.facebook.com/testname
+    - TikTok          : https://www.tiktok.com/@testname
+    - New Email       : new-email@example.com
+    - New password    : newpassword
+    - Confirm password: newpassword
+
+Expected Results:
+    - A success message with a green background is displayed, indicating that the data has been successfully saved.
+    - A secondary pop-up message should also appear, stating that the password has been changed.
+    - All the details should be correctly displayed in the fields.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Enter the username: "new username".
+    6. Enter the first name: "Test first name".
+    7. Enter the surname: "Surname".
+    8. Enter in the about field: "lorem lorem lorem".
+    9. Enter the birthday: "01/01/2011".
+    10. Select "Male" from the gender dropdown menu.
+    11. Select "United Kingdom" from the country dropdown menu.
+    12. Enter the Instagram link: "https://www.instagram.com/test-name".
+    13. Enter the Facebook link: "https://www.facebook.com/test-name".
+    14. Enter the TikTok link: "https://www.tiktok.com/@test-name/".
+    15. Enter the new email: "new-email@example.com".
+    16. Enter the new password: "newpassword".
+    17. Confirm the new password: "newpassword".
+    18. Click the save button.
+    19. Wait a few seconds and then refresh the page.
+
+Actual Results:
+    - A green popup banner appears, informing the user that the details have been saved.
+    - A secondary popup appears, informing the user that the password has been changed.
+    - The page remains on the edit profile page.
+    - The newly entered details remain in the fields after the page is refreshed.
+
+Validations:
+    - Verify that the green message informs the user that their details have been saved.
+    - Verify that the secondary popup message informs the user that the password has been saved.
+    - Verify that the new entered details are not removed from the fields after the page is refreshed.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 2 - Verify Pre-filled Values in the Edit Form
+------------------------------------------------------------------------
+
+Title: Prefilled values edit form check
+
+Preconditions:
+
+    - The user is logged in with valid credentials.
+    - The user has previously saved data used from when they registrated
+
+Inputs:
+None
+
+Expected Results:
+    - The username field should be pre-filled with the user's username.
+    - The email field should be pre-filled with the user's email.
+    - The password field should be pre-filled with the user's password.
+    - All the fields should be read-only and disabled, preventing user input.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Verify that the user has successfully entered the edit profile page.
+
+Actual Results:
+    - The username, email, and password fields are pre-filled with the user's details.
+
+Validations:
+    - Verify that the pre-filled values match the user's previously saved details.
+    - Verify that the username, email, and password fields are read-only and disabled, preventing any user input.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 3 - Verify No New Data is Added when Hitting Save Button
+------------------------------------------------------------------------
+
+Title: No new data is added
+
+Preconditions:
+    - The user is logged in with valid credentials.
+    - The user has previously saved data in the form.
+
+Inputs:
+    None
+
+Expected Results:
+    - A message with an orange background pops up, informing the user that "No data was saved because no new entry was added to the form."
+    - No changes are made to the form.
+    - The existing data remains unchanged.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Verify that the user has successfully entered the edit profile page.
+    6. Verify that no changes have been made to the form.
+    7. Hit the save button.
+
+Actual Results:
+    - A message pops up, informing the user that no data was saved because no new entries/updates were made to the form.
+    - The form retains its original values, and the existing data remains unchanged.
+
+Validations:
+    - Verify that no changes are made to the form.
+    - Verify that the form fields retain their original values.
+    - Verify that the data that was previously saved remains intact.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 4 - Username Field Update when Changing Username
+------------------------------------------------------------------------
+
+Title: Username Field Update when Changing Username
+
+Preconditions:
+    - The user is logged in with valid credentials.
+    - The user has previously saved data in the form.
+
+Inputs:
+    1. Enter "new username" in the new username field.
+
+Expected Results:
+    - A success message with a green background is displayed, indicating that the data has been successfully saved.
+    - The "reasonable username" field is updated to the new username value.
+    - The second field contains the value "new username".
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Verify successful entry into the edit profile page.
+    6. Enter "new username" in the new username field.
+    7. Hit the save button.
+
+Actual Results:
+    - A success message with a green background is displayed, indicating that the data has been successfully saved.
+    - The "reasonable username" field is updated to the new username value.
+    - The rest of the form retains its original values, and the existing data remains unchanged.
+
+Validations:
+    - Verify that the "reasonable username" field is updated to the new username value.
+    - Verify that no changes are made to the rest of the form.
+    - Verify that the form fields retain their original values.
+    - Verify that the data that was previously saved remains intact.
+
+Test Result: Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 5 - Email Field Update when Changing Email
+------------------------------------------------------------------------
+
+Title: Email Field Update when Changing email
+
+Preconditions:
+    - The user is logged in with valid credentials.
+    - The user has previously saved data in the form.
+
+Inputs:
+    1. Enter "newemail@example.com" in the new email field.
+
+Expected Results:
+    - A success message with a green background is displayed, indicating that the data has been successfully saved.
+    - The "reasonable email" field is updated to the new email value.
+    - The second field contains the value "newemail@example.com".
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Verify successful entry into the edit profile page.
+    6. Enter "newemail@example.com" in the new email field.
+    7. Hit the save button.
+
+Actual Results:
+    - A success message with a green background is displayed, indicating that the data has been successfully saved.
+    - The "reasonable email" field is updated to the new email value.
+    - The rest of the form retains its original values, and the existing data remains unchanged.
+
+Validations:
+    - Verify that the "reasonable email" field is updated to the new email value.
+    - Verify that no changes are made to the rest of the form.
+    - Verify that the form fields retain their original values.
+    - Verify that the data that was previously saved remains intact.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 6 - Error Message for Invalid Email in Email Field
+------------------------------------------------------------------------
+
+Title: Error Message for Invalid Email in Email Field
+
+Preconditions:
+    - The user is logged in with valid credentials.
+
+Inputs:
+    1. Enter the invalid email "newemailexample.com" in the new email field.
+
+Expected Results:
+    - An error message should be raised, stating 'Invalid email format. Please enter a valid email address.'
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Verify successful entry into the edit profile page.
+    6. Enter the invalid email "newemailexample.com" in the new email field.
+    7. Hit the save button.
+
+Actual Results:
+    - An error message pops up, stating 'Invalid email format. Please enter a valid email address.'
+    - The form doesn't submit.
+
+Validations:
+    - Verify that the displayed error message matches the expected error message.
+    - Verify that the form doesn't submit.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 7 - Password Field Update when Changing Password
+------------------------------------------------------------------------
+
+Title: Password Field Update when Changing Password
+
+Preconditions:
+    - The user is logged in with valid credentials.
+    - The user has previously saved a password that will be changed in this test case.
+
+Inputs:
+    1. Enter "password" in the new password field.
+    2. Enter "password" in the confirm password field.
+    3. Hit the save button.
+
+Expected Results:
+    - A success message with a green background is displayed, indicating that the data has been successfully saved.
+    - A success message with a green background should be displayed, stating 'Password updated successfully.'
+    - A secondary pop-up message should appear, stating 'Password changed.'
+    - The read-only password field should contain the new password, although it is hidden.
+    - The rest of the form remains unchanged.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Enter "password" in the new password field.
+    6. Enter "password" in the confirm password field.
+    7. Hit the save button.
+    8. Click on the profile icon that displays your name for the dropdown menu.
+    9. Click the logout button.
+    10. On the login page, enter your username.
+    11. Enter your new password.
+    12. Hit the Login button.
+
+Actual Results:
+    - A success message with a green background is displayed, indicating that the data has been successfully saved.
+    - A success message with a green background is displayed, stating 'Password updated successfully.'
+    - The password field is changed.
+
+Validations:
+    - Verify that the displayed success message matches the expected success message.
+    - Verify that you are able to log in with the new password successfully.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 8 - Username Exceeding Maximum Character Limit (20)
+------------------------------------------------------------------------
+
+Title: Username Exceeding Maximum Character Limit (20)
+
+Preconditions:
+    - The user is successfully logged in.
+
+Inputs:
+    - Enter a string that exceeds 20 characters in the username field.
+
+Expected Results:
+    - The username field should display only the first 20 characters.
+    - The user should not be able to add any more characters after exceeding the maximum length.
+    - A success message with a green background should be displayed, indicating that the data has been successfully saved.
+    - No changes should occur in the other fields.
+    - The read-only username field should be changed to the first 20 characters of the new username entered.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Enter a string that exceeds 20 characters in the username field.
+    6. Hit the save button.
+
+Actual Results:
+    - The username field should keep 20 characters and truncate the rest.
+    - The user should not be able to add any more characters.
+    - The application should accept and save the input, considering only the first 20 characters.
+    - The read-only username field should be changed to the first 20 characters of the new username.
+
+Validations:
+    - Verify that only 20 characters are used in the username field.
+    - Verify that the user cannot add any more characters after exceeding the maximum limit.
+    - Verify that the read-only username field contains the first 20 characters of the new username.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 9 - Username doesn't exceed minimum character limit (3)
+------------------------------------------------------------------------
+
+Title: Username doesn't exceed minimum character limit (3)
+
+Preconditions:
+    - The user is successfully logged in.
+    - No extra data is added apart from data entered in any field apart from the entry made in the username field.
+
+Inputs:
+    - Enter a string that doesn't meet the minimum length of 3 characters in the username field (e.g., "ab").
+
+Expected Results:
+    - A message informs the user that the character entered doesn't exceed the minimum length.
+    - The message also informs the user that the username must be at least 3 characters long and specifies the number of additional characters needed to meet the minimum length (e.g., "The username must be at least 3 characters long. You need to enter 1 more character.").
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Enter a string that doesn't meet the minimum length of 3 characters in the username field (e.g., "ab").
+    6. Hit the save button.
+
+Actual Results:
+    - A message pops up telling the user that they don't meet the required character limit.
+    - The form doesn't submit.
+
+Validations:
+    - Verify that the pop-up message informs the user that the username must be at least 3 characters long.
+    - Verify that the pop-up message specifies the number of additional characters needed to meet the minimum length (e.g., "The username must be at least 3 characters long. You need to enter 1 more character.").
+    - Verify that the form is not submitted.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 10 - Firstname doesn't exceed minimum character limit (3)
+------------------------------------------------------------------------
+
+Title: Firstname doesn't exceed minimum character limit (3)
+
+Preconditions:
+    - The user is successfully logged in.
+    - No extra data is added apart from data entered in any field apart from the entry made in the firstname field.
+
+Inputs:
+    - Enter a string that doesn't meet the minimum length of 3 characters in the firstname field (e.g., "ab").
+
+Expected Results:
+    - A message informs the user that the character entered doesn't exceed the minimum length.
+    - The message also informs the user that the firstname must be at least 3 characters long and specifies the number of additional characters needed to meet the minimum length (e.g., "The firstname must be at least 3 characters long. You need to enter 1 more character.").
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Enter a string that doesn't meet the minimum length of 3 characters in the firstname field (e.g., "ab").
+    6. Hit the save button.
+
+Actual Results:
+    - A message pops up telling the user that they don't meet the required character limit.
+    - The form doesn't submit.
+
+Validations:
+    - Verify that the pop-up message informs the user that the firstname must be at least 3 characters long.
+    - Verify that the pop-up message specifies the number of additional characters needed to meet the minimum length (e.g., "The firstname must be at least 3 characters long. You need to enter 1 more character.").
+    - Verify that the form is not submitted.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 11 - Surname doesn't exceed minimum character limit (3)
+------------------------------------------------------------------------
+
+Title: Surname doesn't exceed minimum character limit (3)
+
+Preconditions:
+    - The user is successfully logged in.
+    - No extra data is added apart from data entered in any field apart from the entry made in the surname field.
+
+Inputs:
+    - Enter a string that doesn't meet the minimum length of 3 characters in the surname field (e.g., "ab").
+
+Expected Results:
+    - A message informs the user that the character entered doesn't exceed the minimum length.
+    - The message also informs the user that the surname must be at least 3 characters long and specifies the number of additional characters needed to meet the minimum length (e.g., "The surname must be at least 2 characters long. You need to enter 1 more character.").
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Enter a string that doesn't meet the minimum length of 3 characters in the surname field (e.g., "ab").
+    6. Hit the save button.
+
+Actual Results:
+    - A message pops up telling the user that they don't meet the required character limit.
+    - The form doesn't submit.
+
+Validations:
+    - Verify that the pop-up message informs the user that the surname must be at least 3 characters long.
+    - Verify that the pop-up message specifies the number of additional characters needed to meet the minimum length (e.g., "The surname must be at least 3 characters long. You need to enter 1 more character.").
+    - Verify that the form is not submitted.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 11 - About-me text area doesn't exceed minimum character limit (10)
+------------------------------------------------------------------------
+
+Title: About-me text area doesn't exceed minimum character limit (10)
+
+Preconditions:
+    - The user is successfully logged in.
+    - No extra data is added apart from data entered in any field apart from the entry made in the about-me text area.
+
+Inputs:
+    - Enter a string that doesn't meet the minimum length of 10 characters in the about-me text area.
+
+Expected Results:
+    - A message informs the user that the character entered doesn't exceed the minimum length.
+    - The message also informs the user that the about-me text must be at least 10 characters long and specifies the number of additional characters needed to meet the minimum length (e.g., "The about-me text must be at least 10 characters long. You need to enter 5 more characters.").
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Enter a string that doesn't meet the minimum length of 10 characters in the about-me text area.
+    6. Hit the save button.
+
+Actual Results:
+    - A message pops up telling the user that they don't meet the required character limit.
+    - The form doesn't submit.
+
+Validations:
+    - Verify that the pop-up message informs the user that the about-me text must be at least 10 characters long.
+    - Verify that the pop-up message specifies the number of additional characters needed to meet the minimum length (e.g., "The about-me text must be at least 10 characters long. You need to enter 5 more characters.").
+    - Verify that the form is not submitted.
+
+Test Result: Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 12 - About-me text area exceed maximum character limit (1000)
+------------------------------------------------------------------------
+
+Title: About-me text exceed maximum character limit (1000)
+
+Preconditions:
+    - The user is successfully logged in.
+    - No extra data is added in any field apart from data entered in the about-me text area.
+
+Inputs:
+    - Enter a string that exceeds the maximum length of 1000 characters in the about-me text area.
+
+Expected Results:
+    - A success message with a green background is displayed, indicating that the data has been successfully saved.
+  
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Enter a string that exceeds the maximum length of 1000 characters in the about-me text area.
+    6. Hit the save button.
+
+Actual Results:
+    - The user is not able to add anymore characters after the 1000 character
+    - The remaining character indicator is 0 and red
+    - The form is submitted
+    - A success message with a green background is displayed, indicating that the data has been successfully saved.
+    - All the details on the fields remaining unchanged.
+
+
+Validations:
+    - Verify that the pop-up message informs the user that the about-me text must not exceed 1000 characters.
+    - Verify that the form is submitted.
+    - Verify that the green message informs the user that their details have been saved.
+    - Verify that no other changes are made to the form
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 13 - Birthday field validation with minimum and maximum dates
+------------------------------------------------------------------------
+
+Title: Birthday field validation with minimum and maximum dates
+
+Preconditions:
+    - The user is on a page with a form containing a "birthday" input field.
+    - The "birthday" input field is of type "date" and has the following attributes:
+        - min: "1910-01-01"
+        - max: "2223-12-31"
+        - value: (empty, no pre-filled value)
+
+Inputs:
+    - Enter a date that falls within the valid range, between "1910-01-01" and "2223-12-31", in the "birthday" field.
+
+Expected Results:
+    - The entered date is accepted as valid.
+    - No error messages are displayed.
+    - The form can be submitted successfully.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Locate the "birthday" input field.
+    6. Enter a date that falls within the valid range, between "1910-01-01" and "2223-12-31", in the "birthday" field.
+    7. Attempt to submit the form.
+
+Actual Results:
+    - The entered date is accepted as valid.
+    - No error messages are displayed.
+    - The form can be submitted successfully.
+
+Validations:
+    - Verify that no error messages or validation warnings are displayed.
+    - Verify that the form can be submitted without any issues.
+
+Test Result: Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 13 - Birthday field validation with minimum and maximum dates
+------------------------------------------------------------------------
+
+Title: Birthday field validation with minimum and maximum dates
+
+Preconditions:
+    - The user is on a page with a form containing a "birthday" input field.
+    - The "birthday" input field is of type "date" and has the following attributes:
+        - min: "1910-01-01"
+        - max: "2223-12-31"
+        - value: (empty, no pre-filled value)
+
+Inputs:
+    - Enter a date that falls within the valid range, between "1910-01-01" and "2223-12-31", in the "birthday" field.
+
+Expected Results:
+    - The entered date is accepted as valid.
+    - No error messages are displayed.
+    - The form can be submitted successfully.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Locate the "birthday" input field.
+    6. Enter a date that falls within the valid range, between "1910-01-01" and "2223-12-31", in the "birthday" field.
+    7. Attempt to submit the form.
+
+Actual Results:
+    - The entered date is accepted as valid.
+    - No error messages are displayed.
+    - The form can be submitted successfully.
+
+Validations:
+    - Verify that no error messages or validation warnings are displayed.
+    - Verify that the form can be submitted without any issues.
+
+Test Result: Pass
+
+
+
+
+------------------------------------------------------------------------
+Test Case 15 - Birthday Field Validation: Prevent Entering Future Dates
+------------------------------------------------------------------------
+
+Title: Birthday Field Validation: Prevent Entering Future Dates
+
+Preconditions:
+- The user is on a page with a form containing a "birthday" input field.
+- The "birthday" input field is of type "date" and has the following attributes:
+  - min: "1910-01-01"
+  - max: "2223-12-31"
+  - value: (empty, no pre-filled value)
+
+Inputs:
+    - Enter a date that is greater than the current date in the "birthday" field.
+
+Expected Results:
+    - The user should not be able to enter a date that is greater than the current date.
+    - An alert should be displayed to inform the user about the invalid date entry.
+    - The input field should be cleared after the alert is shown.
+
+Test Steps:
+    1. Navigate to the page with the "birthday" input field.
+    2. Locate the "birthday" input field.
+    3. Enter a date that is greater than the current date in the "birthday" field.
+    4. Trigger the blur event on the input field (e.g., by clicking outside the input field).
+
+Actual Results:
+    - The user is prevented from entering a date that is greater than the current date.
+    - An alert is displayed to inform the user about the invalid date entry.
+    - The input field is cleared after the alert is shown.
+
+Validations:
+    - Verify that the user is prevented from entering a date that is greater than the current date.
+    - Verify that an alert is displayed with the appropriate message.
+    - Verify that the input field is cleared after the alert is shown.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 14 - Verify presence of all 195 countries in the select field
+------------------------------------------------------------------------
+
+Title: Verify presence of all 195 countries in the select field
+
+Preconditions:
+    - The form with the "countries" select field is loaded.
+    - The user is logged in
+
+Inputs:
+    N/A
+
+Expected Results:
+    - Verify that the "countries" select field contains 195 options, each representing a different country.
+    - Verify that all 195 countries are present and correctly listed in the select field.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Locate the "countries" select field.
+    6. Click on the dropdown country.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 15 - Selecting a specific country from the select field
+------------------------------------------------------------------------
+
+Title: Selecting a specific country from the select field
+
+Preconditions:
+    - The form with the "countries" select field is loaded.
+    - The user is logged in
+
+Inputs:
+    - Select a specific country from the "countries" select field.
+
+Expected Results:
+    - Verify that the selected country is displayed in the select field.
+    - Verify that the selected country is correctly submitted when the form is submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Locate the "countries" select field.
+    6. Select a specific country from the list.
+    7. Hit the save button
+    8. Refresh the page
+
+Validation:
+    - Verify that selected country is the one you chose and it is visible as a default country in the select field
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 16 - Verify default selection in the select field
+------------------------------------------------------------------------
+
+Title: Verify default selection in the select field
+
+Preconditions:
+    - The form with the "countries" select field is loaded.
+    - The user is logged in
+
+Inputs:
+    N/A
+
+Expected Results:
+    - Verify that a default option is displayed in the select field.
+    - Verify that the default option is correctly submitted when the form is submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Locate the "countries" select field.
+
+ Validations:
+    - Verify that the first country Afgananistan is visible
+ 
+ Test -> pass
+
+
+------------------------------------------------------------------------
+Test case 17 - Try to submit the form without selecting a country
+------------------------------------------------------------------------
+
+Title: Try to submit the form without selecting a country
+
+Preconditions:
+    - The form with the "countries" select field is loaded.
+    - No other details are entered nor is the form changed in anyway
+    
+Inputs:
+    - Attempt to submit the form without selecting a country.
+
+Expected Results:
+    - The select form should display the first country on the list which is Afgananistan
+    - The form should not submit since the form has not been changed or modified
+    - A message with an orange banner should appear stating that the data was not saved because no data was entered
+
+Test Steps:
+    1. Attempt to submit the form without selecting a country from the "countries" select field.
+
+
+-----------------------------------------------------------------------------------------
+Test case 18 - Verification of Instagram field with incorrect Instagram link
+----------------------------------------------------------------------------------------
+
+Title: Verification of Instagram field with incorrect Instagram link
+
+Preconditions:
+    - The user is logged in with valid credentials.
+
+Inputs:
+    - Instagram: https://www.this-is-not-an-instagram-link.com/test-name/
+
+Expected Results:
+    - An error message should appear, stating that the Instagram link should be in the form of a valid Instagram URL.
+    - The Instagram field should be cleared.
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Verify that the user has successfully accessed the edit profile page.
+    6. Enter the invalid Instagram link: https://www.this-is-not-an-instagram-link.com/test-name/
+    7. Press the Tab key to move away from the field or attempt to submit the form.
+
+Expected Results:
+    - An error message should appear, displaying the following text: "The Instagram link should be in the form of a valid Instagram URL, e.g., https://instagram.com/<username>/"
+    - The Instagram field should be cleared.
+    - The form should not be submitted.
+
+Actual Results:
+    - An error message pops up with the following text: "The Instagram link should be in the form of a valid Instagram URL, e.g., https://instagram.com/<username>/"
+    - The Instagram field is cleared.
+    - The form is not submitted.
+
+Validations:
+    - Verify that the displayed error message matches the expected error message: "The Instagram link should be in the form of a valid Instagram URL, e.g., https://instagram.com/<username>/"
+    - Verify that the form is not submitted.
+    - Verify that the Instagram field is cleared.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 19 - Verification of Facebook field with incorrect Facebook link
+------------------------------------------------------------------------
+
+Title: Verification of Facebook field with incorrect Facebook link
+
+Preconditions:
+    - The user is logged in with valid credentials.
+
+Inputs:
+    - Facebook: https://www.this-is-not-a-facebook-link.com/test-name/
+
+Expected Results:
+    - An error message should appear, stating that the Facebook link should be in the form of a valid Facebook URL.
+    - The Facebook field should be cleared.
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Verify that the user has successfully accessed the edit profile page.
+    6. Enter the invalid Facebook link: https://www.this-is-not-a-facebook-link.com/test-name/
+    7. Press the Tab key to move away from the field or attempt to submit the form.
+
+Expected Results:
+    - An error message should appear, displaying the following text: "The Facebook link should be in the form of a valid Facebook URL, e.g., https://www.facebook.com/<username>/"
+    - The Facebook field should be cleared.
+    - The form should not be submitted.
+
+Actual Results:
+    - An error message pops up with the following text: "The Facebook link should be in the form of a valid Facebook URL, e.g., https://www.facebook.com/<username>/"
+    - The Facebook field is cleared.
+    - The form is not submitted.
+
+Validations:
+    - Verify that the displayed error message matches the expected error message: "The Facebook link should be in the form of a valid Facebook URL, e.g., https://www.facebook.com/<username>/"
+    - Verify that the form is not submitted.
+    - Verify that the Facebook field is cleared.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 20 - Verification of TikTok field with incorrect TikTok link
+------------------------------------------------------------------------
+
+Title: Verification of TikTok field with incorrect TikTok link
+
+Preconditions:
+    - The user is logged in with valid credentials.
+
+Inputs:
+    - TikTok: https://www.this-is-not-a-tiktok-link.com/@testuser/
+
+Expected Results:
+    - An error message should appear, stating that the TikTok link should be in the form of a valid TikTok URL.
+    - The TikTok field should be cleared.
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Verify that the user has successfully accessed the edit profile page.
+    6. Enter the invalid TikTok link: https://www.this-is-not-a-tiktok-link.com/@testuser/
+    7. Press the Tab key to move away from the field or attempt to submit the form.
+
+Expected Results:
+    - An error message should appear, displaying the following text: "The TikTok link should be in the form of a valid TikTok URL, e.g., https://www.tiktok.com/@username/"
+    - The TikTok field should be cleared.
+    - The form should not be submitted.
+
+Actual Results:
+    - An error message pops up with the following text: "The TikTok link should be in the form of a valid TikTok URL, e.g., https://www.tiktok.com/@username/"
+    - The TikTok field is cleared.
+    - The form is not submitted.
+
+Validations:
+    - Verify that the displayed error message matches the expected error message: "The TikTok link should be in the form of a valid TikTok URL, e.g., https://www.tiktok.com/@username/"
+    - Verify that the form is not submitted.
+    - Verify that the TikTok field is cleared.
+
+Test Result: Pass
+
+------------------------------------------------------------------------------------------------------------
+Test case 21 - Verify the remaining character is reduced each time the user adds a character in the text area
+---------------------------------------------------------------------------------------------------------------
+
+Title: Verify the remaining character is reduced each time the user adds a character in the text area
+
+Preconditions:
+
+    - The user is logged in with valid credentials. (Enter the steps to log in with valid credentials)
+
+Inputs:
+    About me: Lorem lorem lorem lorem lorem
+
+Expected Results:
+    - The remaining chars should be initially set to 1000 characters before any text is typed or pasted in.
+    - The counter should display the number of remaining characters, which should be reduced by the number of characters in the text area, including any spaces. For example, if there are 29 characters in the text area, the remaining count should be 1000 - 29 = 971.
+    - The form should submit successfully.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "my account" link on the home page.
+    4. Click on the "edit" link on the profile page.
+    5. Verify that the user has successfully entered the edit profile page.
+    6. Verify that the initial remaining character count is 1000.
+    7. Type or paste the text "Lorem lorem lorem lorem lorem" into the text area, making sure there is no space between the first character and the edge of the text area.
+
+Actual Results:
+    - The remaining character count is observed to be 971.
+
+Validations:
+    - Verify that the remaining character count is 971.
+    - Verify that the form is submitted successfully.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 22 - Validation of username field to disallow special characters
+------------------------------------------------------------------------
+
+Title: Validation of username field to disallow special characters
+
+Preconditions:
+    - The user is logged in with valid credentials.
+    - No other modifications have been made to the field.
+
+Inputs:
+    - Username: "Test@User"
+
+Expected Results:
+    - A pop-up alert should appear, informing the user that special characters are not allowed in the username field.
+    - The username field should be cleared.
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Enter the string "Test@User" in the username field and press the Tab key.
+
+Actual Results:
+    - A pop-up alert appears, displaying the message "Special characters are not allowed in the username field."
+    - The username field is cleared.
+
+Validations:
+    - Verify that the displayed alert message matches the expected message: "Special characters are not allowed in the username field."
+    - Verify that the username field is cleared.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 23 - Verification of paste functionality in the username field
+------------------------------------------------------------------------
+
+Title: Verification of paste functionality in the username field
+
+Preconditions:
+    - The user is logged in with valid credentials. 
+    - The username field is empty or contains irrelevant data.
+
+Inputs:
+    - Paste the following content into the username field: "PastedUsername123"
+
+Expected Results:
+    - The content should be successfully pasted into the username field.
+    - The form can be submitted without any errors.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Ensure that the username field is empty or contains irrelevant data.
+    6. Paste the content "PastedUsername123" into the username field.
+
+Actual Results:
+    - The content "PastedUsername123" is successfully pasted into the username field.
+    - The form can be submitted without any errors.
+
+Validations:
+    - Verify that the pasted content "PastedUsername123" appears in the username field.
+    - Verify that the form can be submitted without any errors.
+
+Test Result: Pass
+
+
+---------------------------------------------------------------------------------------------------------------
+Test case 24 - Verification of username field that paste does not submit when special characters are used
+------------------------------------------------------------------------------------------------------------------
+
+Title: Verification of username field that paste does not submit when special characters are used
+
+Preconditions:
+    - The user is logged in with valid credentials. 
+    - The username field is empty or contains irrelevant data.
+
+Inputs:
+    - Paste the following content into the username field: "User@name#123"
+
+Expected Results:
+    - The content "User@name#123" should not be accepted in the username field.
+    - An error message should be displayed indicating that special characters are not allowed.
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Ensure that the username field is empty or contains irrelevant data.
+    6. Paste the content "User@name#123" into the username field.
+    7. Attempt to submit the form.
+
+Actual Results:
+    - The content "User@name#123" is pasted into the username field.
+    - An error message is displayed indicating that special characters are not allowed.
+    - The form is not submitted.
+
+Validations:
+    - Verify that the username field retains the pasted content "User@name#123".
+    - Verify that an error message is displayed indicating that special characters are not allowed.
+    - Verify that the form is not submitted.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 25 - Validation of first name field to disallow special characters
+------------------------------------------------------------------------
+
+Title: Validation of first name field to disallow special characters
+
+Preconditions:
+    - The user is logged in with valid credentials. 
+    - No other modifications have been made to the field.
+
+Inputs:
+    - First Name: "Test@User"
+
+Expected Results:
+    - A pop-up alert should appear, informing the user that special characters are not allowed in the first name field.
+    - The first name field should be cleared.
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Enter the string "Test@User" in the first name field and press the Tab key.
+
+Actual Results:
+    - A pop-up alert appears, displaying the message "Special characters are not allowed in the first name field."
+    - The first name field is cleared.
+
+Validations:
+    - Verify that the displayed alert message matches the expected message: "Special characters are not allowed in the first name field."
+    - Verify that the first name field is cleared.
+
+Test Result: Pass
+
+
+--------------------------------------------------------------------------------------------------------
+Test case 26 - Verification of paste functionality without special characters in the first name field
+----------------------------------------------------------------------------------------------------------
+
+Title: Verification of paste functionality without special characters in the first name field
+
+Preconditions:
+    - The user is logged in with valid credentials. 
+    - The first name field is empty or contains irrelevant data.
+
+Inputs:
+    - Paste the following content into the first name field: "John"
+
+Expected Results:
+    - The content should be successfully pasted into the first name field.
+    - The form can be submitted without any errors.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Ensure that the first name field is empty or contains irrelevant data.
+    6. Paste the content "John" into the first name field.
+
+Actual Results:
+    - The content "John" is successfully pasted into the first name field.
+    - The form can be submitted without any errors.
+
+Validations:
+    - Verify that the pasted content "John" appears in the first name field.
+    - Verify that the form can be submitted without any errors.
+
+Test Result: Pass
+
+---------------------------------------------------------------------------------------------------------
+Test case 27 - Verification of rejection of pasted text with special characters in the first name field
+--------------------------------------------------------------------------------------------------------
+
+Title: Verification of rejection of pasted text with special characters in the first name field
+
+Preconditions:
+    - The user is logged in with valid credentials. 
+    - The first name field is empty or contains irrelevant data.
+
+Inputs:
+    - Paste the following content into the first name field: "J@hn"
+
+Expected Results:
+    - The content should not be accepted in the first name field.
+    - An error message should be displayed indicating that special characters are not allowed.
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Ensure that the first name field is empty or contains irrelevant data.
+    6. Paste the content "J@hn" into the first name field.
+
+Actual Results:
+    - The content "J@hn" is not accepted in the first name field.
+    - An error message is displayed indicating that special characters are not allowed.
+    - The form is not submitted.
+
+Validations:
+    - Verify that the first name field does not contain the pasted content "J@hn".
+    - Verify that an error message is displayed indicating that special characters are not allowed.
+    - Verify that the form is not submitted.
+
+Test Result: Pass
+
+
+
+---------------------------------------------------------------------------------------------------
+Test case 28 - Verification of paste functionality without special characters in the surname field
+-----------------------------------------------------------------------------------------------------
+
+Title: Verification of paste functionality without special characters in the surname field
+
+Preconditions:
+    - The user is logged in with valid credentials. 
+    - The surname field is empty or contains irrelevant data.
+
+Inputs:
+    - Paste the following content into the surname field: "Doe"
+
+Expected Results:
+    - The content should be successfully pasted into the surname field.
+    - The form can be submitted without any errors.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Ensure that the surname field is empty or contains irrelevant data.
+    6. Paste the content "Doe" into the surname field.
+
+Actual Results:
+    - The content "Doe" is successfully pasted into the surname field.
+    - The form can be submitted without any errors.
+
+Validations:
+    - Verify that the pasted content "Doe" appears in the surname field.
+    - Verify that the form can be submitted without any errors.
+
+Test Result: Pass
+
+
+-------------------------------------------------------------------------------------------------------
+Test case 29 - Verification of rejection of pasted text with special characters in the surname field
+------------------------------------------------------------------------------------------------------
+
+Title: Verification of rejection of pasted text with special characters in the surname field
+
+Preconditions:
+    - The user is logged in with valid credentials. 
+    - The surname field is empty or contains irrelevant data.
+
+Inputs:
+    - Paste the following content into the surname field: "Sm!th"
+
+Expected Results:
+    - The content should not be accepted in the surname field.
+    - An error message should be displayed indicating that special characters are not allowed.
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Ensure that the surname field is empty or contains irrelevant data.
+    6. Paste the content "Sm!th" into the surname field.
+
+Actual Results:
+    - The content "Sm!th" is not accepted in the surname field.
+    - An error message is displayed indicating that special characters are not allowed.
+    - The form is not submitted.
+
+Validations:
+    - Verify that the surname field does not contain the pasted content "Sm!th".
+    - Verify that an error message is displayed indicating that special characters are not allowed.
+    - Verify that the form is not submitted.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------------------------------------
+Test case 30 - Verification of paste functionality with special characters in the "About Me" field
+-------------------------------------------------------------------------------------------------------
+
+Title: Verification of paste functionality with special characters in the About Me field
+
+Preconditions:
+    - The user is logged in with valid credentials.
+    - The About Me field is empty or contains irrelevant data.
+
+Inputs:
+    - Paste the following content into the About Me field: "I love @rt! && coding."
+
+Expected Results:
+    - The content should be successfully pasted into the About Me field.
+    - The form can be submitted without any errors.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Ensure that the About Me field is empty or contains irrelevant data.
+    6. Paste the content "I love @rt! && coding." into the About Me field.
+
+Actual Results:
+    - The content "I love @rt! && coding." is successfully pasted into the About Me field.
+    - The form can be submitted without any errors.
+
+Validations:
+    - Verify that the pasted content "I love @rt! && coding." appears in the About Me field.
+    - Verify that the form can be submitted without any errors.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 31 - Verification of typing special characters in the About Me field
+------------------------------------------------------------------------
+
+Title: Verification of paste functionality with special characters in the About Me field
+
+Preconditions:
+    - The user is logged in with valid credentials.
+    - The About Me field is empty or contains irrelevant data.
+
+Inputs:
+    - Type the following content into the About Me field: "I love @rt! && coding."
+
+Expected Results:
+    - The content should be successfully typed into the About Me field.
+    - The form can be submitted without any errors.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Ensure that the About Me field is empty or contains irrelevant data.
+    6. Type the content "I love @rt! && coding." into the About Me field.
+
+Actual Results:
+    - The content "I love @rt! && coding." is successfully typed into the About Me field.
+    - The form can be submitted without any errors.
+
+Validations:
+    - Verify that the content "I love @rt! && coding." appears in the About Me field.
+    - Verify that the form can be submitted without any errors.
+
+Test Result: Pass
+
+
+
+--------------------------------------------------------------------------------------------
+Test case 32 - Verify that email field cannot contain  the special chars: " ", [] <> ()
+---------------------------------------------------------------------------------------------
+
+Title: Verify that email field cannot contain  the special chars: " ", [] <> ()
+
+Preconditions:
+
+    - The user is logged in with valid credentials.
+    - The email field is empty
+
+Inputs:
+    - Type the following content into the About Me field: "" ", [] <> ()@gmail.com"
+    - Hit the tab key
+
+Expected Results:
+    - An error should pop informing you that the special characters: "" ", [] <> () are not allowed in the email field
+    - The form is cleared
+    - The form doesn't submit
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Ensure that the About Me field is empty or contains irrelevant data.
+    6. Type the content "", [] <> ()@gmail.com" into the email field.
+
+Actual Results:
+    - An pop alert pops up informing the user that informing you that the special characters: "" ", [] <> () are not allowed in the email field
+    - The form is cleared
+    - The form is not submitted
+
+Validations:
+    - Verify that the popup alert matches the alert
+    - Verify that the email field is cleared
+    - Verify that the form is not submitted.
+
+
+Test Result: Pass
+
+
+--------------------------------------------------------------------------------------------
+Test case 33 - Verify that email field does not allow special characters: " ", [] <> ()
+--------------------------------------------------------------------------------------------
+
+Title: Verify that email field does not allow special characters: " ", [] <> ()
+
+Preconditions:
+    - The user is logged in with valid credentials.
+    - The email field is empty.
+
+Inputs:
+    - Type the following content into the email field: "" ", [] <> ()@gmail.com"
+    - Press the Tab key.
+
+Expected Results:
+    - An error message should appear, informing the user that the special characters: "" ", [] <> () are not allowed in the email field.
+    - The email field should be cleared.
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Ensure that the About Me field is empty or contains irrelevant data.
+    6. Type the content "" ", [] <> ()@gmail.com" into the email field.
+
+Actual Results:
+    - An alert message pops up, informing the user that the special characters: "" ", [] <> () are not allowed in the email field.
+    - The email field is cleared.
+    - The form is not submitted.
+
+Validations:
+    - Verify that the displayed alert message matches the expected error message.
+    - Verify that the email field is cleared.
+    - Verify that the form is not submitted.
+
+Test Result: Pass
+
+
+----------------------------------------------------------------
+Test Case 34 - Password and confirm password exceeds 20 chars 
+-----------------------------------------------------------------
+
+Title: Password exceeds 20 characters
+
+Preconditions:
+    - The user is logged in with valid credentials.
+    - The password and the confirm password field is empty
+    - The confirm password and password both match
+
+Inputs:
+    Password        : "password12345678920212124"
+    Confirm Password: "password12345678920212124"
+
+Expected Results: 
+    - User shouldn't be able to add any more characters after the twenty char.
+    - The field strips 20 characters and truncates the rest
+    - The form is submitted
+    - A message pops up informing the user that the password has been changed
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Find the password field and enter "password12345678920212124"
+    6. Find the confirm password field and enter  "password12345678920212124"
+    7. Hit save
+
+
+Actual Results: 
+
+    - User wasn't able to add any more characters after twenty character of the password
+    - The form submits
+    - A message with a green background appears informing the user that data is saved
+    - A secondary message underneath appears informing the user the password has been changed
+   
+Test -> Pass
+
+
+--------------------------------------------------------------------------------
+Test Case 35 - Password and confirm doesn't meet the minimum length 6 characters
+---------------------------------------------------------------------------------
+
+Title: Password exceeds 20 characters
+
+Preconditions:
+    - The user is logged in with valid credentials. 
+    - The password and confirm password fields are empty.
+    - The confirm password and password both match.
+
+Inputs:
+    Password        : "123"
+    Confirm Password: "123"
+
+Expected Results: 
+    - After the user hit save button a message should pop informing the user that characters doesn't meet the required character limit
+    - The form doesn't submitted.
+   
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Find the password field and enter "123".
+    6. Find the confirm password field and enter "123".
+    8. Hit the "Save" button.
+
+Actual Results: 
+    - A message pops informing the user that the password doesn't meet the required characters.
+    - The form doesn't submits.
+   
+Validations:
+    - Verify that the messages informing the user that they don't the required characters length.
+    - Verify that the form doesn't submit.
+
+Test Result: Pass
+
+
+
+-----------------------------------------------------------------------------------------------
+Test Case 36 - Password and confirm password don't meet the minimum length of 6 characters
+------------------------------------------------------------------------------------------------
+
+Title: Password and confirm password don't meet the minimum length of 6 characters
+
+Preconditions:
+
+    - The user is logged in with valid credentials.
+    - The password and confirm password fields are empty.
+    - The confirm password and password both match.
+
+Inputs:
+    Password        : "123"
+    Confirm Password: "123"
+
+Expected Results:
+    - After the user hits the save button, a message should appear informing the user that the password doesn't meet the required character limit.
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Find the password field and enter "123".
+    6. Find the confirm password field and enter "123".
+    8. Click the "Save" button.
+
+Actual Results:
+    - A message appears, informing the user that the password doesn't meet the required character limit.
+    - The form is not submitted.
+
+Validations:
+    - Verify that the message informs the user that the password doesn't meet the required character length.
+    - Verify that the form is not submitted.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test Case 37 - Password and confirm password don't match
+------------------------------------------------------------------------
+
+Title: Password and confirm password don't match
+
+Preconditions:
+    - The user is logged in with valid credentials. (Specify the steps to log in with valid credentials)
+    - The password and confirm password fields are empty.
+    - No other fields are changed.
+
+Inputs:
+    Password        : "123456"
+    Confirm Password: "1234567"
+
+Expected Results:
+    - After the user clicks the "Save" button, a message should appear informing the user that the password doesn't match.
+    - A secondary message underneath should also pop up, informing the user that no data was saved.
+    - The form should not be submitted.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and log in.
+    3. Click on the "My Account" link on the home page.
+    4. Click on the "Edit" link on the profile page.
+    5. Find the password field and enter "123456".
+    6. Find the confirm password field and enter "1234567".
+    7. Click the "Save" button.
+
+Actual Results:
+    - A message appears, informing the user that the password doesn't match.
+    - A secondary message appears, informing the user that no data has been saved.
+    - The form is not submitted.
+
+Validations:
+    - Verify that the message informs the user that the password doesn't match.
+    - Verify that the form is not submitted.
+
+Test Result: Pass

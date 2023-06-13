@@ -1,0 +1,228 @@
+---------------------------------------- LOGOUT TEST SUITE -------------------------------------------------- 
+
+
+Goal: The goal of the logout testing is to ensure that users can securely and successfully log out of the system, 
+terminating their active session and protecting their account from unauthorized access. 
+The testing aims to verify that the logout functionality works as intended, providing a reliable 
+and user-friendly process for users to end their session.
+
+The goal is to validate that users can initiate the logout process from various parts of the system, 
+such as home page, account settings or navigation menus, and successfully log out. 
+The testing should cover scenarios where users are logged in and have an active session,
+ensuring that the system properly handles the logout request and clears the user's session data.
+
+Additionally, the testing should verify that the logout process adheres to necessary security measures.
+This includes verifying that session tokens or cookies are invalidated upon logout, 
+preventing unauthorized access to the user's account even if the session information is compromised 
+and preventing the user from simply logging back in by using the back browser. The goal is to ensure that the
+logout process effectively terminates the user's session and prevents any further actions on behalf of the user.
+
+Furthermore, the testing should validate that appropriate notifications or messages are
+displayed to the user after successful logout, confirming the session termination and providing 
+any additional instructions or information, if necessary.
+
+Overall, the testing aims to provide that the application provides a seamless and secure logout experience for users,
+ensuring that their active session is properly terminated and their account remains protected.
+
+
+
+------------------------------------------------------------------------
+Test case 1 - Successful logout from the home page
+------------------------------------------------------------------------
+
+Title: Successful logout
+Preconditions: The user is logged in and is on the homepage
+
+Inputs:
+    None
+
+Expected Results:
+    - The user should be logged out successfully.
+    - The page should be redirected to the login page.
+    - User-specific elements should no longer be accessible.
+
+Test Steps:
+-------------
+
+Preconditions:
+    - Ensure that the user is already logged in and on the homepage.
+
+1. Navigate to the login page.
+2. Enter valid login credentials.
+3. On the home page, locate and click the "Logout" button or link.
+
+Actual Results:
+    - The user is logged out successfully.
+    - The page is redirected to the login page.
+
+Validations:
+    - Verify that the user is successfully logged out.
+    - Verify that the page is redirected to the login page.
+    - Verify that user-specific elements, such as user profile or dashboard, are no longer accessible.
+
+Test Result: Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 2 - Successful logout from the index page
+------------------------------------------------------------------------
+
+Title: Successful logout out from the index page
+Preconditions: The user is logged in and is on the home page
+
+Inputs:
+    None
+
+Expected Results:
+    - The user should be logged out successfully.
+    - The page should be redirected to the login page.
+    - User-specific elements should no longer be accessible.
+
+Test Steps:
+-------------
+
+Preconditions:
+    - Ensure that the user is already logged in and on the homepage.
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. On the home page, locate the "movie page" and click
+    4. On the index page click the icon "Hi <username> (logged in)" to reveal the dropdown menu
+    5. Select the logout link and click
+
+Actual Results:
+    - The user is logged out successfully.
+    - The page is redirected to the login page.
+
+Validations:
+    - Verify that the user is successfully logged out.
+    - Verify that the page is redirected to the login page.
+    - Verify that user-specific elements, such as user profile or dashboard, are no longer accessible.
+
+Test Result: Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 3 - Successful logout from the profile page
+------------------------------------------------------------------------
+
+Title: Successful logout out from the profile page
+Preconditions: The user is logged in and is on the home page
+
+Inputs:
+    None
+
+Expected Results:
+    - The user should be logged out successfully.
+    - The page should be redirected to the login page.
+    - User-specific elements should no longer be accessible.
+
+Test Steps:
+-------------
+
+Preconditions:
+    - Ensure that the user is already logged in and on the homepage.
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. On the home page, locate the "movie page" and click
+    4. On the index page locate and click the icon "Hi <username> (logged in)" to reveal the dropdown menu
+    5. Select the logout link and click
+
+Actual Results:
+    - The user is logged out successfully.
+    - The page is redirected to the login page.
+
+Validations:
+    - Verify that the user is successfully logged out.
+    - Verify that the page is redirected to the login page.
+    - Verify that user-specific elements, such as user profile or dashboard, are no longer accessible.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 3 - Successful logout from the edit profile page
+------------------------------------------------------------------------
+
+Title: Successful logout out from the edit profile page
+Preconditions: The user is logged in and is on the home page
+
+Inputs:
+    None
+
+Expected Results:
+    - The user should be logged out successfully.
+    - The page should be redirected to the login page.
+    - User-specific elements should no longer be accessible.
+
+Test Steps:
+-------------
+
+Preconditions:
+    - Ensure that the user is already logged in and on the homepage.
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. On the home page, locate the "account" page and click
+    4. On the profile page locate and click the "edit" link
+    5. On the edit page locate and click the icon "Hi <username> (logged in)" to reveal the dropdown menu
+    6. Select the logout from the dropdown menu and click
+
+Actual Results:
+
+    - The user is logged out successfully.
+    - The page is redirected to the login page.
+
+Validations:
+
+    - Verify that the user is successfully logged out.
+    - Verify that the page is redirected to the login page.
+    - Verify that user-specific elements, such as user profile or dashboard, are no longer accessible.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test Case 4 - Logged out when multiple tabs are open
+------------------------------------------------------------------------
+
+Description:
+This test case verifies that the application properly logs out the user and redirects all open tabs to the login page when multiple tabs are open.
+
+Preconditions:
+    1. The user is logged in.
+    2. The user has several tabs open on different pages pertaining to the application.
+
+Inputs:
+    None
+
+Expected Results:
+    1. The user should be logged out successfully.
+    2. The page should be redirected to the login page.
+    3. All open tabs pertaining to movie pages should be redirected to the login page when refreshed.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Navigate to the home page.
+    4. Open another browser tab and go to the profile page.
+    5. Open another browser tab and go to the edit page.
+    6. Log out using the home page.
+    7. For each open tab pertaining to movie pages, refresh the page.
+    8. Repeat this process using the logout process in the dropdown menu on the different pages
+
+Actual Results:
+    1. The user is logged out and redirected to the login screen.
+    2. All the open tabs pertaining to movie pages are redirected to the login page when refreshed.
+
+Validations:
+    1. Verify that the user is successfully logged out.
+    2. Verify that all pages are redirected to the login page.
+    3. Verify that user-specific elements, such as user profile or dashboard, are no longer accessible.
+
+Test Result: Pass

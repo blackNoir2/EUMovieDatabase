@@ -1,0 +1,71 @@
+------------------------------------------------------------------------------------------
+                                Forgotten email Field
+-------------------------------------------------------------------------------------------
+
+1. Email field:
+   - Minimum characters: N/A
+   - Maximum characters: 20
+   - Field: Required
+   - Field type: Email
+
+2. Register button
+  - Register the details
+
+
+------------------------------------------------------------------------------------------
+                                Change password Field
+-------------------------------------------------------------------------------------------
+
+1. Password field:
+   - Minimum characters: 6
+   - Maximum characters: 20
+   - Field: Required
+   - Field type: Email
+
+2. Confirm password field:
+   - Minimum characters: 6
+   - Maximum characters: 20
+   - Field: Required
+   - Field type: password
+
+3. Save button
+   - Save the password when the user clicks
+ 
+
+------------------------------------------------------------------------------------------
+                            Forgotten Email and Password and its functionality
+-------------------------------------------------------------------------------------------
+
+1. Forgotten Email:
+   - Provide a "Forgot Email" link on the login page.
+   - When the user clicks the link:
+     - Display a form to enter the registered username or email address.
+     - Validate the entered username or email format and check if it is associated with a registered account.
+     - If the username or email is valid and associated with an account:
+       - Display a success message and send an email to the user's registered email address containing their email information.
+       - Take the user to a change password form
+     - If the username or email is not valid or not associated with an account:
+       - Display an appropriate error message informing the user.
+
+2. Password Change:
+   - Provide a "Forgot Password" link on the login page.
+   - When the user clicks the link:
+     - Display a form to enter the registered email address.
+     - Validate the entered email format and check if it is associated with a registered account.
+     - If the email is valid and associated with an account:
+     - Display an appropriate error message informing the user.
+       - Display a password reset form
+            - Display a form with fields for the new password and confirm password.
+                - Validate the entered passwords to ensure they meet the required criteria (e.g., minimum length, complexity).
+                - If the passwords are valid and match:
+                - Update the user's password securely in the database using a strong hashing algorithm (e.g., bcrypt, Argon2).
+                - Display a success message indicating that the password has been changed.
+                - Redirect the user to the login page to log in with the new password.
+                - If the passwords are not valid or do not match:
+    
+     - If the email is not valid or not associated with an account:
+       - Display an appropriate error message informing the user.
+
+3. Password Reset Form:
+   - When the user clicks the password reset link from the email:
+     

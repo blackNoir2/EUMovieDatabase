@@ -1,0 +1,199 @@
+---------------------------------------- HOME PAGE TEST CASE -------------------------------------------------- 
+
+When the user navigates to the home page there should see three clickable options
+
+    - Movie page
+    - My account
+    - Logout user
+
+
+------------------------------------------------------------------------
+Test case 1 -  Goes to Movie page when the link is clicked
+------------------------------------------------------------------------
+
+Title         : Goes to movie page when the link is clicked
+Preconditions : The user has succesfully logged in
+
+Inputs:
+
+    None
+   
+Expected Results: 
+
+    - The user should directed to the index page
+  
+ 
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Log in with valid credentials
+    3. On the homepage click on the movie link card button
+       
+
+Actual Results: 
+
+    - The user is directed to the movie page.
+ 
+Test -> Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 2 - Navigate to "my Account" page when the link is clicked
+------------------------------------------------------------------------
+
+Title         : Navigate to "my Account" page the link is clicked
+Preconditions : The user has succesfully logged in
+
+Inputs:
+
+    None
+   
+Expected Results: 
+
+    - The user should directed to the their account page
+  
+ 
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Log in with valid credentials
+    3. On the homepage click on the 'my Account' card button link
+       
+
+Actual Results: 
+
+    - The user is directed their accounts page.
+ 
+Test -> Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 3 - Log out user when the "log out user" link card is clicked
+------------------------------------------------------------------------
+
+Title         : Log out user when the "log out user" link card is clicked
+Preconditions : The user has succesfully logged in
+
+Inputs:
+
+    None
+   
+Expected Results: 
+
+    - The user should directed to the login page
+   
+ 
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Log in with valid credentials
+    3. On the homepage click on the 'logout user' card button link
+       
+
+Actual Results: 
+
+    - The user is logged out and redirect to the login page.
+ 
+Test -> Pass
+
+
+
+------------------------------------------------------------------------
+Test case 4 - Error when navigating to the movie page without logging in
+------------------------------------------------------------------------
+
+Title         : Error when clicking on the movie link without logging in
+Preconditions : The user is not logged in
+
+Inputs:
+
+    None
+   
+Expected Results: 
+
+    - The user should not be able to access the movie page without being logged in and should be redirected to login page
+   
+ 
+Test Steps:
+-------------
+
+    1. Open the application
+    2. Type the url page for the movie page
+    3. Hit enter
+       
+
+Actual Results: 
+
+    - The user should be redirected back to the login page
+ 
+Test -> Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 5 - Error when navigating to the account page without logging in
+------------------------------------------------------------------------
+
+Title         : Error when navigating to the account page without logging in
+Preconditions : The user is not logged in
+
+Inputs:
+
+    None
+   
+Expected Results: 
+
+    - The user should not be able to access the account page without being logged in and should be redirected to login page
+   
+ 
+Test Steps:
+-------------
+
+    1. Open the application
+    2. Type the url page for the account page
+    3. Hit enter
+       
+
+Actual Results: 
+
+    - The user should be redirected back to the login page
+ 
+Test -> Pass
+
+
+
+------------------------------------------------------------------------
+Test case 6 - Error - Trying to logged out when not logged in 
+------------------------------------------------------------------------
+
+Title         : Error - Trying to logged out when not logged in 
+Preconditions : The user is not logged in
+
+Inputs:
+
+    None
+   
+Expected Results: 
+
+    - The user should not be able to view the logout button
+   
+ 
+Test Steps:
+-------------
+
+    1. Open the application
+   
+       
+Actual Results: 
+
+    - The user is not able to view the logout button
+ 
+Test -> Pass

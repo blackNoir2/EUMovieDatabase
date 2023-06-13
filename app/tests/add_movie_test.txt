@@ -1,0 +1,1197 @@
+---------------------------------------- ADD MOVIE TEST SUITE -------------------------------------------------- 
+
+Goal: 
+
+The overall goal of this test suite for adding movies is to verify that the system correctly 
+handles the process of adding movies to the local storage, ensuring that the movie, series, 
+comedies, etc details are accurately captured and stored. The testing aims to validate that the movie information
+is correctly displayed and accessible after adding, and that any associated functionalities
+ (such as viewing or deleting movies) work as intended. Additionally, the testing hopes to 
+identify and handle any potential errors or exceptional cases that may occur during the movie
+addition process, ensuring the system's stability and reliability.
+
+
+
+-------------------------------------------------------------------------------------------------
+Test case 1 -  Successful added a movie to the application by filling  in the required fields
+--------------------------------------------------------------------------------------------------
+
+Title         : Successful added a movie to the application
+Preconditions : The user is Successful logged in
+
+Inputs:
+
+     Title              : Test movie
+     Description        : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo similique in labore at
+     Cast               : Cast 1
+     Runtime            : 125
+     Rating (out of 10) : 5 
+     Year               : 2022
+      
+Expected Results: 
+
+    - A success message with a green background is displayed, indicating that the movie has been successfully added.
+   
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter the movie title as "Test movie".
+    6.  Enter the movie description.
+    7.  Enter the cast information as "Cast 1".
+    8.  Enter the movie runtime as "125".
+    9.  Enter the movie rating as "5".
+    10. Enter the year of release as "2022".
+    11. Click the "Add" button to add the movie.
+
+Actual Results: 
+
+    - A success message with a green background is displayed, confirming the successful addition of the movie.
+   
+Validations:
+
+    - Verify that the success message element is displayed with the correct message.
+    - The displayed movie card matches the entered movie details, including the title, description, cast, runtime, rating, and year.
+
+Test -> Pass
+
+
+---------------------------------------------------------------------------------------------------------
+Test case 2 - Only apostrophe, commas, full stops, and hyphens should be allowed in the title field
+---------------------------------------------------------------------------------------------------------
+
+Title         : Only apostrophe, commas, full stops, and hyphens should be allowed in the title field
+Preconditions : The user is successful logged in
+
+Input:
+
+    Title              : Test movie with special characters: -, ., ', ,
+    Description        : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo similique in labore at
+    Cast               : Cast 1
+    Runtime            : 125
+    Rating (out of 10) : 5 
+    Year               : 2022
+
+   
+Expected Results: 
+
+    - A success message with a green background is displayed, indicating that the movie has been successfully added
+    - The movie card with the provided details is displayed on the page.
+
+
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter the movie title as "Test movie with special characters: -, ., ', ,".
+    6.  Enter the movie description.
+    7.  Enter the cast information as "Cast 1".
+    8.  Enter the movie runtime as "125".
+    9.  Enter the movie rating as "5".
+    10. Enter the year of release as "2022".
+    11. Click the "Add" button to add the movie.
+
+
+Actual Results: 
+
+    - See actual results for test 1
+
+Validations:
+
+    - See validation results for test 1
+
+
+Test -> Pass
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+Test case 3 - Enter any special character apart from apostrophe, commas, full stops, and hyphen in the title field
+------------------------------------------------------------------------------------------------------------------------------
+
+Title         : Adding any special characters that is not an apostrophe, commas, full stops, and hyphen in the title field
+Preconditions : The user is Successful logged in
+Info          : The invalid characters are any special characters that are not an apostrophe, commas, full stops, and hyphen
+
+Input:
+
+    Title  : Type into the movie title field any special characters that are not " -, ., ', ," and hit the "Enter" key
+   
+   
+Expected Results: 
+
+    - A popup alert should appear stating that the title should only contain hyphen, apostrophe, comma or fullstops
+    - The invalid characters entered will be deleted
+   
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter the movie title as "Test movie using any special characters that do not contain -, ., ', ," and hit the "Enter" key.
+   
+
+Actual Results: 
+
+    - A popup appears informing the user that only hyphens, apostrophe, fullstop, commas are allowed in the title
+    - The entire field is deleted
+
+Validations:
+
+    - Verify that alert message.
+    - Verify that the data is not submitted with the invalid characters.
+
+Test -> Pass
+
+
+
+
+------------------------------------------------------------------------------------
+Test case 4 - Test if invalid characters can be 'pasted' into the form title field
+------------------------------------------------------------------------------------
+
+Title         : Test if invalid characters can be 'pasted' into the form title field
+Preconditions : The user is successful logged in
+
+Input:
+    Title              : Paste a set of special special characters that are not " -, ., ', ," into the movie title field
+    Description        : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo similique in labore at
+  
+   
+Expected Results: 
+
+    - A popup alert should appear stating that the title should only contain hyphen, apostrophe, comma or fullstop
+    - The entire field will be deleted
+    - The data for the movie or series will not be submitted
+
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Paste the movie title as "Test movie using any special characters that do not contain -, ., ', ," and hit the "Enter" key
+
+Actual Results: 
+
+    - A popup appears informing the user that only hyphens, apostrophe, fullstop, commas are allowed in the title
+    - The entire field is deleted
+    - The movie is not submitted
+
+Validations:
+
+    - Verify that alert message correctly conveys the message
+    - Verify that the field is cleared
+    - Verify that the data is not submitted to the local storage with invalid characters.
+
+Test -> Pass
+
+
+------------------------------------------------------------------------
+Test case 5 -  Adding names seperated by commas in the cast field
+------------------------------------------------------------------------
+
+Title         :  Adding names seperated by commas in the cast field
+Preconditions : The user is Successful logged in
+
+Inputs:
+
+     Title              : test title
+     Description        : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia sapiente aliquid quidem nulla 
+     Cast               : Cast 1, Cast 2, Cast 3
+     Runtime            : 125
+     Rating (out of 10) : 5
+     Year               : 2022
+   
+   
+Expected Results: 
+
+    - see expected result of test 1
+
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter the movie title as "Test movie".
+    6.  Enter the movie description.
+    7.  Enter the cast information as "Cast 1", "Cast 2", "Cast 3"
+    8.  Enter the movie runtime as "125".
+    9.  Enter the movie rating as "5".
+    10. Enter the year of release as "2022".
+    11. Click the "Add" button to add the movie.
+
+Actual Results: 
+
+    - See actual results of test 1
+
+Validations:
+
+    - See validation of test 1
+  
+Test -> Pass
+
+
+
+---------------------------------------------------------------------------------------
+Test case 6 -  Invalid special characters used instead of comma in the cast field
+---------------------------------------------------------------------------------------
+
+Title         : Invalid special characters used instead of comma
+Preconditions : The user is Successful logged in
+
+Inputs:
+
+     Cast : Cast 1 - Cast 2 -Cast 3
+    
+    
+   
+Expected Results: 
+
+    - A popup message should appear informing the user that the cast field can only be seperated by commas and nothing else.
+    - The field is cleared
+ 
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter the movie title as "Test movie".
+    6.  Enter the movie description.
+    7.  Enter the cast information  "Cast 1", "Cast 2", "Cast 3" but separate it using any special character apart from comma
+    8.  Hit the "Enter"
+    
+
+Actual Results: 
+
+    - A popup alert should popup that comments cannot be separated by special characters except with commas
+    - The whole field is deleted
+   
+Validations:
+
+    - Verify that the whole field is deleted
+    - Verify that the message informs the user that the field only commas are allowed
+    - Verify that the data is not submitted
+  
+
+Test -> Pass
+
+
+----------------------------------------------------------------------------------------------------------------
+Test case 7 -  A pasted string containing names all separated by invalid special characters in the cast field
+-----------------------------------------------------------------------------------------------------------------
+
+Title         : A pasted string containing names all separated by invalid special characters in the cast field
+Preconditions : The user is Successful logged in
+More info     : The invalid special characters are any characters that are not commas
+
+Inputs:
+
+    
+     Cast : Cast 1 - Cast 2 - Cast 3 (or any invalid special characters to separate the names)
+   
+   
+Expected Results: 
+
+    - A popup message should appear informing the user that cast field can only be seperated by commas
+    - The field should then be cleared of the invalid special characters
+    - The movie shouldn't be submitted 
+  
+
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter the movie title as "Test movie".
+    6.  Enter the movie description.
+    7.  Paste the cast information  "Cast 1", "Cast 2", "Cast 3" but separate it using any invalid special characters
+    8.  Hit Enter.
+    
+
+Actual Results: 
+
+    - A popup alert should popup with the a comments that informs the user that names must only commas can be used an all others are invalid
+    - The field should be cleared of only the invalid special characters
+    - The movie should not be submitted
+
+Validations:
+
+    - Verify that the field is cleared
+    - Verfify that the movie is not submitted
+  
+Test -> Pass
+
+
+
+------------------------------------------------------------------------
+Test case 8  -  Adding a Movie with an invalid runtime
+------------------------------------------------------------------------
+
+Title         : Adding a Movie with an invalid runtime
+Preconditions : The user is Successful logged in
+info          : The field should only accept integers any other value e.g float, etc is invalid
+
+Inputs:
+
+     Title              : "Test movie"
+     Description        : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo similique in labore at
+     Cast               : Cast 1"
+     Runtime            : "1.25"
+     Rating (out of 10) : "1"
+     Year               : "2001"
+   
+   
+Expected Results: 
+
+     - An error message pops up informing the user that runtime must be an integer
+     - The movie is not added to the application.
+
+
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter the movie title "Test movie"
+    6.  Enter the movie description.
+    7.  Enter the "cast 1" into the cast field.
+    8.  Enter the invalid runtime "1.25" in the runtime field
+    9.  Enter the rating "1" into the rating field.
+    10. Enter the year "2001" in the year field.
+    11. Click the "Add" button to add the movie.
+
+Actual Results: 
+
+   - An error message is displayed indicating that the runtime must be an integer.
+   - The movie is not added to the application.
+
+Validations:
+
+    - Verify that the error message element is displayed with the correct text.
+    - Verify that the movie is not added to the application.
+
+Test -> Pass
+
+
+
+------------------------------------------------------------------------
+Test case 9 -  Adding a Movie with an invalid rating
+------------------------------------------------------------------------
+
+Title         : Adding a Movie with invalid rating
+Preconditions : The user is Successful logged in
+Info          : The field should only accept integers any other values e.g float, etc is invalid
+
+
+Inputs:
+
+     Title              : "Test movie"
+     Description        : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo similique in labore at
+     Cast               : Cast 1"
+     Runtime            : "125"
+     Rating (out of 10) : "1.25"
+     Year               : "2001"
+   
+   
+Expected Results: 
+
+     - An error message pops up informing the user that ratings must be an integer
+     - The movie is not added to the application.
+
+
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter the movie title "Test movie"
+    6.  Enter the movie description.
+    7.  Enter the "cast 1" into the cast field.
+    8.  Enter the runtime "125" in the runtime field
+    9.  Enter the invalid rating "1.25" into the rating field.
+    10. Enter the year "2001" in the year field.
+    11. Click the "Add" button to add the movie.
+
+Actual Results: 
+
+   - An error message is displayed indicating that the rating must be an integer.
+   - The movie is not added to the application.
+
+Validations:
+
+    - Verify that the error message is displayed when the user enters an integer
+    - Verify that the movie is not added to the application.
+
+Test -> Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 10 -  Adding a Movie with invalid year
+------------------------------------------------------------------------
+
+Title         : Adding a Movie with invalid year
+Preconditions : The user is Successful logged in
+Info          : The field should only accept integers any other value e.g float, etc is invalid
+
+Inputs:
+
+     Title              : "Test movie"
+     Description        : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo similique in labore at
+     Cast               : Cast 1"
+     Runtime            : "125"
+     Rating (out of 10) : "125"
+     Year               : "200.1"
+   
+   
+Expected Results: 
+
+     - An error message pops up informing the user that the year must be an integer
+     - The movie is not added to the application.
+
+
+Test Steps:
+-------------
+
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter the movie title "Test movie"
+    6.  Enter the movie description.
+    7.  Enter the "cast 1" into the cast field.
+    8.  Enter the runtime "125" in the runtime field
+    9.  Enter the rating "125" into the rating field.
+    10. Enter the invalid year "200.1" in the year field.
+    11. Click the "Add" button to add the movie.
+
+Actual Results: 
+
+   - An error message is displayed indicating that the year must be an integer.
+   - The movie is not added to the application.
+
+Validations:
+
+    - Verify that the error message correctly informs the user of the given error.
+    - Verify that the movie is not added to the application.
+
+Test -> Pass
+
+
+
+------------------------------------------------------------------------
+Test case 11 -  Add a Movie title that exceeds the maximum character Limit
+------------------------------------------------------------------------
+
+Title         : A Movie title that exceeds the maximum character upper limit
+Preconditions : The user is Successful logged in
+
+Inputs:
+
+     Title              : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo similique in labore at"
+     Description        : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo similique in labore at"
+     Cast               : Cast 1"
+     Runtime            : "125"
+     Rating (out of 10) : "1"
+     Year               : "2001"
+   
+   
+Expected Results: 
+
+     - The movie should only display the first 20 characters of the title and the rest are truncated
+     - The user should not be able to add anymore characters after 20 characters
+     - see expected results for test 1
+     
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter a title that exceeds the maximum character limit (e.g., more than 20 characters).
+    6.  Enter the movie description.
+    7.  Enter the "cast 1" into the cast field.
+    8.  Enter the runtime "125" in the runtime field
+    9.  Enter the rating "1" into the rating field.
+    10. Enter the year "2001" in the year field.
+    11. Click the "Add" button to add the movie.
+
+Actual Results: 
+    - The field should keep 20 characters and strip the rest 
+    - The user should not be able to add anymore characters 
+    - The application should submit - since the application only takes 20 characters and truncates the rest
+    - See test 1 actual results
+
+Validations:
+   - Verify that only 20 chars are used and the rest are truncated
+   - Verify that the user can no longer add anymore characters once the maximum limit has been exceeded
+   - See validation in test 1
+
+Test -> Pass
+
+
+-------------------------------------------------------------------------------------------------------------
+Test case 12 -  Add a movie description (text area) that exceeds the maximum limit Exceeded of 600 chars
+-------------------------------------------------------------------------------------------------------------
+
+Title         : Add a movie description that exceeds the maximum limit Exceeded of 600 chars
+Preconditions : The user is Successful logged in
+
+Inputs:
+
+     Title              : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo similique in labore at"
+     Description        : "Enter or paste any movie description where the maximum characters are greater 600" 
+     Cast               : Cast 1"
+     Runtime            : "125"
+     Rating (out of 10) : "1"
+     Year               : "2001"
+   
+   
+Expected Results: 
+
+     - The counter at the bottom of page that counts number of remaining characters should be 0 and should be red
+     - The user should not be able to add anymore characters to text area after the maximum length has been exceeded
+     - The application should submit - since the application only takes the maximum characters and truncates the rest
+     - Go Test 1 expected results
+     
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter a title
+    6.  Enter a movie description that exceeds the maximum character limit (e.g., more than 600 characters).
+    7.  Enter the "cast 1" into the cast field.
+    8.  Enter the runtime "125" in the runtime field
+    9.  Enter the rating "1" into the rating field.
+    10. Enter the year "2001" in the year field.
+    11. Click the "Add" button to add the movie.
+
+Actual Results: 
+    - The remaining counter is 0 and red
+    - The user is not able to add anymore characters after the maximum has been exceeded
+    - The application submits the movie
+    - Go to test 1 to see actual result
+
+Validations:
+   - Verify that the counter is 0 and red 
+   - Verify that the user is not able to add anymore characters
+   - Go to test 1 validation
+
+
+Test -> Pass
+
+
+
+
+---------------------------------------------------------------------------------------------
+Test case 13 -  Add a movie description that doesn't not exceed the minimum limit (10)
+----------------------------------------------------------------------------------------------
+
+Title         : Add a movie description that doesn't not exceed the minimum limit of ten
+Preconditions : The user is Successful logged in
+
+Inputs:
+
+     Title              : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo similique in labore at"
+     Description        : "Doesn't meet the minimum requirement of 10"
+     Cast               : Cast 1"
+     Runtime            : "125"
+     Rating (out of 10) : "1"
+     Year               : "2001"
+   
+   
+Expected Results: 
+
+    - An alert should inform the user of the number of characters needed in order to meet the requirement of the minimum length
+    - The form should not submit
+     
+Test Steps:
+-------------
+
+    1.  Navigate to the login page.
+    2.  Enter valid login credentials.
+    3.  Click on the "Movies" page.
+    4.  Click on the "Add Movie" button at the top of the page.
+    5.  Enter a title
+    6.  Enter a movie description that doesn't exceeds the minimum length limit (e.g., more than 10 characters).
+    7.  Enter the "cast 1" into the cast field.
+    8.  Enter the runtime "125" in the runtime field
+    9.  Enter the rating "1" into the rating field.
+    10. Enter the year "2001" in the year field.
+    11. Click the "Add" button to add the movie.
+
+Actual Results: 
+
+    - An alert informs the user of the number of characters needed in order to meet the requirement of the minimum length
+    - The form doesn't submit
+
+Validations:
+
+   - Verify that the alert shown is one that states the number of characters they need to meet the minimum requirement
+   - The movie form is not submitted.
+
+
+Test -> Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 14 - Pasting a link into movie title form
+------------------------------------------------------------------------
+
+Preconditions:
+
+    1. The user is successfully logged in
+
+Inputs:
+    - Title  : "http://127.0.0.1:5500"
+    
+  
+Expected Results:
+    1. A popup alert should appear, informing the user that links and images are not allowed.
+    2. The text field where the link was pasted should be cleared.
+    3. The movie should not be stored in the application.
+
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click on the "Add Movie" button at the top of the page.
+    5. Paste the link "http://127.0.0.1:5500" into the title field and hit enter.
+   
+
+Actual Results:
+    1. A popup alert appears, stating that links and images are not allowed.
+    2. The text field where the link was pasted is cleared.
+    3. The movie is not stored in the application.
+  
+
+Validations:
+    - Verify that the popup alert message matches the expected alert message.
+    - Verify that the title field is empty after pasting the link.
+    - Verify that the movie is not added to the application.
+    
+Test Result:
+    Pass
+
+
+
+------------------------------------------------------------------------
+Test case 15 -  Type a link into movie title form
+------------------------------------------------------------------------
+
+Preconditions:
+    1. The user is successfully logged in.
+
+Inputs:
+    - Title: "http://127.0.0.1:5500"
+    
+Expected Results:
+    - A popup alert message should appear informing the user that links or images are not allowed.
+    - The text field should deleted the special characters ":" after the http leaving only http
+    - The movie should be submitted
+    - See test case 1 in expected results
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click on the "Add Movie" button at the top of the page.
+    5. Type the link "http://127.0.0.1:5500" into the title field.
+    6. Hit the enter key
+    7. Enter "Cast 1" into the cast field.
+   
+
+Actual Results:
+    1. A popup alert appears should appear after the ":/" informing the user that links and image are not allowed
+    2. The entire field is cleared
+    
+Validations:
+    - The entire is field is cleared
+
+Test Result:
+    Pass
+
+
+------------------------------------------------------------------------
+Test case 16 - Pasting an image into movie title field
+------------------------------------------------------------------------
+
+Preconditions:
+    1. The user is successfully logged in.
+
+Inputs:
+    - Title             : "paste an image into the title"
+    - Description       : "lorem text"
+    - Cast              : "Cast 1"
+    - Runtime           : "125"
+    - Rating (out of 10): "1"
+    - Year              : "2001"
+
+Expected Results:
+    1. The image should not be displayed no matter how many times you click the paste
+    2. The field should be blank
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click on the "Add Movie" button at the top of the page.
+    5. Retrieve an image from your computer and paste the into the title field.
+   
+
+Actual Results:
+    1. The field remains blank
+    2. The page is not submitted
+
+Validations:
+    - Verify that field remains blank
+ 
+Test Result:
+    Pass
+
+
+------------------------------------------------------------------------------
+Test case 16 -  Pasting an image url from the internet into movie title field
+------------------------------------------------------------------------------
+
+
+Preconditions:
+    1. The user is successfully logged in and is on the Movies page.
+
+Inputs:
+    - Title : "Paste an image url from the intenet"
+    
+Expected Results:
+    1. A pop alert should appear informing the user that links and images are not allowed
+    2. The field should be clear
+ 
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click on the "Add Movie" button at the top of the page.
+    5. Paste an image url from the internet and paste and hit enter
+    
+Actual Results:
+    1. A popup alert appears informing the user that images and links are not allowed
+    2. The field is cleared
+ 
+Validations:
+    - Verify that a popup is shown declaring that alert message
+    - Verify that field is cleared
+    - Verify that the movie is not submitted
+
+Test Result:
+    Pass
+
+
+------------------------------------------------------------------------
+Test case 17 - Type a link into movie description text area
+------------------------------------------------------------------------
+
+Preconditions:
+    1. The user is successfully logged in.
+
+Inputs:
+    - Description: "http://127.0.0.1:5500"
+    
+Expected Results:
+    - A popup alert should appear immediately, informing the user that links or images are not allowed.
+    - The text area field should be blank
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click on the "Add Movie" button at the top of the page.
+    5. Enter the movie title.
+    6. Type the link "http://127.0.0.1" into the movie description.
+
+Actual Results:
+    1. A popup alert appears, stating that links and images are not allowed.
+    2. The entire field is not cleared
+    3. The form is not submitted
+   
+Validations:
+    - Verify that the popup alert message matches the expected alert message.
+    - Verify that the entire field is cleared
+    - Go to test 1 validation
+   
+
+Test Result: Pass
+
+------------------------------------------------------------------------
+Test case 18 -  Paste a link into movie cast field
+------------------------------------------------------------------------
+
+Preconditions:
+    1. The user is successfully logged in.
+
+Inputs:
+    - Cast: "http://127.0.0.1:5500"
+   
+Expected Results:
+    - A  popup alert should appear informing the user that links and images are not allowed.
+    - The text field where the link was typed should be cleared.
+  
+Test Steps:
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click on the "Add Movie" button at the top of the page.
+    5. Enter "Sample Title" into the title field.
+    6. Enter the movie description.
+    7. Paste the link "http://127.0.0.1:5500" into the cast field.
+  
+
+Actual Results:
+    1. A popup alert appears stating that link and images are not allowed.
+    2. The text field where the link was typed is cleared.
+    3. The movie is not submitted
+
+Validations:
+    - Verify that the popup alert states that images and links are not allowed.
+    - Verify that the cast field is empty after pasting the link "http://127.0.0.1:5500".
+    - Verify that the movie is not added to the application.
+
+Test Result:
+    Pass
+
+
+
+------------------------------------------------------------------------
+Test case 19 -  Type a link into movie cast field
+------------------------------------------------------------------------
+
+Preconditions:
+
+    1. The user is successfully logged in.
+
+Inputs:
+    - Cast: "http://127.0.0.1:5500"
+   
+
+Expected Results:
+    - The entire field is cleared
+    
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click on the "Add Movie" button at the top of the page.
+    5. Type the link "http://127.0.0.1:5500" into the cast field.
+    
+Actual Results:
+
+    - A popup alert appears stating that links and images are not valid
+
+Validations:
+    - Verify that the popup alert states that images and links are not allowed.
+    - Verify that the cast field is empty after pasting the link "http://127.0.0.1:5500".
+    - Verify that the movie is not added to the application.
+
+
+Test Result:
+    Pass
+
+
+------------------------------------------------------------------------
+Test case 20 -  Paste an image into movie cast field from your computer
+------------------------------------------------------------------------
+
+Preconditions:
+    1. The user is successfully logged in.
+
+Inputs:
+    - Cast: "image to be pasted"
+
+Expected Results:
+    - The field should remain blank no matter how many times you paste
+    - The movie should not be stored in the application.
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click on the "Add Movie" button at the top of the page.
+    5. Go to computer pick any image and paste it into the cast field
+  
+Actual Results:
+    1. The field should remain blank
+    2. The movie is not stored in the application.
+    3. The movie is not submitted
+
+Validations:
+ 
+    - Verify that the cast field is empty after pasting an image
+    - Verify that the movie is not added to the application.
+    - Verify that the movie is not submitted
+
+Test Result:
+    Pass
+
+
+------------------------------------------------------------------------
+Test case 21  - Paste an image url into movie cast field from the internet
+------------------------------------------------------------------------
+
+Preconditions:
+    1. The user is successfully logged in.
+
+Inputs:
+    - Cast: "image to be pasted from the internet"
+   
+Expected Results:
+    - A popup message should appear that images and links are not allowed.
+    - The field should be cleared
+    - The application should not be submitted
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click on the "Add Movie" button at the top of the page.
+    5. Go to the internet, pick any image and paste it into the cast field
+
+Actual Results:
+    1. A pop alert appears stating that only links and images are not allowed.
+    3. The field is cleared
+    4. The movie is not stored in the application.
+    
+Validations:
+    - verify that the pop alert appears stating that only links and images are not allowed
+    - Verify that the cast field is empty after pasting an image
+    - Verify that the movie is not added to the application.
+
+Test Result:
+    Pass
+
+
+-------------------------------------------------------------------------------------------------
+Test Case 21 - Negative Test: Submitting the form with all required fields left blank
+--------------------------------------------------------------------------------------------------
+
+Title           : Successful addition of a movie to the application
+Preconditions  : The user is successfully logged in
+
+Inputs:
+
+    Title              : ""
+    Description        : ""
+    Cast               : ""
+    Runtime            : ""
+    Rating (out of 10) : ""
+    Year               : ""
+
+Expected Results:
+
+    - A popup alert should appear stating that the fields are required.
+
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click on the "Add Movie" button at the top of the page.
+    5. Leave the title field blank.
+    6. Leave the movie description field blank.
+    7. Leave the cast field blank.
+    8. Leave the runtime field blank.
+    9. Leave the movie rating field blank.
+    10. Leave the year field blank.
+    11. Click the "Add" button to submit the movie.
+
+Actual Results:
+
+    - A popup alert appears stating that the fields are required.
+
+Validations:
+
+    - Verify that a popup message appears stating that the required fields should not be left blank.
+
+Test Result: Pass
+
+
+
+-------------------------------------------------------------------------------------------------
+Test Case 22 - Negative Test: HTML Injection in Movie Description Field
+--------------------------------------------------------------------------------------------------
+
+HTML Injection Testing:
+
+All input fields throughout the application should be tested for HTML injection vulnerabilities. 
+This includes fields such as titles, descriptions, cast, runtime, ratings, and any other user-input fields. 
+Verify that the application properly filters and sanitizes user input to prevent the execution of HTML tags, scripts, 
+or any other potentially malicious code.
+
+When testing each field, ensure to cover both positive cases (valid input) and negative cases (HTML injection attempts). 
+Use common HTML tags, such as <script>, <img>, <a>, <div>, etc., along with various attributes and event handlers to 
+validate the effectiveness of the input filtering and sanitization mechanisms.
+
+Record the results of each field test, including whether the HTML tags were filtered and displayed as 
+plain text or if any unexpected behavior occurred.
+
+Each field should be tested by using the following html tags
+
+Paste the below html into the field..
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+  <link rel="shortcut icon" href="/img/movieBackground-main.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  />
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="container">
+      <div class="logo">
+        <a href="/home.html" class="movie-nav-pic"><img src="/img/movie.jpg" alt=""></a>
+      </div>
+      <div class="links">
+        <a href="#" id="add-movie">add movie</a> 
+      </div>
+      <div id="profile">
+        <a href="#" id="profile-link" class="profile-link greetings-link"></a>
+      </div>
+
+      <div class="user-menu" id="user-menu">
+          <a href="/profile.html" class="my-profile-link">My profile</a>
+          <a href="/edit-profile.html" class="edit-profile">Edit profile</a>
+          <a href="#" class="logout">logout</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="form-sidebar">
+
+    <h2>Add a movie</h2>
+    <div class="message"></div>
+
+    <form id="add-movie-form">
+        <input>Some fields </input>
+
+    </form>
+  </div>
+
+
+  <section id="movies">
+    <div class="container">
+        <p>Testing </p>
+
+      </div>
+
+      <h2 class="h2-movie-title">My movies</h2>
+      <div class="cards"></div>
+
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="copy-right"></div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/greeting.js"></script>
+  <script type="module" src="../js/script.js"></script>
+  <script type="module" src="../js/home.js"></script>
+  </script>
+
+</body>
+</html>
+
+
+Title          : HTML injection prevention in movie description field
+Preconditions  : The user is successfully logged in
+
+Inputs:
+
+    Title              : To be pasted with HTML
+    Description        : To be pasted with HTML
+    Cast               : To be pasted with HTML
+    Runtime            : To be pasted with HTML
+    Rating (out of 10) : To be pasted with HTML
+    Year               : To be pasted with HTML
+
+Expected Results:
+
+    - The HTML tags in the movie description field should be filtered and displayed as plain text.
+    - The script alert should not execute.
+
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click on the "Add Movie" button at the top of the page.
+    5. Enter the movie as the HTML document provided.
+    6. Enter the movie description as the HTML document provided.
+    7. Enter the cast as the HTML document provided.
+    8. Enter the runtime as the HTML document provided.
+    9. Enter the movie rating as the HTML document provided.
+    10. Enter the year as the HTML document provided.
+    11. Click the "Add" button to submit the movie.
+
+Actual Results:
+
+    - The title should display a popup alert stating that special characters are not allowed. 
+      Only twenty characters should be displayed in the title bar before it is removed due to containing special characters.
+    - The description field should be filtered and displayed as plain text, without executing the HTML or scripts.
+    - The cast, runtime, and rating fields should display a popup alert stating that special characters are not allowed before being removed.
+
+Validations:
+
+    - Verify that the HTML tags in the movie description field are sanitization and are displayed as plain text strings.
+    - Verify that the title field is limited to twenty characters and special characters are not allowed.
+    - Verify that the cast, runtime, and rating fields are blank and special characters are not allowed.
+    - Verify that the script alert does not execute.
+
+Test Result: Pass
+

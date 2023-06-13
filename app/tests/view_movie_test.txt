@@ -1,0 +1,388 @@
+---------------------------------------- MOVIE TEST SUITE -------------------------------------------------- 
+
+
+Goal: 
+
+The goal of the view movie testing is to ensure that users can access and view movie details accurately 
+and efficiently within the system. The testing aims to verify that the view movie functionality works as intended, 
+allowing users to retrieve comprehensive information about specific movies.
+
+The goal is to validate that when the view movie feature is clicked it correctly displays 
+relevant and up-to-date details for each movie, including title, synopsis, release date, genre, cast, and other relevant information. 
+The testing should ensure that the displayed movie information aligns with the corresponding 
+movie's data in the local storage providing users with accurate and reliable information.
+
+Furthermore, the testing should cover scenarios where the user can view the movies in a library as well
+as on individual level when a single movie is clicked in order to see its attributes.
+
+Additionally, the testing should validate the user interface aspects of the view movie feature, 
+ensuring that the movie details are presented in a user-friendly and visually appealing manner. 
+This may include checking the layout, formatting, and responsiveness of the movie details page, 
+as well as verifying the availability of necessary actions or interactions, such as rating,
+favoriting, or adding reviews.
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+Test Case 1: View a Single Movie from the Index Page (index page)
+---------------------------------------------------------------------------------------------------------
+
+Title: View a single movie from the index page
+
+Preconditions:
+  - The user is successfully logged in.
+  - There is at least one movie in the local storage.
+
+Inputs: None
+
+Expected Results:
+  - The user should be able to visually view a card containing all the aspects of the movie, including the title, description, cast, year, runtime, and rating.
+  - The movie card should also include "cancel" and "confirm" buttons.
+
+Test Steps:
+  1. Navigate to the login page.
+  2. Enter valid login credentials.
+  3. Click on the "Movies" page.
+  4. Observe that there is a single movie card on the index page.
+
+Actual Results:
+  - The movie card with the provided details is displayed on the page.
+  - The displayed movie card matches the entered movie details, including the title, description, cast, runtime, rating, and year.
+
+Validations:
+  - Verify that the movie card element is displayed with the correct details.
+  - Verify that the displayed movie card matches the entered movie details.
+
+Test Result: Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 2 - Successful view a row of movies from index page (index page)
+------------------------------------------------------------------------
+
+Title         : Successful view a row of movies from index page
+Preconditions : The user is successfully logged in and there are at least five movies in the local storage
+
+Inputs:
+     - None
+      
+Expected Results: 
+
+    - The movies should be displayed as two rows of cards, with the first row containing three cards and the second row containing two cards.
+    - Each card should be separated by a space of about 1/2 centimeter.
+   
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Observe that there is a single movie card on the index page.
+
+Actual Results: 
+
+    - The movie cards are displayed in rows, and each movie card is separated by 1/2 centimeter.
+
+Validations:
+
+    - Verify that each row is separated by a 1/2 centimeter space.
+    - Verify that there are at least two rows.
+
+Test Result: Pass
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Test case 3 - Verify the width and height of each movie card are the same despite the movie
+              description contain different sizes of text (index page)
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Title         : Verify the width and height of each movie card are the same despite 
+                the movie description contain different lengths of text
+
+Preconditions : The user is successfully logged in and there are at least five movies in the local storage. 
+                Each movie has a different length of text in the description.
+
+Inputs:
+     - None
+      
+Expected Results: 
+
+    - Each movie card should have the same height and width, regardless of the length of the text in the movie description.
+    - Each card should be separated by a space of about 1/2 centimeter.
+   
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Observe that there are card elements.
+
+Actual Results: 
+
+    - The movie cards are displayed in rows, and each movie card is separated by 1/2 centimeter.
+    - The height and width of each movie card are the same, regardless of the different sizes of text.
+
+Validations:
+
+    - Verify that each movie card has the same length.
+
+Test Result: Pass
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Test case 4 - Verify the width and height of each movie card are the same despite the movie 
+              description contain different sizes of text in the index page
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Title         : Verify the width and height of each movie card are the same despite 
+                the movie description contain different lengths of text
+                
+Preconditions : The user is successfully logged in and there are at least five movies in the local storage. 
+                Each movie has a different length of text in the description.
+
+Inputs:
+     - None
+      
+Expected Results: 
+
+    - Each movie card should have the same height and width, regardless of the length of the text in the movie description.
+    - Each card should be separated by a space of about 1/2 centimeter.
+   
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Observe that there are card elements.
+
+Actual Results: 
+
+    - The movie cards are displayed in rows, and each movie card is separated by 1/2 centimeter.
+    - The height and width of each movie card are the same, regardless of the different sizes of text.
+
+Validations:
+
+    - Verify that each movie card has the same length.
+
+Test Result: Pass
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Test case 5 - Verify the text for title in the movie cards only display 
+              seven characters and trunicate the rest in the index page (index page)
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Title         : Verify the text for title in the movie cards only display seven characters and trunicate the rest
+                
+Preconditions : The user is successfully logged in and there are at least one movie inside the local storage and title of the movie
+                exceeds seven characters
+
+Inputs:
+     - None
+      
+Expected Results: 
+
+    - Only seven characters should be shown and the rest are truncated
+   
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Observe that there are card elements.
+
+Actual Results: 
+
+    - Only seven characters are shown and the rest are truncated
+
+Validations:
+
+    - Verify that only seven characters are shown and the rest are truncated
+
+Test Result: Pass
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Test case 6 - Verify the text for title in the movie cards only display seven characters and trunicate the rest (index page)
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Title         : Verify the text for title in the movie cards only display seven characters and trunicate the rest
+                
+Preconditions : The user is successfully logged in and there are at least one movie inside the local storage and title of the movie
+                exceeds seven characters
+
+Inputs:
+     - None
+      
+Expected Results: 
+
+    - Only seven characters should be shown and the rest are truncated
+   
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Observe that there are card elements.
+
+Actual Results: 
+
+    - Only seven characters are shown and the rest are truncated
+
+Validations:
+
+    - Verify that only seven characters are shown and the rest are truncated
+
+Test Result: Pass
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Test case 7 - Verify the text for the description doesn't overflow and it is truncated at 263 characters on the movie card (index page)
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Title         : Verify the text for the description doesn't overflow and it is truncated at 263 characters on the movie card (index page)
+Preconditions : The user is successfully logged in and there is at least one movie in the local storage. 
+                The text in the movie description is 600 characters long.
+
+Inputs:
+     - None
+      
+Expected Results: 
+
+    - The text within the movie card should word-wrap, meaning that it shouldn't overflow outside the card but instead move to the next line.
+    - The character count should be truncated at 263 characters.
+   
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Observe the card element.
+
+Actual Results: 
+
+    - The text within the movie card is displayed with word-wrap, not overflowing outside the card.
+    - The character count of the description is truncated at 263 characters.
+
+Validations:
+
+    - Verify that the text doesn't overflow and is truncated at 263 characters.
+
+Test Result: Pass
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Test case 8 - Verify that buttons on the card are on the same row at the bottom of the page and there is no gap between the card and the button
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Title         : Verify that buttons on the card are on the same row at the bottom of the page and there is no gap between the card and the button
+Preconditions : The user is successfully logged in and there is at least one movie in the local storage.
+
+Inputs:
+     - None
+      
+Expected Results: 
+
+    - The buttons should be at the bottom of the page, aligned on the same row as the movie card, with no gap between the card and the button.
+   
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Observe the card elements.
+
+Actual Results: 
+
+    - The buttons are displayed at the bottom of the page, aligned on the same row as the movie card, with no gap between the card and the button.
+
+Validations:
+
+    - Verify that the buttons are aligned on the same row as the movie card.
+    - Verify that there is no gap between the card and the button.
+
+Test Result: Pass
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Test case 9 - Verify that when no movie is in the local storage the index page correctly displays "no movies"
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Title         : Verify that when no movie is in the local storage the index page correctly displays "no movies"
+Preconditions : The user is successfully logged in and there is at least one movie in the local storage.
+
+Inputs:
+     - None
+      
+Expected Results: 
+
+    - There should be no movie displayed on the page and a message stating "No movies".
+
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Observe the card elements.
+
+Actual Results: 
+
+    - There are no movies displayed on the page and a message stating "No movies" is shown.
+
+Validations:
+
+    - Verify that there are no movies displayed on the page.
+    - Verify that a message stating "No movies" is shown.
+
+Test Result: Pass
+
+
+---------------------------------------------------------------------------------------------------------
+Test Case 10: View a Single Movie from the details Page
+---------------------------------------------------------------------------------------------------------
+
+Title: View a single movie from the details page
+
+Preconditions:
+  - The user is successfully logged in.
+  - There is at least one movie in the local storage.
+
+Inputs: None
+
+Expected Results:
+  - The user should be able to visually view all the aspects of the movie, 
+     including the title, description, cast, year, runtime, and rating on the details page.
+  - The bottom of the page should also include "cancel" and "confirm" buttons.
+
+Test Steps:
+  1. Navigate to the login page.
+  2. Enter valid login credentials.
+  3. Click on the "Movies" page.
+  4. Click on the "view more" on the movie card.
+  5. Observe that movie aspects are shown.
+
+Actual Results:
+  - The movie details page with the provided details is displayed on the page.
+  - The displayed movie matches the entered movie details, including the title, description, cast, runtime, rating, and year.
+
+Validations:
+  - Verify that the displayed details page matches the entered movie details.
+
+Test Result: Pass

@@ -1,0 +1,217 @@
+---------------------------------------- DELETE MOVIE TEST CASE -------------------------------------------------- 
+
+Goal: 
+
+The goal of the movie deletion testing is to ensure that the system provides a reliable and 
+accurate process for deleting movies. The testing aims to verify that the movie deletion 
+functionality works as intended, allowing usersto remove movies from the system. 
+
+The goal is to validate that the deletion process is secure and properly authorized, ensuring 
+that only authorized users can delete movies and that the right movie is deleted. 
+The testing should also verify that the movie and any associated data, such as ratings, reviews, 
+are completely and permanently removed from the system upon deletion and that no movie is accidently
+deleted by ensuring that alert popup are used to confirm any permanent deletion. 
+
+Additionally, the testing should handle scenarios where errors or issues may 
+arise during the movie deletion process, such as a missing movie id, etc to ensure that appropriate error 
+handling mechanisms are in place and the system remains stable and functional.
+
+
+------------------------------------------------------------------------
+Test case 1 - Successful delete a movie from the application
+------------------------------------------------------------------------
+
+Title         : Successful delete a movie from the application
+Preconditions : The user is successfully logged in, and there are movies already in the database
+
+Inputs:
+    None
+   
+Expected Results: 
+
+    - When the user hits delete on the movie card, a dropdown message is displayed asking the user to confirm or cancel.
+    - After confirming the deletion, a red banner message pops up informing the user that the movie has been deleted.
+    - The movie is no longer displayed on the index.html page.
+
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Find a movie you would like to delete and click the delete button.
+    5. When the dropdown menu appears, click the confirm button.
+   
+Actual Results: 
+
+    - The popup disappears.
+    - A message appears informing the user that the movie has been deleted.
+    - The movie is deleted from the local storage.
+    - Only the targeted movie is deleted
+
+Validations:
+
+    - Verify that the banner message is red and successfully informs the user that the movie is deleted.
+    - Verify that the movie is no longer displayed on the index page.
+    - Verify that only the intended movie is deleted and no other movie
+  
+Test -> Pass
+
+
+------------------------------------------------------------------------
+Test case 2 - User cancels deletion of movie by hitting the cancel button
+------------------------------------------------------------------------
+
+Title         : User cancels the deletion of the movie by hitting the cancel button in the dropdown menu
+Preconditions : The user is successfully logged in, and there are movies already in the database
+
+Inputs:
+    None
+   
+Expected Results: 
+
+    - When the user hits delete on the movie card, a dropdown message is displayed asking the user to confirm or cancel.
+    - After the user hits cancel on the dropdown menu, the dropdown menu disappears
+    - The movie is not deleted and the user should still be on the index page.
+
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Find a movie you would like to delete and click the delete button.
+    5. When the dropdown menu appears, click the cancel button.
+   
+Actual Results: 
+
+    - The popup disappears.
+    - The movie is not deleted from the local storage
+    - The user is still on the index page
+
+Validations:
+
+    - Verify that the movie is not deleted
+    - Verify that movie is still on the index page
+  
+Test -> Pass
+
+
+
+------------------------------------------------------------------------
+Test case 3 - Deleting a movie from the details page
+------------------------------------------------------------------------
+
+Title         : User deletes a movie from the details page
+Preconditions : The user is successfully logged in, and there are movies already in the database
+
+Inputs:
+    None
+   
+Expected Results: 
+
+    - When the user hits delete on the movie card, a dropdown message is displayed asking the user to confirm or cancel.
+    - After the user hits confirm the movie is deleted
+    - The user is then redirected to the index page
+
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Find a movie you would like to delete click the view more button.
+    5. On the details page click delete button
+    6. On the confirmation dropdown menu click confirm
+   
+Actual Results: 
+
+    - The popup disappears.
+    - The movie is deleted from the local storage.
+    - The page is redirected back to the index page
+
+Validations:
+
+    - Verify that the movie is no longer displayed on the index page.
+    - Verify that page is redirected to the index page
+    - Verify that no other movie is deleted
+  
+Test -> Pass
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+Test case 4 - Check that when the final movie is deleted that the background displays that you have no movies to delete
+-----------------------------------------------------------------------------------------------------------------------------
+
+Title         : Check if the correct background is displayed after the final movie is deleted
+Preconditions : The user is successfully logged in, and there is only one movie already in the database
+
+Inputs:
+    None
+   
+Expected Results: 
+
+    - When the user hits delete the final movie the background should change to inform the user that they have no more movies.
+
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Click the only movie on the display.
+    5. Click the delete button on the card
+    6. On the confirmation dropdown menu click confirm
+   
+Actual Results: 
+
+    - The popup disappears.
+    - The movie is deleted from the local storage.
+    - The page is now displays no more movies
+
+Validations:
+
+    - Verify that the movie is no longer displayed on the index page.
+    - Verify that background has changed to no more movies
+  
+Test -> Pass
+
+
+
+----------------------------------------------------------------
+Test case 6 - Try to delete a movie with an invalid ID
+-----------------------------------------------------------------
+
+Title         : Try to delete a movie with an invalid ID
+Preconditions : The user is successfully logged in, and there is only one movie already in the database
+
+Inputs:
+    None
+   
+Expected Results: 
+
+    - The user should be re-directed to a not found page
+
+Test Steps:
+-------------
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Movies" page.
+    4. Find a movie you would like to delete click the view more button.
+    5. Click on the view button
+    6. On the details page change one or more characters on the movie ID url
+    7. Hit Enter
+   
+Actual Results: 
+
+    - The page is redirected to a 404 not found page
+
+Validations:
+
+    - Verify that you are on the 404 not found page
+  
+  
+Test -> Pass
+

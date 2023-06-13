@@ -1,0 +1,1810 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@300&display=swap');
+
+
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  transition: 2s ease-in-out;
+}
+
+
+:root {
+
+  --box-shadow-four: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --box-shadow-one: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --box-shadow-three: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --box-shadow-two: 0 0 5px 0 rgba(255, 255, 255, 0.2),
+    0 0 10px 0 rgba(255, 255, 255, 0.2),
+    0 0 20px 0 rgba(255, 255, 255, 0.2),
+    0 0 30px 0 rgba(255, 255, 255, 0.2),
+    0 0 40px 0 rgba(255, 255, 255, 0.2),
+    0 0 50px 0 rgba(255, 255, 255, 0.2),
+    0 0 60px 0 rgba(255, 255, 255, 0.2),
+    0 0 70px 0 rgba(255, 255, 255, 0.2),
+    0 0 80px 0 rgba(255, 255, 255, 0.2),
+    0 0 90px 0 rgba(255, 255, 255, 0.2),
+    0 0 100px 0 rgba(255, 255, 255, 0.2);
+  --border-background-seven: 2px solid;
+  --border-background-six: 1px solid blue;
+  --border-background-five: 0.5px solid black;
+  --border-background-four: #141414;
+  --border-background-three: 16px solid #3498db;
+  --border-background-two: 16px solid #f3f3f3;
+  --border-background-one: 1px solid black;
+  --card-background: lavender;
+  --color-black: black;
+  --color-darkgreen: darkgreen;
+  --color-green: green;
+  --color-red: red;
+  --color-white: white;
+  --footer-background: rgba(0, 0, 0, 0.9);
+  --font-family-nunito: 'Nunito', sans-serif;
+  --font-family-poppins: 'Poppins', sans-serif;
+  --movie-background: linear-gradient(to bottom right, #ADD8E6, white, white),
+    radial-gradient(circle at center, white 30%, transparent 40%);
+  --primary-background: rgba(0, 0, 0, 0.9);
+  --primary-button-color: orange;
+  --profile-background: #353535;
+  --success-message-background: lightgreen;
+  --user-menu-background: lightgray;
+}
+
+
+/* --------------------------------------------------------------------------------
+Native elements
+-------------------------------------------------------------------------------- */
+
+a {
+  cursor: pointer;
+  z-index: 1000000000000000;
+
+}
+
+a:active {
+  color: darkgreen;
+}
+
+body {
+  font-family: var(--font-family-nunito);
+}
+
+hr {
+  border: var(--border-background-one);
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+html {
+  height: 100%;
+}
+
+.img {
+  text-align: center;
+}
+
+label {
+  text-align: left;
+}
+
+span {
+  font-weight: bolder;
+}
+
+span a {
+  cursor: pointer;
+}
+
+span button {
+  cursor: pointer;
+}
+
+ol {
+  color: black;
+  margin-left: 0;
+}
+
+li {
+  color: white;
+  padding: 8px;
+}
+
+
+
+/* --------------------------------------------------------------------------------
+Native elements end here
+-------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------
+INPUT, TEXTAREA, and SELECT elements
+-------------------------------------------------------------------------------- */
+
+input[type="date"],
+input[type="email"],
+input[type="file"],
+input[type="number"],
+input[type="password"],
+input[type="text"],
+input[type="url"],
+select {
+  border: var(--border-background-one);
+  cursor: pointer;
+  font-size: 1.2rem;
+  height: 32px;
+}
+
+textarea {
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  border: 1px solid gray;
+}
+
+/* --------------------------------------------------------------------------------
+Input and select elements end here
+-------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------------------------------
+Utils
+-------------------------------------------------------------------------------- */
+/* 
+Creates the spinner */
+.spinner {
+
+  animation: spin 2s linear infinite;
+  border: var(--border-background-two);
+  border-radius: 100%;
+  border-top: var(--border-background-three);
+  display: none;
+  height: 120px;
+  left: 47%;
+  position: fixed;
+  top: 38%;
+  width: 120px;
+  z-index: 99999999999999;
+}
+
+
+/* Controls the spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Controls div box that displays the number of characters remaining */
+.char-count-msg {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Controls elements for the forbidden html page */
+.forbidden {
+  height: 70vh;
+  width: 40%;
+  margin: auto;
+  margin-top: 10%;
+}
+
+
+.greetings {
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 2.2rem;
+  color: var(--color-white);
+}
+
+
+.small-text {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.close-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.forbidden img {
+  width: 100%;
+}
+
+.not-found {
+  text-align: center;
+  height: 100vh;
+}
+
+.not-found img {
+  padding-top: 50%;
+  width: 500px;
+}
+
+/* the logo images inside the profile */
+
+.socials {
+  border: 1px solid black;
+  box-shadow: var(--box-shadow-one);
+  border-radius: 26%;
+  height: 30px;
+  opacity: 0.8;
+  width: 30px;
+
+}
+
+.socials:hover {
+  box-shadow: var(--box-shadow-two);
+  opacity: 0.5;
+}
+
+/* --------------------------------------------------------------------------------
+Utils end here
+-------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------------------------------
+Nav elements start here
+-------------------------------------------------------------------------------- */
+
+nav {
+  background: var(--primary-background);
+  cursor: pointer;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .links {
+  color: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
+}
+
+nav .links a,
+nav .profile a {
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+nav .profile {
+  color: var(--color-white);
+  display: flex;
+  gap: 1;
+  justify-content: 0;
+  padding: 0.8rem;
+}
+
+nav .profile a {
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+nav img {
+  height: 40px;
+  width: 40px;
+}
+
+/* --------------------------------------------------------------------------------
+Navigation end here
+-------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------
+Font awesome icons
+-------------------------------------------------------------------------------- */
+
+.fa-user {
+  padding-right: 16px;
+}
+
+/* --------------------------------------------------------------------------------
+Font awesome end here
+-------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------------------------------
+Hover sections start here
+-------------------------------------------------------------------------------- */
+a:hover {
+  color: var(--color-darkgreen);
+}
+
+.button:hover,
+.visit-button:hover {
+  background: var(--color-black);
+}
+
+
+
+.card:hover {
+  transform: rotateX(10deg);
+}
+
+
+.close:hover {
+  background: white;
+  border: var(--border-background-seven);
+  color: white;
+}
+
+.close:hover {
+  border: var(--border-background-seven);
+  background: white;
+  color: black;
+}
+
+.close-div i:hover {
+  color: var(--color-red);
+}
+
+
+.flex-box div:hover {
+  opacity: 0.5;
+  border: var(--border-background-six);
+  color: var(--color-green);
+}
+
+
+.profile-img:hover {
+  opacity: 0.6;
+}
+
+.user-div a:hover {
+  background: gray;
+  color: var(--color-black);
+}
+
+.user-menu:hover {
+  background: var(--color-white);
+}
+
+
+.email-btn:hover,
+.login-btn:hover,
+.register-btn:hover,
+.reset-btn:hover,
+.save-btn:hover,
+.save-password-btn {
+  background: var(--color-black);
+}
+
+
+/* --------------------------------------------------------------------------------
+Groups -> elements that share the same styling
+-------------------------------------------------------------------------------- */
+#about-me,
+#plot {
+  border: var(--border-background-one);
+  font-size: 1.15rem;
+  height: 400px;
+  line-height: 1.1;
+}
+
+.change-password-msg,
+.reset-email-msg {
+
+  color: var(--color-white);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+
+#change-password .container,
+#login .container,
+#reset-email .container {
+  border-bottom: 1px solid;
+  box-shadow: var(--box-shadow-three);
+  cursor: pointer;
+  margin: auto;
+  margin-top: 32px;
+  padding: 9px;
+  padding: 32px;
+  text-align: center;
+  width: 40%;
+}
+
+#change-password .container form,
+#login .container form,
+#reset-email .container form {
+  width: 100%;
+}
+
+#change-password .container h1,
+#reset-email .container h1,
+#login .container h1 {
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 16px;
+}
+
+.login-msg,
+#delete-confirmation-message,
+#delete-account,
+.message,
+.profile-msg {
+  text-align: center;
+  padding: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000000000000000;
+}
+
+
+
+
+#change-password .container img,
+#login .container img,
+#reset-email .container img {
+  cursor: pointer;
+  width: 100%;
+}
+
+.profile-message,
+.success-message {
+  background: white;
+  border: 2px solid white;
+  color: white;
+  display: none;
+  font-weight: bolder;
+  padding: 1rem;
+  position: fixed;
+  text-align: center;
+  z-index: 100000000000;
+}
+
+/* the logo images inside the profile */
+.facebook,
+.instagram,
+.tiktok,
+.youtube {
+  display: none;
+}
+
+
+/* --------------------------------------------------------------------------------
+End of Group shared styling
+-------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------------------------------
+Buttons elements for the entire application
+-------------------------------------------------------------------------------- */
+
+.email-btn,
+.login-btn,
+.register-btn,
+.reset-btn,
+.save-btn,
+.save-password-btn {
+  background: var(--primary-button-color);
+  color: var(--color-white);
+  cursor: pointer !important;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  margin-top: 17px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.button {
+  background: var(--primary-button-color);
+  position: absolute;
+  bottom: 0;
+  cursor: pointer !important;
+}
+
+.button a {
+  color: var(--color-white);
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.buttons {
+  display: flex;
+  /* padding: 1rem; */
+}
+
+.buttons a {
+  color: var(--color-white);
+  padding: 1rem;
+}
+
+.button,
+.visit-button {
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+#confirm-delete-btn,
+.confirm-delete-btn,
+.view-btn {
+  background: var(--color-green);
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.delete-btn,
+.delete-button {
+  background: var(--color-red);
+}
+
+.delete-button {
+  width: 100%;
+}
+
+.delete-btn,
+.view-btn {
+  width: 100%;
+}
+
+.flex-btn {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.flex-btn .confirm {
+  background: var(--color-green);
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.flex-btn button {
+  padding: 1rem;
+}
+
+.form-buttons,
+.flex-btns {
+  display: flex;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.history .button {
+  position: relative;
+}
+
+#movie .container .buttons {
+  width: 30%;
+  margin: auto;
+}
+
+.sidebar-movie-info .button {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.visit-button {
+  background: var(--color-darkgreen);
+}
+
+.submit-btn {
+  position: relative;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  color: white;
+}
+
+
+
+/* --------------------------------------------------------------------------------
+Button elements end here
+-------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------
+Login Section
+-------------------------------------------------------------------------------- */
+
+#login div.login-msg,
+img {
+  cursor: pointer;
+}
+
+
+/* --------------------------------------------------------------------------------
+Login section ends here
+-------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------------------------------
+Registration section start here
+-------------------------------------------------------------------------------- */
+.hidden-registration {
+  background: var(--color-white);
+  box-shadow: var(--box-shadow-three);
+  cursor: pointer;
+  left: 0;
+  margin: auto;
+  padding: 64px;
+  position: fixed;
+  right: 0;
+  top: -100000;
+  width: 50%;
+  z-index: 10000000000000;
+}
+
+/* --------------------------------------------------------------------------------
+Registration section ends here
+-------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------------------------------
+Home section starts here
+-------------------------------------------------------------------------------- */
+
+#home {
+  background-color: var(--border-background-four);
+}
+
+#home .container {
+  height: 100vh;
+  margin: auto;
+  width: 70%;
+}
+
+/* --------------------------------------------------------------------------------
+Home section ends here
+-------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------
+Movie section
+-------------------------------------------------------------------------------- */
+
+/* Inside the details.html controls the space for the description
+padding for the movie description page */
+div#movie-description {
+  text-align: center;
+  padding-top: 32px;
+}
+
+#movie div {
+  margin: auto;
+  /* min-height: 20vh; */
+  line-height: 1.9;
+  text-align: center;
+  /* width: 60%; */
+}
+
+#movie .info {
+  border-top: 1px solid;
+  width: 25%;
+  margin-top: 48px;
+  border-bottom: 1px solid;
+}
+
+
+#movie .container .description {
+  font-size: 1.2rem;
+  padding-bottom: 64px;
+  padding-top: 64px;
+}
+
+#movie .container .info {
+  padding-bottom: 32px;
+  padding-top: 32px;
+  text-align: left;
+}
+
+#movie-form .container {
+  border: 1px solid;
+  border-radius: 1%;
+  box-shadow: var(--box-shadow-one);
+  font-family: var(--font-family-nunito);
+  margin: auto;
+  padding: 1rem;
+  width: 40%;
+}
+
+#movie-form .container h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#movie-title {
+  text-transform: capitalize;
+}
+
+.h2-movie-title {
+  display: none;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+  text-transform: capitalize;
+  text-transform: uppercase;
+}
+
+.movie-description-img {
+  height: 250px;
+  text-align: center;
+  width: 250px;
+}
+
+.movie-img {
+  height: 300px;
+  width: 300px;
+}
+
+.movie-info {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+#movies {
+  background: var(--movie-background);
+}
+
+#movies .showcase-display {
+  display: none;
+  font-family: var(--font-family-nunito);
+  font-size: 2rem;
+  margin-top: 13rem;
+  text-align: center;
+}
+
+
+
+/* --------------------------------------------------------------------------------
+End of movie section
+-------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------------------------------
+Profile section
+-------------------------------------------------------------------------------- */
+
+.about {
+  padding-top: 32px;
+}
+
+.about .answer {
+  color: var(--color-white);
+}
+
+
+#my-profile {
+  background: var(--profile-background);
+}
+
+#profile {
+  font-family: var(--font-family-nunito);
+}
+
+#profile h1 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+#my-profile .container {
+  width: 80%;
+  margin: auto;
+  padding-top: 10px;
+}
+
+#my-profile .container .menu {
+  display: flex;
+  gap: 38px;
+  border: var(--border-background-one);
+  justify-content: center;
+  margin-top: 16px;
+  background: lavender;
+  color: var(--color-black);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#my-profile .container .profile {
+  border-right: 1px solid;
+  padding-right: 28px;
+}
+
+.profile-img {
+  height: 500px !important;
+  width: 500px !important;
+  padding-bottom: 2rem;
+  padding-top: 16px;
+  border-radius: 7% !important;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.profile-footer {
+  margin-top: 0;
+}
+
+#profile a {
+  border: 1px solid white;
+  background: var(--profile-background);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
+
+}
+
+.profile a:hover {
+  opacity: 0.5;
+}
+
+/* --------------------------------------------------------------------------------
+Profile section ends here
+-------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------------------------------
+History section start here
+-------------------------------------------------------------------------------- */
+
+.history h1 {
+  padding-bottom: 16px;
+}
+
+/* --------------------------------------------------------------------------------
+History section end here
+-------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------
+The card elements for the entire application
+-------------------------------------------------------------------------------- */
+
+.card {
+  background: var(--color-white);
+  border-radius: 3%;
+  box-shadow: var(--box-shadow-four);
+  cursor: pointer;
+  flex: 0 1 33%;
+  height: auto;
+  margin-top: 2rem;
+  position: relative;
+  text-align: center;
+  z-index: 100;
+
+}
+
+.card .header {
+  background: var(--card-background);
+}
+
+.card .header img {
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+
+.card .body {
+  min-height: 86vh;
+  word-wrap: break-word;
+
+}
+
+.card .body .title {
+
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.card .body div {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+
+.card .body p {
+  line-height: 1.6;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 32px;
+}
+
+
+.card img {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 2rem;
+}
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin: auto;
+  width: 70%;
+}
+
+#delete-account-pop-alert {
+  position: fixed;
+  background: var(--color-white);
+  width: 50%;
+  text-align: center;
+  height: 40%;
+  left: 29%;
+  right: 50%;
+  display: none;
+
+}
+
+.delete-registered-account-alert h1,
+.delete-card h1 {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.delete-registered-account-alert,
+.delete-card {
+  background: var(--color-white);
+  border-radius: 3%;
+  bottom: 30%;
+  border: 1px solid;
+  height: 35vh;
+  left: 28%;
+  margin: auto;
+  position: fixed;
+  text-align: center;
+  top: -400%;
+  transition: 1s ease-in-out;
+  right: 50%;
+  width: 42%;
+  z-index: 100000000000000;
+}
+
+
+
+.movie-card {
+  height: 45vh;
+}
+
+.delete-registered-account-alert p:first-child,
+.delete-card p:first-child {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.delete-registered-account-alert p:nth-child(1),
+.delete-card p:nth-child(1) {
+  padding-bottom: 2rem !important;
+}
+
+.delete-registered-account-alert p,
+.delete-card p {
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------------
+The card elements end here.
+-------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------
+Form elements start here
+-------------------------------------------------------------------------------- */
+.close {
+  background: var(--color-red);
+  color: var(--color-white);
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+
+.form-img-container {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-sidebar {
+  background: var(--color-white);
+  border-left: var(--border-background-one);
+  bottom: 0;
+  display: none;
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: 2s ease-in;
+  z-index: 1000000000000000000000;
+}
+
+.form-sidebar-active {
+  display: block;
+  transition: 2s ease-in-out;
+  z-index: 1000000000000000000000;
+  ;
+}
+
+.form-sidebar h2 {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 90%;
+}
+
+#movie-form {
+  margin-top: 10rem;
+}
+
+#my-profile .container form {
+  background: var(--color-white);
+  margin: auto;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  padding: 32px;
+  width: 50%;
+}
+
+/* --------------------------------------------------------------------------------
+The form elements end here.
+-------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------
+Flex starts here
+-------------------------------------------------------------------------------- */
+
+.flex-container {
+  margin: auto;
+}
+
+.flex-box {
+  gap: 10px;
+  flex-wrap: wrap;
+  display: flex;
+  padding: 10px;
+  padding-left: 121px;
+  padding-right: 121px;
+  padding-bottom: 121px;
+  font-family: var(--font-family-poppins);
+}
+
+.flex-box div {
+  cursor: pointer;
+  width: 25%;
+  font-size: 0.8rem;
+  display: flex;
+  border: 1px solid;
+  text-align: center;
+  padding: 8%;
+  flex-basis: 0 1 33%;
+  width: calc(32.33% - 20px);
+  margin-top: 7rem;
+  text-align: center;
+  background: white;
+  border-radius: 5%;
+  text-transform: capitalize;
+  box-shadow: var(--box-shadow-two)
+}
+
+.flex-container {
+  display: flex;
+  gap: 32px;
+}
+
+.flex-container {
+  padding-top: 16px;
+}
+
+.flex-container .info {
+  display: flex;
+  gap: 10px;
+}
+
+.flex-container .info .question {
+  font-weight: bold;
+}
+
+.flex-container .info .answer {
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------------
+Flex end here
+-------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------------------------------
+Message -> Controls how the message is displayed to the user
+-------------------------------------------------------------------------------- */
+#delete-confirmation-message,
+.message {
+  display: none;
+}
+
+#delete-confirmation-message {
+  color: var(--color-white);
+  background: var(--color-red);
+  z-index: 1000000;
+}
+
+.email-msg {
+  text-align: center;
+}
+
+.msg2 {
+  padding-bottom: 20px;
+}
+
+.success-message {
+
+  top: 0;
+  width: 80%;
+
+}
+
+.profile-message {
+  margin-bottom: 1rem;
+  width: 80%;
+  top: 59px;
+
+}
+
+
+
+
+
+.message {
+  background: var(--success-message-background);
+}
+
+
+.profile-img:hover {
+  opacity: 0.6;
+}
+
+.second-show-case-img {
+  display: none;
+  width: 100%;
+}
+
+.user-div a:hover {
+  background: gray;
+  color: var(--color-black);
+}
+
+.user-menu:hover {
+  background: var(--color-white);
+}
+
+
+.user-menu a:hover {
+  background: var(--profile-background);
+  color: var(--color-white);
+}
+
+a:hover {
+  color: var(--color-darkgreen);
+}
+
+/* --------------------------------------------------------------------------------
+Message end here
+-------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------
+All elements that allow a div to pop up or hide when the user performs some action
+-------------------------------------------------------------------------------- */
+
+
+.d-none {
+  display: block !important;
+  top: 0 !important;
+  transition: 1s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------------
+End of section
+-------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------------------------------------
+History section
+-------------------------------------------------------------------------------- */
+.history {
+
+  height: 40vh;
+  margin-bottom: 32px;
+  overflow: hidden;
+
+}
+
+.wrapper {
+  border: 1px solid;
+  color: var(--color-white);
+  height: 22vh;
+  padding-right: 32px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+
+/* --------------------------------------------------------------------------------
+End of history section
+-------------------------------------------------------------------------------- */
+
+
+
+/* --------------------------------------------------------------------------------
+-> User menu
+-> The elements that control when a user menu when a user hits the profile on the 
+navigation bar
+-------------------------------------------------------------------------------- */
+
+
+.user-menu {
+  background: var(--color-white);
+  background: var(--user-menu-background);
+  border: var(--border-background-one);
+  border-radius: 3%;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  top: 80px;
+  width: 300px;
+  z-index: 100000;
+}
+
+
+.user-menu a {
+  background: var(--color-white);
+  border: 1px solid;
+  color: var(--color-black);
+  padding: 1rem;
+}
+
+
+/* --------------------------------------------------------------------------------
+Footer
+-------------------------------------------------------------------------------- */
+footer {
+  background: var(--footer-background);
+  color: var(--color-white);
+  margin-top: 4rem;
+}
+
+footer .container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+}
+
+.not-found-footer,
+.forbidden-footer {
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------------
+Footer ends here
+-------------------------------------------------------------------------------- */
+
+
+.show {
+  display: inline-flex;
+
+}
+
+
+/*--------------------------------------------------------------------------------
+Media queries 
+-------------------------------------------------------------------------------- */
+
+/* Screens (less than 300px) */
+@media only screen and (max-width: 290px) {
+ 
+  #movie .container {
+    width: 99%;
+    padding: 10px;
+  }
+
+  #movie .container .info {
+    text-align: left;
+    width: 100%;
+  }
+
+  #my-profile .container {
+    width: 98%;
+  }
+
+  .delete-registered-account-alert {
+    
+    height: 58vh;
+    left: 2%;  
+    top: -400%;
+    right: 54%;
+    width: 96%;
+   
+  }
+  
+  .details-card  {
+    margin: auto;
+    min-height: 67vh!important;
+    margin-top: 94px;
+    text-align: center;
+    width: 80%;
+  }
+
+  .delete-card h1 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+
+
+  .hidden-registration {
+    padding: 14px;
+    height: 80%;
+  }
+
+  .not-found img {
+    padding-top: 50%;
+    width: 236px !important;
+  }
+
+
+}
+
+
+@media only screen and (max-width: 400px) {
+  .delete-card {
+    height: 35vh;
+  }
+
+ 
+}
+
+
+@media only screen and (max-width: 500px) {
+  .delete-card {
+    height: 40vh;
+  }
+  
+}
+
+
+@media only screen and (max-width:600px) {
+
+  .delete-card {
+    height: 80vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .user-menu {
+    width: 100%;
+  }
+
+  .delete-registered-account-alert {
+    
+    bottom: 30%;
+    height: 50vh;
+    left: 4%;
+    right: 50%;
+    width: 90%;
+   
+}
+
+  
+}
+
+
+@media only screen and (min-width:601px) and (max-width:950px) {
+
+  .card {
+    flex: 1 1 44%;
+  }
+
+  .delete-registered-account-alert {
+  
+  
+    bottom: 30%;
+    border: 1px solid;
+    height: 60vh;
+    left: 4%;
+    right: 50%;
+    width: 90%;
+ 
+}
+ 
+}
+
+
+@media only screen and (min-width: 700px) {
+  #movie .container {
+    margin: auto;
+    text-align: center;
+    width: 70%;
+  }
+
+}
+
+@media only screen and (max-width: 715px) {
+
+  /* native elements */
+  input[type="date"],
+  input[type="email"],
+  input[type="file"],
+  input[type="number"],
+  input[type="password"],
+  input[type="text"],
+  select {
+    border: var(--border-background-five);
+    font-size: 1.1rem;
+  }
+
+  footer {
+    margin-top: 0;
+  }
+
+  nav {
+    margin-top: 3rem;
+  }
+
+  .wrapper li {
+    border-bottom: 2px solid var(--color-white);
+  }
+
+  .wrapper li:last-child {
+    border-bottom: 0;
+  }
+
+  /* end of native elements */
+
+
+  /* flex box elements */
+  .flex-box {
+    gap: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  }
+
+  .flex-box div {
+    border: 1px solid;
+    cursor: pointer;
+    display: grid;
+    margin-top: 55px;
+    padding: 20%;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* end of flex box */
+
+
+  /* card elements */
+  .card {
+    flex: 1 1 50%;
+  }
+
+  /* end of card elements */
+
+
+  /* Images  */
+  .profile-img {
+    height: 0 !important;
+    width: 0 !important;
+  }
+
+  .second-show-case-img {
+    display: block;
+    width: 100%;
+  }
+
+  .show-case-img {
+    display: none;
+  }
+
+  .not-found img {
+    padding-top: 50%;
+    width: 315px;
+  }
+
+  .show-case-img {
+    border-radius: 14%;
+    width: 100%;
+  }
+
+  /* End of images */
+
+
+  /* movie elements */
+  div#movie-description {
+    text-align: center;
+    padding-top: 32px;
+  }
+
+  #movie>div {
+
+    margin: auto;
+    min-height: 0vh;
+    margin-top: 94px;
+    text-align: center;
+    width: 80%;
+  }
+
+  #movie .info {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    margin-top: 48px;
+    width: 50%;
+
+  }
+
+  #movie .container .buttons {
+    margin: auto;
+    width: 100%;
+  }
+
+  #movies .showcase-display {
+    box-shadow: var(--border-background-three);
+    margin-top: 0em;
+    text-align: center;
+  }
+
+  /* End of movie elements */
+
+
+  /* profile elements */
+  #my-profile .container form {
+    padding: 23px;
+    width: 100%;
+  }
+
+  #profile a {
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  /* profile end here */
+
+
+  /* form section */
+
+  #change-password .container,
+  #login .container,
+  #reset-email .container {
+
+    box-shadow: var(--border-background-three);
+    cursor: pointer;
+    border-bottom: 1px solid;
+    margin: auto;
+    margin-top: auto;
+    padding: 32px;
+    width: 100%;
+  }
+
+  /* end of sections */
+
+  /* form bar elements here */
+  .form-sidebar-active {
+    display: block;
+    transition: 2s ease-in-out;
+    width: 100%;
+  }
+
+  /* form bar ends here */
+
+
+  /* home container  */
+  #home .container {
+    height: 100vh;
+    margin: auto;
+    width: 100%;
+  }
+
+  /* end of home container */
+
+  /* classes */
+
+  .hidden-registration {
+    width: 100%;
+  }
+
+  .showcase-display {
+    font-size: 1.1rem !important;
+  }
+
+  .showcase-display p:last-child {
+    padding-bottom: 1rem;
+  }
+
+  .warning-msg {
+    display: none;
+  }
+
+}
+
+
+/* Small screens (greater than 950px) */
+@media only screen and (min-width: 950px) {
+  .delete-registered-account-alert {
+    height: 50vh;
+  }
+}
+
+
+@media only screen and (min-width: 716px) and (max-width: 950px) {
+  /* CSS styles for medium screens */
+
+  #home .container {
+    height: 100vh;
+    margin: auto;
+    width: 100%;
+  }
+
+  #my-profile .container form {
+    width: 70%;
+  }
+
+  #change-password .container,
+  #login .container,
+  #reset-email .container {
+
+    border-bottom: 1px solid;
+    box-shadow: var(--box-shadow-three);
+    cursor: pointer;
+    margin: auto;
+    margin-top: auto;
+    margin-top: 30px;
+    padding: 32px;
+    width: 60%;
+  }
+
+  /* flex box  elements  */
+  .flex-box {
+    gap: 1px;
+    justify-content: center;
+    padding-left: 150px;
+    padding-right: 150px;
+    width: 100%;
+  }
+
+  .flex-box div {
+    border: 1px solid;
+    cursor: pointer;
+    display: grid;
+    font-size: 1rem !important;
+    margin-top: 55px;
+    padding: 20%;
+    text-align: center;
+    width: 40%;
+  }
+
+  .flex-box div {
+    padding: 6%;
+  }
+
+  /* end of flex box */
+
+
+  /* classes  */
+  .delete-card {
+    height: 40vh;
+  }
+
+  .hidden-registration {
+    width: 70%;
+  }
+
+  /* classes end here */
+}
+
+
+
+/* Large screens (greater than 900px) */
+@media only screen and (min-width: 900px) {
+
+  .flex-box div {
+    flex-basis: 0 1 33%;
+    padding: 5%;
+    width: calc(32.33% - 2px);
+
+  }
+
+  .not-found img {
+    padding-top: 15% !important;
+
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .delete-card {
+    height: 58vh;
+  }
+ 
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+  .delete-card {
+    height: 50vh;
+  }
+
+}
+
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,381 @@
+--------------------------------------------- LOG TEST ----------------------------------------------
+
+What the log is?
+
+The log on the profile page is designed to track and display a chronological record of important 
+user activities and events. It serves as a historical log that captures actions such as successful 
+login attempts, account creation, and other relevant interactions within the application. 
+The log provides users with a transparent view of their activity history, 
+allowing them to review and track their actions over time. 
+Additionally, the log can help identify any unexpected behavior or discrepancies in user actions, 
+providing valuable information for troubleshooting and auditing purposes.
+
+
+Goal of the log test
+-------------------
+
+The goal of testing the log functionality on the profile page is to ensure that it accurately
+captures and displays the relevant user activities and events. The testing aims to verify 
+that the log records the expected actions, such as successful login attempts, account creation, 
+adding or deleting movies and other significant interactions, in the correct chronological order. 
+The goal is also to validate that the log provides a clear and comprehensive history of user actions, 
+allowing users to review their activity and facilitating troubleshooting and auditing processes. 
+Overall, the testing goal is to ensure the reliability, accuracy, and usability of the log feature in capturing 
+and presenting the user's activity history.
+
+--------------------------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------------
+Test case 1 - View log history on profile page after an account has been newly being created
+-----------------------------------------------------------------------------------------------
+
+Title: View log history on profile page when an account is created
+
+Preconditions:
+    - The user is successfully logged in.
+
+Inputs: None
+
+Expected Results:
+- When viewing a newly created account in the history field located on the profile page, the fields should display as follows:
+
+    [+] A successfully login attempt was made on <date and time created i.e YYYY-MM-DD HH:MM:SS>
+    [+] You successfully created an account on <date and time created i.e YYYY-MM-DD HH:MM:SS>
+
+Test Steps:
+
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Go to the "History" section located at the bottom of the page and observe.
+
+Actual Results:
+    - The history accurately displays the correct logs
+    - The login log should be on top since it is the latest entry.
+    - The registration log should be second.
+
+Validations:
+    - Verify that the expected logs are correct.
+
+Test Result: Pass
+
+
+----------------------------------------------------------------------------------------------
+Test case 2 - View log history on profile page after a movie has been added
+----------------------------------------------------------------------------------
+
+Title: View log history on profile page after a movie has been added
+
+Preconditions:
+    - The user already has a registered account
+    - The database contains one movie that was added to the local storage through the app.
+
+Inputs: None
+
+Expected Results:
+     - Inside the log there should be a log that resemble the following string:
+
+    [+] You added a movie with the id <id> and the title "<title here>" to your local storage on <YYYY-MM-DD HH:MM:SS>
+
+    Rest here ..................
+   
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Go to the "History" section located at the bottom of the page and observe.
+
+Actual Results:
+    - There should be a log entry that resembles the one on expected results 
+   
+Validations:
+    - Verify that there is added movie log entry in history section
+  
+Test Result: Pass
+
+
+----------------------------------------------------------------------------------
+Test case 3 - View log history on profile page after a movie has been deleted
+----------------------------------------------------------------------------------
+
+Title: View log history on profile page after a movie has been deleted
+
+Preconditions:
+     - The user has a registered account
+     - The database contains one movie that was added to the local storage through the app.
+
+Inputs: None
+
+Expected Results:
+    - Inside the log there should be a log that resemble the following string:
+
+    [+] You deleted a movie with the id <id>and the title <title> from your local storage on <YYYY-MM-DD HH:MM:SS>
+
+    Rest here .......................
+   
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Go to "History" section located at the bottom of the page and observe.
+
+Actual Results:
+    - The log correctly displays the deletion log entry
+    - The rest of the logs are displayed underneath
+
+Validations:
+    - Verify that there is delete string log in the log history
+
+Test Result: Pass
+
+----------------------------------------------------------------------------------------------
+Test case 4 - View log history on profile page after the edit page has been edited
+-------------------------------------------------------------------------------------------
+
+Title: View log history on profile page after a field in the "edit" page has been updated or modified
+
+Preconditions:
+    - The user has a registered account.
+
+Inputs: None
+
+Expected Results:
+- Inside the log history, there should be a log entry that resembles the following string:    
+    [+] You successfully edited your profile on <YYYY-MM-DD HH:MM:SS>
+    
+    Rest here .................
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Click on the "Edit" link.
+    5. On the edit page, choose any field and modify it.
+    6. Navigate back to the profile page.
+    7. Go to the "History" section located at the bottom of the page and observe.
+
+Actual Results:
+    - The first log entry is displayed, containing the date and time when the account was modified.
+    - The rest of the logs should be underneath.
+
+Validations:
+    - Verify that the correct log text is displayed and in the correct order.
+
+Test Result: Pass
+
+----------------------------------------------------------------------------------------------
+Test case 5 - View log history on profile page after a user has logged in
+-------------------------------------------------------------------------------------------
+
+Title: View log history on profile page after a user has logged in
+
+Preconditions:
+    - The user is not logged in.
+    - The user has a registered account.
+
+Inputs: None
+
+Expected Results:
+- When viewing the log history on the profile page after a user has logged in, the log entry should display as follows:
+    [+] A successful login attempt was made on <date and time created>
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Go to the "History" section located at the bottom of the page and observe.
+
+Actual Results:
+    - The log accurately displays the correct login entry.
+
+Validations:
+    - Verify that the expected log entry is correct.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------------------------------------
+Test case 6 - View log history on profile page after a user has made an incorrect log in attempt
+--------------------------------------------------------------------------------------------------------
+
+Title: View log history on profile page after an user makes an incorrect login attempt
+
+Preconditions:
+    - The user attempts to log in with an incorrect password.
+    - The user then logs in with valid credentials.
+    - There is already a registered account.
+
+Inputs: None
+
+Expected Results:
+- After the failed attempt, there should be a log entry that resembles the following:
+    [+] An incorrect login attempt was made to your account on <YYYY-MM-DD HH:MM:SS>
+
+    Rest here...
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter invalid login credentials.
+    3. Enter valid login credentials.
+    4. Click on the "Account" page on the home page.
+    5. Go to the "History" section located at the bottom of the page and observe.
+
+Actual Results:
+    - The page accurately displays the correct logs.
+
+Validations:
+    - Verify that the expected logs are correct.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------------------------------------
+Test case 7 - View log history on profile page after a user has logged out
+--------------------------------------------------------------------------------------------------------
+
+Title: View log history on profile page after a user has logged out and then in
+
+Preconditions:
+    - There is already a registered account in the local storage.
+
+Inputs: None
+
+Expected Results:
+    - When viewing the log history on the profile page, the following log entry should be displayed:
+        [+] You successfully logged out of the application - <YYYY-MM-DD HH:MM:SS>
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials and login.
+    3. Log out of the application.
+    4. Log in again with the valid login credentials.
+    5. Click on the "Account" page on the home page.
+    6. Go to the "History" section located at the bottom of the page and observe.
+
+Actual Results:
+    - The page accurately displays the correct logs.
+
+Validations:
+    - Verify that the expected logs are correct.
+
+Test Result: Pass
+
+
+-----------------------------------------------------------------------------------------------------------------------
+Test case 8 - View log history on profile page after the user requests a new password and successfully changes it
+-------------------------------------------------------------------------------------------------------------------------
+
+Title: View log history on profile page after the user requests a new password
+
+Preconditions:
+    - The user is not logged in.
+    - The user has a previously registered account (e.g., email, password, etc.).
+
+Inputs: None
+
+Expected Results:
+    - When viewing the log history on the profile page, the following log entries should be displayed:
+        [+] You have successfully changed your password - <YYYY-MM-DD HH:MM:SS>
+        [+] A successful request was made to change your email - <YYYY-MM-DD HH:MM:SS>
+
+Test Steps:
+     1. Navigate to the login page.
+     2. Click on the forgotten password link.
+     3. Enter your registered email.
+     4. Enter a new password in the password and confirm password fields.
+     5. Click save.
+     6. Log in with valid credentials and the newly changed password.
+     7. Click on "My Account" on the home page.
+     8. Go to the "History" section located at the bottom of the page and observe.
+
+Actual Results:
+    - The log displays the date and time when the password was changed, as well as the request to change the password.
+    - The rest of the logs are displayed below.
+
+Validations:
+    - Verify that the log matches the given expectations.
+
+Test Result: Pass
+
+
+
+----------------------------------------------------------------------------------------------
+Test case 9 - View log history on profile page after failed attempt to change password 
+              after requesting a password change through forgotten password
+----------------------------------------------------------------------------------------------
+
+Title: View log history on profile page after the user requests a new password but fails to change the password
+
+Preconditions:
+    - The user has requested to change their password through the forgotten password link.
+    - The user has successfully entered their email on the change new password form.
+    - The user is already registered and has a valid password.
+    - The user is not logged in.
+    
+Inputs: None
+
+Expected Results:
+    - When viewing the log history on the profile page, the following log entry should be displayed:
+        [+] You failed to change your password - <YYYY-MM-DD HH:MM:SS>
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Click on the forgotten password link.
+    3. Enter your registered email address.
+    4. Enter mismatched passwords in the password and confirm password fields.
+    5. Click save.
+    6. Log in with valid credentials.
+    7. Click on "My Account" on the home page.
+    8. Go to "History" located at the bottom of the page and observe.
+
+Actual Results:
+    - The log accurately displays the expected message indicating a failed attempt to change the password.
+    - The rest of the logs are displayed below the failed password change attempt.
+
+Validations:
+    - Verify that the error log is displayed at the top.
+
+Test Result: Pass
+----------------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------------------
+Test case 10 - View log history on profile page when an incorrect email is used to reset password
+----------------------------------------------------------------------------------------------
+
+Title: View log history on profile page after the user requests a new password
+
+Preconditions:
+    - The user has requested to change their password through the forgotten password link.
+    - The user has successfully entered a non-registered email.
+    - The user is not logged in.
+    
+Inputs: None
+
+Expected Results:
+    - When viewing the log history on the profile page, the following log entry should be displayed:
+        [+] An attempt was made to change your password, but it failed because the email could not be found! - <YYYY-MM-DD HH:MM:SS>
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Click on the forgotten password link.
+    3. Enter the non-registered email address.
+    4. Enter mismatched passwords in the password and confirm password fields.
+    5. Click save.
+    6. Log in with valid credentials.
+    7. Click on "My Account" on the home page.
+    8. Go to "History" located at the bottom of the page and observe.
+
+Actual Results:
+    - The log accurately displays the expected message indicating a failed attempt to change the password due to an invalid email.
+    - The rest of the logs are displayed below the failed password change attempt.
+
+Validations:
+    - Verify that the log correctly shows the expected message for the failed password change attempt.
+
+Test Result: Pass
+

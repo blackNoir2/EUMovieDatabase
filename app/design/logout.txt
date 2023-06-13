@@ -1,0 +1,23 @@
+------------------------------------------------------------------------------------------
+                                  Logout
+-------------------------------------------------------------------------------------------
+
+1. Logout button: [Logout]
+
+
+
+--------------------------------------------------------------------------------------------
+                          Logout Handling
+----------------------------------------------------------------------------------------------
+
+1. When the user clicks the logout button from any page on the nav bar:
+     - Clear the session token and logged-in status.
+     - Redirect the user to the login page.
+   
+2. Session Management:
+   - Implement secure session management to maintain the user's authentication state.
+   - When the user logs out, invalidate the session token to ensure the user is fully logged out and cannot 
+     access protected pages without re-authentication.
+   - Ensure that the user can't simply hit the back button and log back in
+
+

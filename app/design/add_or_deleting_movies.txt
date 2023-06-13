@@ -1,0 +1,78 @@
+------------------------------------------------------------------------------------------
+                                Add Movie Form
+-------------------------------------------------------------------------------------------
+
+1. Title field:
+   - Minimum characters: N/A
+   - Maximum characters: 100
+   - Field: Required
+   - Field type: Text
+
+2. Description field:
+   - Minimum length: 10
+   - Maximum length: 500
+   - Field: Required
+   - Field type: Textarea
+
+3. Cast field:
+   - Minimum length: 1
+   - Maximum length: 200
+   - Field: Required
+   - Field type: Text
+
+4. Rating field:
+   - Minimum value: 0
+   - Maximum value: 10
+   - Field: Required
+   - Field type: Number (no decimals)
+
+5. Year field:
+   - Field: Required
+   - Field type: Number (no decimals)
+   - Validate that the entered year is within a reasonable range, e.g., not a future year or too far in the past.
+
+6. Add movie button
+   - When clicked, perform client side validation of the entered data before proceeding.
+
+7. Cancel movie button
+   - Allows the user to cancel the movie addition and return to the previous page.
+
+--------------------------------------------------------------------------------------------
+                                Movie Data Storage
+----------------------------------------------------------------------------------------------
+
+
+1. User Authentication:
+   - Only authenticated users with the necessary permissions should be allowed to add movies.
+   - Implement proper user authentication and authorization mechanisms to restrict access to the movie addition functionality.
+
+4. Data Sanitization and Encoding:
+   - Sanitize and properly encode user inputs before storing them in the local storage e.g html forms, etc
+
+
+5. Input Validation:
+   - Implement input validation on the client-side to ensure that the entered data meets the required format and constraints.
+   - Display appropriate error messages if any validation errors occur.
+
+------------------------------------------------------------------------------------------
+                                Deleting Movies
+-------------------------------------------------------------------------------------------
+
+1. Delete Button:
+   - Display a delete button or icon next to each movie entry.
+
+2. Confirmation Prompt:
+   - When the user clicks the delete button, display a confirmation prompt asking the user to confirm the deletion to prevent accidential deletion.
+
+3. Confirmation Options:
+   - The confirmation prompt should include options to confirm or cancel the deletion.
+
+4. Client-Side Handling:
+   - Perform server-side validation and authorization to ensure that only authorized users can delete movies.
+
+5. Secure Deletion:
+   - Implement secure deletion mechanisms to prevent unauthorized deletion of movies.
+   - Ensure that appropriate checks are in place to verify the user's identity and authorization before any movie is deleted.
+
+Remember to handle all user data securely, sanitize inputs, validate and authorize user actions, and implement appropriate security measures to protect against potential vulnerabilities or unauthorized access to movie data.
+

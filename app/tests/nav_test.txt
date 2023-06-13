@@ -1,0 +1,183 @@
+------------------------------------ Navigation test suites ---------------------------------------------------
+
+
+Goal: 
+
+The goal of the navigation bar testing is to ensure that the navigation bar, which typically appears at the top 
+of the user interface, functions correctly and provides users with intuitive and reliable navigation options
+throughout the system. The testing aims to verify that the navigation bar is properly designed, responsive, 
+and accessible, allowing users to efficiently navigate between different sections, pages, and functionalities 
+of the system.
+
+The goal is to validate that the navigation bar accurately reflects the current user's state, 
+such as displaying appropriate links or options based on whether the user is logged in or logged out, 
+for example when the user is logged there should be a greeting. 
+
+The testing should cover scenarios where the user is in different states, ensuring that the navigation
+bar dynamically adjusts and displays relevant options accordingly.
+
+Additionally, the testing should verify that the navigation bar links and menus are correctly structured 
+and organized, providing a logical and easy-to-understand hierarchy of navigation. 
+This includes testing the functionality of various navigation elements, such as dropdown menus, 
+submenus to ensure they function as expected and facilitate efficient navigation.
+
+Furthermore, the testing should validate the responsiveness of the navigation bar across different screen 
+sizes and devices. It should ensure that the navigation bar remains accessible and usable on mobile devices,
+tablets, and desktop screens, adapting its layout and behavior accordingly.
+
+
+
+
+
+------------------------------------------------------------------------------
+Test case 1 - Nav bar elements visibility and accessibility from the home page
+------------------------------------------------------------------------------
+
+Title: Nav bar elements visibility and accessibility from the home page
+
+Preconditions:
+- The user is logged in.
+
+Inputs: None
+
+Expected Results:
+- All the elements in the navigation bar should be visible and accessible from the home page.
+
+Test Steps:
+    1. Navigate to the home page.
+    2. Verify that the navigation bar is displayed.
+    3. Check the visibility and accessibility of each navigation bar element, including links, buttons, or dropdown menus.
+    4. Click on each navigation bar element and observe the expected behavior (e.g., page navigation, dropdown menu expansion).
+
+Actual Results:
+    - The navigation bar is displayed on the home page.
+    - All the navigation bar elements are visible and accessible.
+    - Clicking on each element correctly performs the expected action.
+
+Validations:
+    - Verify that the navigation bar is displayed on the home page.
+    - Verify the visibility and accessibility of each navigation bar element.
+    - Verify that clicking on each element performs the expected action.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------------
+Test case 2 - Nav bar elements visibility and accessibility from the index page
+------------------------------------------------------------------------------
+
+Title: Nav bar elements visibility and accessibility from the index page
+
+Preconditions:
+    - The user is logged in.
+
+Inputs: None
+
+Expected Results:
+    - All the elements in the navigation bar should be visible and accessible from the index page.
+
+Test Steps:
+    1. Navigate to the home page.
+    2. Verify that the navigation bar is displayed.
+    3. Check the visibility and accessibility of each navigation bar element, including links, buttons, or dropdown menus.
+    4. Click on each navigation bar element and observe the expected behavior (e.g., page navigation, dropdown menu expansion).
+
+Actual Results:
+    - The navigation bar is displayed on the  page.
+    - All the navigation bar elements are visible and accessible.
+    - Clicking on each element correctly performs the expected action.
+
+Validations:
+    - Verify that the navigation bar is displayed on the page.
+    - Verify the visibility and accessibility of each navigation bar element.
+    - Verify that clicking on each element performs the expected action.
+
+Test Result: Pass
+
+
+
+---------------------------------------------------------------------------------
+Test case 3 - Nav bar elements visibility and accessibility from the profile page
+---------------------------------------------------------------------------------
+
+Title: Nav bar elements visibility and accessibility from the profile page
+
+Preconditions:
+    - The user is logged in.
+
+Inputs: None
+
+Expected Results:
+    - All the elements in the navigation bar should be visible and accessible on the profile page.
+
+Test Steps:
+    1. Navigate to the profile page.
+    2. Go to Test 2 and follow steps from "2" and downwards
+
+Actual Results:
+    - Go to actual results in test 2 and follow
+
+Validations:
+    - Go to validation in test 2 and follow
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------------
+Test case 4 - Nav bar elements visibility and accessibility from the edit page
+------------------------------------------------------------------------------
+
+Title: Nav bar elements visibility and accessibility from the edit page
+
+Preconditions:
+    - The user is logged in.
+
+Inputs: None
+
+Expected Results:
+    - All the elements in the navigation bar should be visible and accessible from the edit page.
+
+Test Steps:
+    1. Navigate to the edit page.
+    2. Go to test steps and follow from step 2
+
+Actual Results:
+    - Go to the actual results in test 2 and follow
+
+Validations:
+    - Go to validations in test 2 and follow
+
+Test Result: Pass
+
+
+----------------------------------------------------------------------------------
+Test case 4 - Is dropdown menu in navbar fixed
+----------------------------------------------------------------------------------
+
+Title: Is dropdown menu in navbar fixed
+
+Preconditions:
+    - The user is logged in.
+
+Inputs: None
+
+Expected Results:
+    - The dropdown menu should be fixed meaning regardless if the user scrolls up or down the dropdown menu 
+      should always be visible
+
+Test Steps:
+    1. Navigate to any page click on the profile icon to display dropdown menu
+    2. Now scroll down and then up to see that dropdown menu is visible
+    3. Do this for all the pages
+        - Profile page
+        - Index page
+        - Edit page
+
+Actual Results:
+    - The dropdown menu works as expected
+
+Validations:
+    - Validate that it works for all pages
+
+Test Result: Pass"
+

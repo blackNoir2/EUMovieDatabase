@@ -1,0 +1,24 @@
+------------------------------------------------------------------------------------------
+                             User Registration
+-------------------------------------------------------------------------------------------
+
+1. Username field -> minimum characters = 6, maximum characters = 20, field = required
+2. Password field -> minimum characters = 6, maximum characters = 20, field = required
+3. Confirm Password field -> field = required, must match the Password field
+4. Email field -> field = required, must be a valid email format
+5. Show password -> (toggle) -> when clicked show passwords, when clicked again hides password
+5. Register button
+
+
+--------------------------------------------------------------------------------------------
+                            Registration Process
+----------------------------------------------------------------------------------------------
+
+1. User fills in the registration form with the required information.
+2. Validate the entered data on the client-side to ensure all required fields are filled correctly.
+3. Password Storage:
+   - Store the hashed password in the local storage.
+4. Additional User Information:
+   - Store the username, email, and any other relevant information in the local storage.
+5. Account Activation:
+   - Inform the user that they can now login with their new registered details

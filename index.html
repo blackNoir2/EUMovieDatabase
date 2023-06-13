@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <link rel="shortcut icon" href="/img/movieBackground-main.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  />
+
+  <link rel="stylesheet" type="text/css"  href="css/style.css">
+  <title>Movie Database - Egbie's International Movie Database (EIMD)</title>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container">
+     
+
+      <div class="logo">
+        <a href="/home.html" class="movie-nav-pic"><img src="img/movie.jpg" alt=""></a>
+      </div>
+
+      <div class="links">
+        <a href="#" id="add-movie">add movie</a> 
+      </div>
+
+    
+      <div id="profile">
+        <a href="#" id="profile-link" class="profile-link greetings-link"></a>
+      </div>
+
+      <div class="user-menu" id="user-menu">
+          <a href="profile.html" class="my-profile-link">My profile</a>
+          <a href="edit-profile.html" class="edit-profile">Edit profile</a>
+          <a href="#" class="logout">logout</a>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="form-sidebar">
+
+    <h2>Add a movie</h2>
+    <div class="message"></div>
+
+
+
+    <form id="add-movie-form">
+      <div class="form-img-container">
+        <img src="/img/movieBackground-main.jpg" alt="movie image" class="movie-img">
+      </div>
+
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" required maxlength="20" autocomplete="off">
+
+      <label for="plot">Plot summary</label>
+      <textarea name="plot" id="plot" cols="60" rows="60" minLength="10" maxlength="600" required autocomplete="off"></textarea>
+      <span class="small-text char-count-msg">You have 600 characters remaining</span>
+
+      <label for="cast">Cast (comma-separated list)</label>
+      <input type="text" name="cast" id="cast" maxlength="600" required autocomplete="off"/>
+
+      <label for="runtime">Runtime (minutes)</label>
+      <input type="number" name="runtime" id="runtime" required autocomplete="off">
+
+      <label for="rating">Rating (out of 10)</label>
+      <input type="number" name="rating" step="1" id="rating" min="0" max="10" required />
+
+      <label for="year">Year</label>
+      <input type="number" name="year" id="year" step="1" required autocomplete="off"/>
+
+      <!-- <input type="submit" name="submit" id="submit"> -->
+      <div class="form-buttons flex-btns">
+        <button type="submit" class="button submit-btn add-movie-btn"><i class="fa-solid fa-check"></i> Add movie </button>
+        <button class="close" id="close-sidebar-btn"><i class="fa-solid fa-xmark"></i> Close</button>
+      </div>
+
+
+    </form>
+  </div>
+
+
+  <section id="movies">
+    <div class="container">
+      
+      <img src="img/movie2.png" alt="" class="second-show-case-img">
+      <div id="spinner" class="spinner"></div>
+      <div class="showcase-display">
+        <img src="img/movieBackground-main.jpg" alt="" srcset="" class="show-case-img">
+        <p>You have no movies</p>
+        <p>To see your movies click add the movie link </p>
+
+      </div>
+
+      <h2 class="h2-movie-title">My movies</h2>
+      <div class="cards"></div>
+
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="copy-right"></div>
+    </div>
+  </footer>
+
+    <script type="module" src="../js/greeting.js"></script>
+    <script type="module" src="../js/script.js"></script>
+    <script type="module" src="../js/home.js"></script>
+
+
+
+
+</body>
+
+</html>

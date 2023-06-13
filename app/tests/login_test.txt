@@ -1,0 +1,475 @@
+---------------------------------------- LOGIN TEST SUITE -------------------------------------------------- 
+
+Goal: The goal of the login testing is to ensure that users can securely and successfully log into the system 
+using their credentials. The testing aims to verify that the login functionality works as intended, 
+providing a reliable and user-friendly process for users to access their accounts.
+
+The goal is to validate that users can enter their correct credentials, such as their registerd email and password,
+and successfully authenticate with the system. 
+
+The testing should cover scenarios where users enter incorrect credentials, such as wrong email or password, 
+to verify that appropriate error messages are displayed, guiding users to correct their inputs, and finally
+the test should cover what happens when the user is not logged and the user navigates to any page that requires
+the user to login in order to accessed.
+
+Overall, the testing aims to provide a seamless and secure login experience for users, 
+ensuring that the system effectively verifies user credentials and safeguards 
+user accounts from unauthorized access.
+
+
+------------------------------------------------------------------------
+Test case 1 -  Successful Login
+------------------------------------------------------------------------
+
+Title         : Successful login
+Preconditions : The login form is accessible and the registered password is password123
+
+Inputs:
+
+    Username        : "johnsmith"
+    Password        : "password123"
+   
+Expected Results: 
+
+    - The user should be redirected to the home page
+    - The homepage should greeting the user them by the following words "Hi, <username>"
+
+
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Enter the username "johnsmith".
+    2. Enter the password "password123".
+    3. Click login button
+
+
+Actual Results: 
+
+    - The user is directed to the home page
+    - The user is greeted with the greeting "Hi, johnsmith"
+
+Test -> Pass
+
+
+
+------------------------------------------------------------------------
+Test case 2 -  Incorrect Username but correct password
+------------------------------------------------------------------------
+
+Title         : Incorrect Username but correct password
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username : "incorrectUsername"
+    Password : "password123"
+   
+Expected Results: 
+
+    - A message with a red background should be displayed on top of the page informing the user that the username and password is incorrect
+    - The message should disapper after a few seconds
+    - The login form should still be displayed to the user
+
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Enter the username "incorrectUsername".
+    2. Enter the password "password123".
+    3. Click login button
+
+Actual Results: 
+
+    - A message appears informing the user that the username and password is incorrect
+    - The message disappears after a few seconds
+    - The login form is displayed to user
+    - The user is not able to access any of the other pages
+
+Test -> Pass
+
+
+------------------------------------------------------------------------
+Test case 3 -  Correct Username but incorrect password
+------------------------------------------------------------------------
+
+Title         : Correct Username but incorrect password
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username : "johnsmith"
+    Password : "incorrectPassword"
+   
+
+Expected Results: 
+    - A message with a red background should be displayed on top of the page informing the user that the username and password is incorrect
+    - The message should disapper after a few seconds
+    - The login form should still be displayed to the user
+
+
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Enter the username "johnsmith".
+    2. Enter the password "incorrectPassword".
+    3. Click login button
+
+
+Actual Results: 
+    - A message appears informing the user that the username and password is incorrect
+    - The message disappears after a few seconds
+    - The login form is displayed to user
+
+Test -> Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 4 -  Incorrect Username and incorrect password
+------------------------------------------------------------------------
+
+Title         : incorrect Username and incorrect password
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username : "incorrectusername"
+    Password : "incorrectPassword"
+   
+
+Expected Results: 
+    - A message with a red background should be displayed on top of the page informing the user that the username and password is incorrect
+    - The message should disapper after a few seconds
+    - The login form should still be displayed to the user
+
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Enter the username "incorrectusername".
+    2. Enter the password "incorrectPassword".
+    3. Click login button
+
+Actual Results: 
+    - A message appears informing the user that the username and password is incorrect
+    - The message disappears after a few seconds
+    - The login form is displayed to user
+
+Test -> Pass
+
+
+------------------------------------------------------------------------
+Test case 5 -  Correct Username but blank password
+------------------------------------------------------------------------
+
+Title         : Correct Username but blank password
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username : "johnsmith"
+    Password : ""
+   
+
+Expected Results: 
+    - A message should popup underneath the password field stating that the field cannot be blank
+    - The login form should not be submitted
+
+
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Enter the username "johnsmith".
+    2. Enter a blank password.
+    3. Click login button
+
+Actual Results: 
+    - A popup message pops up underneath the password field stating the field cannot be blank
+    - The login form does not submit
+
+Test -> Pass
+
+
+------------------------------------------------------------------------
+Test case 6 -  Blank Username but correct password
+------------------------------------------------------------------------
+
+Title         : Correct password but blank username
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username        : ""
+    Password        : "password123"
+   
+
+Expected Results: 
+    - A message should popup underneath the password field stating that the field cannot be blank
+    - The login form should not be submitted
+
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Enter a blank username.
+    2. Enter the password "password123".
+    3. Click login button
+
+Actual Results: 
+    - A popup message pops up underneath the username field stating the field cannot be blank
+    - The login form does not submit
+
+Test -> Pass
+
+
+------------------------------------------------------------------------
+Test case 7 -  Blank Username and blank password
+------------------------------------------------------------------------
+
+Title         : Blank Username and blank password
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username        : ""
+    Password        : ""
+   
+Expected Results: 
+    - The form does not submit
+
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Enter a blank username.
+    2. Enter a blank password.
+    3. Click login button
+
+Actual Results: 
+    - The login form doesn't submit
+
+Test -> Pass
+
+
+
+------------------------------------------------------------------------
+Test case 8 -  Paste a link inside the username field
+------------------------------------------------------------------------
+
+Title         : Paste a link inside the username field
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username        : "http://youtube.com"
+    Password        : "password123"
+   
+Expected Results: 
+    - A popup alert should appear stating that links and images are not allowed
+    - The form entry should be cleared
+
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Paste a link in the username field .
+    2. Enter a password.
+    3. Click login button
+
+Actual Results: 
+    - A popup alert appears informing the user links and images are not allowed
+    - The login form doesn't submit
+
+Test -> Pass
+
+
+------------------------------------------------------------------------
+Test case 9 -  Paste a series of special character in the username field
+------------------------------------------------------------------------
+
+Title         : Paste a series of special character in the username field
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username        : "???,,///>"
+    Password        : "password123"
+   
+Expected Results: 
+
+    - A popup alert should appear stating that special characters are not allowed
+    - The form entry should be cleared
+
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Paste a "???,,///>" do not type in the username field .
+    2. Enter a password.
+    3. Click login button
+
+Actual Results: 
+    - A popup alert appears informing the user links and images are not allowed
+    - The login form doesn't submit
+
+Test -> Pass
+
+
+------------------------------------------------------------------------
+Test case 10 -  Paste a series of special character in the username field
+               The first character should be a letter, the rest should be
+               special characters and the ending character should be a letter
+------------------------------------------------------------------------
+
+Title         : Paste a series of special character in the username field
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username        : "d???,,///>e"
+    Password        : "password123"
+   
+Expected Results: 
+    - A popup alert should appear stating that special characters are not allowed
+    - The form entry should be cleared
+
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Paste a "d???,,///>e" do not type in the username field .
+    2. Enter a password.
+    3. Click login button
+
+Actual Results: 
+    - A popup alert appears informing the user special characters are not allowed
+    - The login form doesn't submit
+
+Test -> Pass
+
+
+
+------------------------------------------------------------------------
+Test case 11 -  Enter a special character in the username field
+------------------------------------------------------------------------
+
+Title         : Enter a special character in the username field
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username        : "?"
+    Password        : "password123"
+   
+Expected Results: 
+    - A popup alert should appear stating that special characters are not allowed
+    - The form entry should be cleared
+
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Enter "?" in the username field .
+    2. Enter the password123.
+    3. Click login button
+
+Actual Results: 
+    - A popup alert appears informing the user special characters are not allowed
+    - The login form doesn't submit
+
+Test -> Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 12 -  Username exceeds 20 characters
+------------------------------------------------------------------------
+
+Title         :  Username exceeds 20 characters
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username        : "123456789101112131415161718192021"
+    Password        : "password123"
+   
+Expected Results: 
+    - The field uses only 20 characters and truncates the rest
+    - The user is not able to add anymore characters after the twenty characeter
+    - A message with a red background should be displayed on top of the page informing the user that the username and password is incorrect
+    - The message should disapper after a few seconds
+    - The login form should still be displayed to the user
+   
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Enter  "123456789101112131415161718192021" in the username field .
+    2. Enter the password123.
+    3. Click login button
+
+Actual Results: 
+    - No more characters are added after the twenty character
+    - A message appears informing the user that the username and password is incorrect
+    - The message disappears after a few seconds
+    - The login form is displayed to user
+
+
+Test -> Pass
+
+
+
+
+------------------------------------------------------------------------
+Test case 13 -  Password exceeds 20 characters
+------------------------------------------------------------------------
+
+Title         :  Password exceeds 20 characters
+Preconditions : The login form is accessible  
+
+Inputs:
+
+    Username        : "johnsmith"
+    Password        : "1234567891011121314151617181920"
+   
+Expected Results: 
+    - The password field takes 20 characters and the rest are truncated
+    - The user is not able to add anymore characters after the twenty characeter
+    - A message with a red background should be displayed on top of the page informing the user that the username and password is incorrect
+    - The message should disapper after a few seconds
+    - The login form should still be displayed to the user
+   
+Test Steps:
+-------------
+
+Go to login page.
+
+    1. Enter "johnsmith" in the username field .
+    2. Enter the "1234567891011121314151617181920".
+    3. Click login button
+
+Actual Results: 
+    - No more characters are added after the twenty character
+    - A message appears informing the user that the username and password is incorrect
+    - The message disappears after a few seconds
+    - The login form is displayed to user
+
+
+Test -> Pass

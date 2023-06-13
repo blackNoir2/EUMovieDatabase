@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <link rel="shortcut icon" href="/img/movieBackground-main.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" type="text/css"  href="css/style.css">
+  <title>Movie Database - Egbie's International Movie Database (EIMD)</title>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container">
+
+
+      <div class="logo">
+        <a href="/home.html" class="movie-nav-pic"><img src="/img/movie.jpg" alt=""></a>
+
+
+      </div>
+
+      <div class="links">
+        <a href="/index.html" id="add-movie">Home</a>
+      </div>
+
+      <div id="profile">
+        <a href="#" id="profile-link" class="profile-link greetings-link"><i class="fa-solid fa-user"></i></a>
+      </div>
+
+      <div class="user-menu" id="user-menu">
+        <a href="/profile.html">My profile</a>
+        <a href="/edit-profile.html" class="edit-profile edit-profile-link">Edit profile</a>
+        <a href="#" class="logout">logout</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <section id="my-profile">
+    <div class="container">
+      <div id="spinner" class="spinner"></div>
+      <div class="profile-message"></div>
+      <div class="success-message">You have successfully saved your data</div>
+
+
+      <div class="menu">
+        <div class="profile profile-menu"><a href="/profile.html">Profile</a></div>
+      </div>
+
+      <form id="profile-form">
+        <label for="username">Username:</label>
+        <input type="text" id="profile-old-username" name="username" value="" disabled>
+
+        <label for="username">New username</label>
+        <input type="text" id="profile-new-username" name="username">
+
+        <hr>
+
+        <label for="first Name">First name:</label>
+        <input type="text" id="firstname" name="first-name" minlength="3" maxlength="20" value="">
+
+        <label for="Surname">Surname:</label>
+        <input type="text" id="surname" name="surname" minlength="3" maxlength="80" value="" >
+
+        <label for="about-me">About me</label>
+        <textarea name="about" id="about-me" class="about-me" cols="40" rows="40" minLength="10" maxlength="1000" value=""></textarea>
+        <span class="small-text char-count-msg">You have 1000 characters remaining</span>
+
+
+        <label for="birthday">Birthday:</label>
+
+        <input type="date" id="birthday" name="birthday" min="1910-01-01" max="2223-12-31" value="">
+
+        <label for="gender">I am:</label>
+        <select id="gender" name="gender">
+          <option value=""></option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+
+        <label for="country">Country</label>
+        <select name="countries" id="countries"></select>
+     
+
+
+        <hr>
+
+        <h1>Socials</h1>
+        <label for="instagram">Instagram:</label>
+        <input type="url" id="instagram" name="instagram" maxlength="200"  value="">
+
+        <label for="Facebook">Facebook</label>
+        <input type="url" id="facebook" name="facebook" maxlength="200" value="">
+
+        <label for="tik-tok">Tik Tok</label>
+        <input type="url" id="tik-tok" name="tik-tok" maxlength="200" value="">
+
+      
+        <hr>
+
+        <h1>Change email</h1>
+
+        <label for="email">Current Email address:</label>
+        <input type="email" id="current-email" name="current-email" disabled>
+
+        <label for="email">New Email address:</label>
+        <input type="email" id="new-email" name="new-email" maxlength="100" value="">
+
+        <hr>
+
+        <h1>Change password</h1>
+
+        <label for="password">Password:</label>
+        <input type="password" id="profile-old-password" name="password" disabled>
+
+        <label for="password">New password:</label>
+        <input type="password" id="profile-new-password" minlength="6"  maxlength="20"  name="password" value="">
+
+        <label for="confirm-password">Confirm password</label>
+        <input type="password" id="profile-confirm-password" minlength="6" maxlength="20" name="password" value="">
+
+
+
+        <button type="submit" class="save-btn" id="save-btn">Save</button>
+      </form>
+  </section>
+
+  <footer class="profile-footer">
+    <div class="container">
+      <div class="copy-right"></div>
+    </div>
+  </footer>
+
+  <!-- <footer>
+    <div class="container">
+      <div class="copy-right"></div>
+    </div>
+  </footer> -->
+
+  <!-- <script type="module" src="/templates/profile.js"> -->
+  <script type="module" src="../js/profile.js"></script>
+  <script type="module" src="../js/greeting.js"></script>
+  <script type="module" src="../js/script.js"></script>
+
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>

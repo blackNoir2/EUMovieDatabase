@@ -1,0 +1,932 @@
+------------------------------------ View profile test suites ---------------------------------------------------
+
+
+Goal: 
+
+The goal of the view profile testing is to ensure that users can access and view their profile information 
+accurately and securely within the system. The testing aims to verify that the view profile functionality works 
+as intended, allowing users to retrieve and review their personal details and settings.
+
+The goal is to validate that the view profile feature displays the correct user information, including username,
+email address, bio, the number of movies they have added and any other relevant details associated with 
+the user's profile. The testing should ensure that the displayed information corresponds to the user's account 
+data in the system, providing users with an accurate representation of their profile.
+
+Since the system is limited to one user per browser the the testing does not cover scenarios related to different 
+types of user profiles on the same browswer 
+
+Additionally, the testing should validate the security aspects of the view profile feature, ensuring that sensitive 
+information is properly protected and accessible only to authorized users. This includes not be able to access 
+the profile when the user is not logged in 
+
+Moreover, the testing should consider scenarios where users can customize their profile settings or preferences. 
+This includes verifying that users can view and modify their profile information such as 
+changing their bio, etc. The testing should ensure that any changes made to the profile
+are accurately reflected and persisted in the system.
+
+
+
+
+----------------------------------------------------------------------------------
+Test case 1 - View newly created profile without profile details added yet
+----------------------------------------------------------------------------------
+
+Title: View newly created profile without profile details added yet
+
+Preconditions:
+- The user is successfully logged in.
+
+Inputs: None
+
+Expected Results:
+- When viewing a newly created profile without any profile details added yet, the fields should display as follows:
+   - First name  : Not added yet
+   - Surname     : Not added yet
+   - Birthday    : Not added yet
+   - Age         : N/A
+   - Gender      : Not added yet
+   - Country     : [Default country]
+   - Email       : <registered email>
+   - Total Movies: 0
+   - Socials     : Not added yet
+   - About me    : Not added yet
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information.
+
+Actual Results:
+    - The page accurately displays the correct structure of a newly created profile without added details.
+
+Validations:
+    - Verify that each field displays "Not added yet".
+    - Verify that the birthday field shows "N/A".
+    - Verify that the "Total Movies" field displays as "0".
+    - Verify that email field displays the "registered email"
+    - Verify that "country" field displays the default country Afghanistan
+    
+Test Result: Pass
+
+
+----------------------------------------------------------------------------------
+Test case 2 - View profile when the first name has been added
+----------------------------------------------------------------------------------
+
+Title: View profile when the first name has been added
+
+Preconditions:
+    - The user is successfully logged in.
+    - The user has added their first name using the "edit profile" functionality.
+    - No other data should be added in any of the fields in "edit profile".
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where the first name has been added via the "edit profile" functionality, the fields should display as follows:
+   - First name  : Test name
+   - Surname     : Not added yet
+   - Birthday    : Not added yet
+   - Age         : N/A
+   - Gender      : Not added yet
+   - Country     : [Default country]
+   - Email       : <registered email>
+   - Total Movies: 0
+   - Socials     : Not added yet
+   - About me    : Not added yet
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information.
+
+Actual Results:
+    - The page accurately displays the newly added first name.
+
+Validations:
+    - Verify that the "First name" field contains the name "Test name".
+    - Verify that each remaining field displays "Not added yet".
+    - Verify that the "Birthday" field shows "N/A".
+    - Verify that the "Total Movies" field displays as "0".
+    - Verify that email field displays the "registered email"
+    - Verify that "country" field displays the default country Afghanistan
+
+
+Test Result: Pass
+
+
+----------------------------------------------------------------------------------
+Test case 3 - View profile when the surname has been added
+----------------------------------------------------------------------------------
+
+Title: View profile when the surname has been added
+
+Preconditions:
+    - The user is successfully logged in.
+    - The user has added their surname using the "edit profile" functionality.
+    - No other data should be added in any of the fields in "edit profile".
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where the surname has been added via the "edit profile" functionality, the fields should display as follows:
+   - First name  : Not added yet
+   - Surname     : Test surname
+   - Birthday    : Not added yet
+   - Age         : N/A
+   - Gender      : Not added yet
+   - Country     : [Default country]
+   - Email       : <registered email>
+   - Total Movies: 0
+   - Socials     : Not added yet
+   - About me    : Not added yet
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information.
+
+Actual Results:
+    - The page accurately displays the newly added surname.
+
+Validations:
+    - Verify that the "Surname" field contains the name "Test surname".
+    - Verify that each remaining field displays "Not added yet".
+    - Verify that the "Birthday" field shows "N/A".
+    - Verify that the "Total Movies" field displays as "0".
+    - Verify that email field displays the "registered email"
+    - Verify that "country" field displays the default country Afghanistan
+
+
+Test Result: Pass
+
+
+----------------------------------------------------------------------------------
+Test case 4 - View profile when your birthday has been added
+----------------------------------------------------------------------------------
+
+Title: View profile when the birthday has been added
+
+Preconditions:
+    - The user is successfully logged in.
+    - The user has added their birthday using the "edit profile" functionality.
+    - No other data should be added in any of the fields in "edit profile".
+
+Inputs:
+    - None
+
+Expected Results:
+- When viewing a profile where the surname has been added via the "edit profile" functionality, the fields should display as follows:
+   - First name  : Not added yet
+   - Surname     : Not added yet
+   - Birthday    : birthday
+   - Age         : <age should automtically be calculated based on their birthday>
+   - Gender      : Not added yet
+   - Country     : [Default country]
+   - Email       : <registered email>
+   - Total Movies: 0
+   - Socials     : Not added yet
+   - About me    : Not added yet
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information.
+
+Actual Results:
+    - The page accurately displays the newly added surname.
+
+Validations:
+    - Verify that the "birthday" field contains the your birthday
+    - Verify that the age field has automatically been calculated and correctly displays your age
+    - Verify that the "Total Movies" field displays as "0".
+    - Verify that email field displays the "registered email"
+    - Verify that "country" field displays the default country Afghanistan
+
+Test Result: Pass
+
+
+
+----------------------------------------------------------------------------------
+Test Case 5: View Profile - Birthday Display with Earlier Month
+----------------------------------------------------------------------------------
+
+Title: View profile when the birthday has been added
+
+Preconditions:
+  - The user is successfully logged in.
+  - No other data should be added in any of the fields in "edit profile".
+
+Test Steps:
+  1. Navigate to the login page.
+  2. Enter valid login credentials.
+  3. Click on the "Account" page on the home page.
+  4. Add the birthday with the scenario: [Provide specific instructions for adding the birthday with the desired scenario.]
+  5. Additional instructions for providing the birthday
+
+   Expected Goal
+   -----------------
+
+  The function calculates the age of the user based on the year, month, and day. 
+  For example, if the current date is "05-06-2023" and the user was born on "05-07-2013", 
+  the user would be 10 years old because their birthday has already passed. However, if the
+  user's birthday is "07-06-2013" and the current date is "05-06-2023", 
+  the user would be 9 years old because it is not yet their birthday. Ideally, if the 
+  user's birthday is on "05-06-2023" and the current date is "05-09-2023", 
+  the user should be 9 years old because it is not yet their birthday.
+
+    
+
+Expected Results:
+  - When viewing the profile, the fields should display as follows:
+    - First Name   : Not added yet
+    - Surname      : Not added yet
+    - Birthday     : [Correct birthday year, correct birth day, 
+                     any month that is less than your current birth month 
+                     e.g if you were born in june use any month less than june e.g May, April, etc]
+    - Age          : [Expected calculated age based on the provided birthday]
+    - Gender       : Not added yet
+    - Country      : [Default country]
+    - Email        : [Registered email]
+    - Total Movies : 0
+    - Socials      : Not added yet
+    - About Me     : Not added yet
+
+Validations:
+  - Verify that the "birthday" field contains the expected birthday.
+  - Verify that the "age" field displays the expected calculated age and that is your correct age.
+  - Verify that the "Total Movies" field displays as "0".
+  - Verify that the "email" field displays the registered email.
+  - Verify that "country" field displays the default country Afghanistan
+
+
+Actual Results:
+  - The profile accurately displays the expected information.
+
+Test Result: Pass
+
+
+
+
+----------------------------------------------------------------------------------
+Test Case 6: View Profile - Birthday Display with Earlier day
+----------------------------------------------------------------------------------
+
+Title: View profile when the birthday has been added with an earlier day
+
+Preconditions:
+  - The user is successfully logged in.
+  - No other data should be added in any of the fields in "edit profile".
+
+Test Steps:
+  1. Navigate to the login page.
+  2. Enter valid login credentials.
+  3. Click on the "Account" page on the home page.
+  4. Add the birthday with the scenario: [Provide specific instructions for adding the birthday with the desired scenario.]
+  5. Additional instructions for providing the birthday
+
+   Expected Goal
+   -----------------
+
+  The function calculates the age of the user based on the year, month, and day. 
+  For example, if the current date is "05-06-2023" and the user was born on "05-07-2013", 
+  the user would be 10 years old because their birthday has already passed. However, if the
+  user's birthday is "07-06-2013" and the current date is "05-06-2023", 
+  the user would be 9 years old because it is not yet their birthday. Ideally, if the 
+  user's birthday is on "05-06-2023" and the current date is "05-09-2023", 
+  the user should be 9 years old because it is not yet their birthday.
+
+    
+
+Expected Results:
+  - When viewing the profile, the fields should display as follows:
+    - First Name   : Not added yet
+    - Surname      : Not added yet
+    - Birthday     : [Correct birthday year, correct birth month, 
+                     any day that is less than your current birth day
+                     e.g if you were born on the 26 use any day less than 26 e.g 25, 24, 22, 20, etc]
+    - Age          : [Expected calculated age based on the provided birthday]
+    - Gender       : Not added yet
+    - Country      : [Default country]
+    - Email        : [Registered email]
+    - Total Movies : 0
+    - Socials      : Not added yet
+    - About Me     : Not added yet
+
+Validations:
+  - Verify that the "birthday" field contains the expected birthday.
+  - Verify that the "age" field displays the expected calculated age and that is your correct age.
+  - Verify that the "Total Movies" field displays as "0".
+  - Verify that the "email" field displays the registered email.
+  - Verify that "country" field displays the default country Afghanistan
+
+
+Actual Results:
+  - The profile accurately displays the expected information.
+
+Test Result: Pass
+
+
+----------------------------------------------------------------------------------
+Test Case 7: View Profile - Gender Display
+----------------------------------------------------------------------------------
+
+Title: View profile when the gender has been added
+
+Preconditions:
+  - The user is successfully logged in.
+  - The user has selected a gender from the select field using the "edit profile" functionality.
+  - No other data should be added in any of the fields in "edit profile".
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where the gender has been added via the "edit profile" functionality, the fields should display as follows:
+   - First name   : Not added yet
+   - Surname      : Not added yet
+   - Birthday     : Not added yet
+   - Age          : N/A
+   - Gender       : [a chosen gender]
+   - Country      : [Default country]
+   - Email        : [Registered email]
+   - Total Movies : 0
+   - Socials      : Not added yet
+   - About me     : Not added yet
+
+Test Steps:
+  1. Navigate to the login page.
+  2. Enter valid login credentials.
+  3. Click on the "Account" page on the home page.
+  4. Observe the displayed profile information.
+
+Actual Results:
+  - The page accurately displays the newly added gender.
+
+Validations:
+  - Verify that the "Gender" field contains the specified gender.
+  - Verify that each remaining field displays "Not added yet".
+  - Verify that the "Birthday" field shows "N/A".
+  - Verify that the "Total Movies" field displays as "0".
+  - Verify that the "Email" field displays the registered email.
+  - Verify that "country" field displays the default country Afghanistan
+
+
+Test Result: Pass
+
+
+
+----------------------------------------------------------------------------------
+Test Case 8: View Profile - Country Display
+----------------------------------------------------------------------------------
+
+Title: View profile when the country has been added
+
+Preconditions:
+  - The user is successfully logged in.
+  - The user has selected a country from the dropdown field using the "edit profile" functionality.
+  - No other data should be added in any of the fields in "edit profile".
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where the country has been added via the "edit profile" functionality, the fields should display as follows:
+   - First name   : Not added yet
+   - Surname      : Not added yet
+   - Birthday     : Not added yet
+   - Age          : N/A
+   - Gender       : Not added yet
+   - Country      : [Selected country]
+   - Email        : [Registered email]
+   - Total Movies : 0
+   - Socials      : Not added yet
+   - About me     : Not added yet
+
+Test Steps:
+  1. Navigate to the login page.
+  2. Enter valid login credentials.
+  3. Click on the "Account" page on the home page.
+  4. Observe the displayed profile information.
+
+Actual Results:
+  - The page accurately displays the newly added country.
+
+Validations:
+  - Verify that the "Country" field contains the specified country.
+  - Verify that each remaining field displays "Not added yet".
+  - Verify that the "Birthday" field shows "N/A".
+  - Verify that the "Total Movies" field displays as "0".
+  - Verify that the "Email" field displays the registered email.
+
+
+Test Result: Pass
+
+
+----------------------------------------------------------------------------------
+Test Case 9: View Profile - Current email has been changed from the registered email
+----------------------------------------------------------------------------------
+
+Title: View profile when the current email has been changed from the registered one to a new one
+
+Preconditions:
+    - The user is successfully logged in.
+    - The user has changed their current registered email to a new one via the "edit profile" functionality.
+    - No other data should be added in any of the fields in "edit profile".
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where the email has been changed via the "edit profile" functionality, the fields should display as follows:
+   - First name   : Not added yet
+   - Surname      : Not added yet
+   - Birthday     : Not added yet
+   - Age          : N/A
+   - Gender       : Not added yet
+   - Country      : [Default country]
+   - Email        : [new email]
+   - Total Movies : 0
+   - Socials      : Not added yet
+   - About me     : Not added yet
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information.
+
+Actual Results:
+- The page accurately displays the newly added email.
+
+Validations:
+    - Verify that the "Email" field contains the new email.
+    - Verify that each remaining field displays "Not added yet".
+    - Verify that the "Birthday" field shows "N/A".
+    - Verify that the "Total Movies" field displays as "0".
+    - Verify that "country" field displays the default country Afghanistan
+
+
+Test Result: Pass
+
+
+----------------------------------------------------------------------------------
+Test Case 10: View Profile - Movie added via "Add Movie" page
+----------------------------------------------------------------------------------
+
+Title: View profile when a movie has been added via the "Add Movie" page
+
+Preconditions:
+    - The user is successfully logged in.
+    - There is already one movie added to the user's account.
+    - No other data should be added in any of the fields in the "Edit Profile" page.
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where a movie has been added via the "Add Movie" page, the fields should display as follows:
+   - First name   : Not added yet
+   - Surname      : Not added yet
+   - Birthday     : Not added yet
+   - Age          : N/A
+   - Gender       : Not added yet
+   - Country      : [Default country]
+   - Email        : [registered email]
+   - Total Movies : 1
+   - Socials      : Not added yet
+   - About me     : Not added yet
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information.
+
+Actual Results:
+    - The page accurately displays that the total count of movies is now 1.
+
+Validations:
+    - Verify that each remaining field displays "Not added yet".
+    - Verify that the "Birthday" field shows "N/A".
+    - Verify that the "Total Movies" field displays as "1".
+    - Verify that the "Email" field displays the registered email.
+    - Verify that "country" field displays the default country Afghanistan
+
+
+Test Result: Pass
+
+
+
+----------------------------------------------------------------------------------
+Test Case 11: View Profile - Movie Added and Deleted
+----------------------------------------------------------------------------------
+
+Title: View profile when a movie has been added and deleted
+
+Preconditions:
+- The user is successfully logged in.
+- There is already one movie added to the user's account.
+- No other data should be added in any of the fields in the "Edit Profile" page.
+
+Inputs: None
+
+Expected Results:
+- Before the movie is deleted, the fields should display as follows:
+   - First name   : Not added yet
+   - Surname      : Not added yet
+   - Birthday     : Not added yet
+   - Age          : N/A
+   - Gender       : Not added yet
+   - Country      : [Default country]
+   - Email        : [registered email]
+   - Total Movies : 1
+   - Socials      : Not added yet
+   - About me     : Not added yet
+
+- After the movie is deleted, the fields should display as follows:
+   - First name   : Not added yet
+   - Surname      : Not added yet
+   - Birthday     : Not added yet
+   - Age          : N/A
+   - Gender       : Not added yet
+   - Country      : [Default country]
+   - Email        : [registered email]
+   - Total Movies : 0
+   - Socials      : Not added yet
+   - About me     : Not added yet
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information when there is already one movie in the database, which should display the total movies as 1.
+    5. Click on the "Home" link at the top of the page to go to the index page.
+    6. Delete the movie.
+    7. Go back to the profile page.
+    8. Observe that the total movies field is now 0.
+
+Actual Results:
+    - The page accurately displays that the total count of movies is now 0.
+
+Validations:
+    - Verify that each remaining field displays "Not added yet".
+    - Verify that the "Birthday" field shows "N/A".
+    - Verify that the "Total Movies" field displays as "0".
+    - Verify that the "Email" field displays the registered email.
+    - Verify that "country" field displays the default country Afghanistan
+
+
+Test Result: Pass
+
+
+
+----------------------------------------------------------------------------------
+Test Case 12: View Profile - When an Instagram link has been added via the "edit" profile
+----------------------------------------------------------------------------------
+
+Title: When an Instagram link has been added via the "edit" profile
+
+Preconditions:
+    - The user is successfully logged in.
+    - An Instagram link has been added via the "edit" profile page.
+    - No other data should be added in any of the fields in the "Edit Profile" page.
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where an Instagram link has been added via the "edit" profile, the fields should display as follows:
+   - First name   : Not added yet
+   - Surname      : Not added yet
+   - Birthday     : Not added yet
+   - Age          : N/A
+   - Gender       : Not added yet
+   - Country      : [Default country]
+   - Email        : [registered email]
+   - Total Movies : 1
+   - Socials      : [Instagram Icon]
+   - About me     : Not added yet
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information to ensure there is an Instagram icon in the socials field.
+
+Actual Results:
+    - The page accurately displays an Instagram icon in the socials field.
+
+Validations:
+    - Verify that the socials field displays an Instagram icon.
+    - Verify that each remaining field displays "Not added yet".
+    - Verify that the "Birthday" field shows "N/A".
+    - Verify that the "Total Movies" field displays as "1".
+    - Verify that the "Email" field displays the registered email.
+    - Verify that the "Country" field displays the default country Afghanistan.
+
+Test Result: Pass
+
+
+
+
+----------------------------------------------------------------------------------
+Test Case 13: View Profile - When a Facebook link has been added via the "edit" profile
+----------------------------------------------------------------------------------
+
+Title: When a Facebook link has been added via the "edit" profile
+
+Preconditions:
+    - The user is successfully logged in.
+    - A Facebook link has been added via the "edit" profile page.
+    - No other data should be added in any of the fields in the "Edit Profile" page.
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where a Facebook link has been added via the "edit" profile, the fields should display as follows:
+   - First name   : Not added yet
+   - Surname      : Not added yet
+   - Birthday     : Not added yet
+   - Age          : N/A
+   - Gender       : Not added yet
+   - Country      : [Default country]
+   - Email        : [registered email]
+   - Total Movies : 1
+   - Socials      : [Facebook Icon]
+   - About me     : Not added yet
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information to ensure there is a Facebook icon in the socials field.
+
+Actual Results:
+    - The page accurately displays a Facebook icon in the socials field.
+
+Validations:
+    - Verify that the socials field displays a Facebook icon.
+    - Verify that each remaining field displays "Not added yet".
+    - Verify that the "Birthday" field shows "N/A".
+    - Verify that the "Total Movies" field displays as "1".
+    - Verify that the "Email" field displays the registered email.
+    - Verify that the "Country" field displays the default country Afghanistan.
+
+Test Result: Pass
+
+
+
+----------------------------------------------------------------------------------
+Test Case 14: View Profile - When a TikTok link has been added via the "edit" profile
+----------------------------------------------------------------------------------
+
+Title: When a TikTok link has been added via the "edit" profile
+
+Preconditions:
+    - The user is successfully logged in.
+    - A TikTok link has been added via the "edit" profile page.
+    - No other data should be added in any of the fields in the "Edit Profile" page.
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where a TikTok link has been added via the "edit" profile, the fields should display as follows:
+   - First name   : Not added yet
+   - Surname      : Not added yet
+   - Birthday     : Not added yet
+   - Age          : N/A
+   - Gender       : Not added yet
+   - Country      : [Default country]
+   - Email        : [registered email]
+   - Total Movies : 1
+   - Socials      : [TikTok Icon]
+   - About me     : Not added yet
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information to ensure there is a TikTok icon in the socials field.
+
+Actual Results:
+    - The page accurately displays a TikTok icon in the socials field.
+
+Validations:
+    - Verify that the socials field displays a TikTok icon.
+    - Verify that each remaining field displays "Not added yet".
+    - Verify that the "Birthday" field shows "N/A".
+    - Verify that the "Total Movies" field displays as "1".
+    - Verify that the "Email" field displays the registered email.
+    - Verify that the "Country" field displays the default country Afghanistan.
+
+Test Result: Pass
+
+
+----------------------------------------------------------------------------------
+Test Case 15: View Profile - When a YouTube link has been added via the "edit" profile
+----------------------------------------------------------------------------------
+
+Title: When a YouTube link has been added via the "edit" profile
+
+Preconditions:
+    - The user is successfully logged in.
+    - A YouTube link has been added via the "edit" profile page.
+    - No other data should be added in any of the fields in the "Edit Profile" page.
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where a YouTube link has been added via the "edit" profile, the fields should display as follows:
+   - First name   : Not added yet
+   - Surname      : Not added yet
+   - Birthday     : Not added yet
+   - Age          : N/A
+   - Gender       : Not added yet
+   - Country      : [Default country]
+   - Email        : [registered email]
+   - Total Movies : 1
+   - Socials      : [YouTube Icon]
+   - About me     : Not added yet
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information to ensure there is a YouTube icon in the socials field.
+
+Actual Results:
+    - The page accurately displays a YouTube icon in the socials field.
+
+Validations:
+    - Verify that the socials field displays a YouTube icon.
+    - Verify that each remaining field displays "Not added yet".
+    - Verify that the "Birthday" field shows "N/A".
+    - Verify that the "Total Movies" field displays as "1".
+    - Verify that the "Email" field displays the registered email.
+    - Verify that the "Country" field displays the default country Afghanistan.
+
+Test Result: Pass
+
+
+
+----------------------------------------------------------------------------------
+Test case 16 - View profile when the about me as been added
+----------------------------------------------------------------------------------
+
+Title: View profile when the about-me has been added via the edit profile
+
+Preconditions:
+    - The user is successfully logged in.
+    - The user has added "lorem lorem lorem lorem" in the  about-me section using the "edit profile" functionality.
+    - No other data should be added in any of the fields in "edit profile".
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where the first name has been added via the "edit profile" functionality, the fields should display as follows:
+   - First name  : Test name
+   - Surname     : Not added yet
+   - Birthday    : Not added yet
+   - Age         : N/A
+   - Gender      : Not added yet
+   - Country     : [Default country]
+   - Email       : <registered email>
+   - Total Movies: 0
+   - Socials     : Not added yet
+   - About me    : lorem lorem lorem lorem
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information.
+
+Actual Results:
+    - The page accurately displays the newly added first name.
+
+Validations:
+    - Verify that the "about me" field contains the text "lorem lorem lorem lorem".
+    - Verify that each remaining field displays "Not added yet".
+    - Verify that the "Birthday" field shows "N/A".
+    - Verify that the "Total Movies" field displays as "0".
+    - Verify that email field displays the "registered email"
+    - Verify that "country" field displays the default country Afghanistan
+
+
+Test Result: Pass
+
+
+
+----------------------------------------------------------------------------------
+Test Case 17: View Profile - When the "About Me" section has been added via the edit profile
+----------------------------------------------------------------------------------
+
+Title: View profile when the "About Me" section has been added via the edit profile
+
+Preconditions:
+    - The user is successfully logged in.
+    - The user has added "lorem lorem lorem lorem" in the "About Me" section using the "edit profile" functionality.
+    - No other data should be added in any of the fields in the "edit profile" page.
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where the "About Me" section has been added via the "edit profile" functionality, the fields should display as follows:
+   - First name   : Test name
+   - Surname      : Not added yet
+   - Birthday     : Not added yet
+   - Age          : N/A
+   - Gender       : Not added yet
+   - Country      : [Default country]
+   - Email        : [registered email]
+   - Total Movies : 0
+   - Socials      : Not added yet
+   - About Me     : lorem lorem lorem lorem
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information.
+
+Actual Results:
+    - The page accurately displays the newly added first name.
+
+Validations:
+    - Verify that the "About Me" field contains the text "lorem lorem lorem lorem".
+    - Verify that each remaining field displays "Not added yet".
+    - Verify that the "Birthday" field shows "N/A".
+    - Verify that the "Total Movies" field displays as "0".
+    - Verify that the "Email" field displays the registered email.
+    - Verify that the "Country" field displays the default country Afghanistan.
+
+Test Result: Pass
+
+
+----------------------------------------------------------------------------------
+Test Case 18: View Profile - When all fields have been filled in the edit profile
+----------------------------------------------------------------------------------
+
+Title: View profile when all fields have been filled via the edit profile
+
+Preconditions:
+    - The user is successfully logged in.
+    - The user has filled in all the fields in the "edit profile" functionality.
+    - There is one movie already in the database.
+
+Inputs: None
+
+Expected Results:
+- When viewing a profile where all fields have been filled via the "edit profile" functionality, the fields should display as follows:
+   - First name   : Test name
+   - Surname      : Test surname
+   - Birthday     : [Your birthday]
+   - Age          : [Your age automatically calculated and displayed based on your birthday]
+   - Gender       : [Selected gender]
+   - Country      : [Selected country]
+   - Email        : [Registered email or new email]
+   - Total Movies : 1
+   - Socials      : [Instagram Icon, Facebook Icon, TikTok Icon, YouTube Icon]
+   - About Me     : lorem lorem lorem lorem
+
+Test Steps:
+    1. Navigate to the login page.
+    2. Enter valid login credentials.
+    3. Click on the "Account" page on the home page.
+    4. Observe the displayed profile information.
+
+Actual Results:
+    - The page accurately displays all the fields.
+
+Validations:
+    - Verify that all fields are correctly displayed.
+
+Test Result: Pass
+
+
+
+
+----------------------------------------------------------------------------------
+Test Case 18: Negative test case - View Profile when the user is not logged in
+----------------------------------------------------------------------------------
+
+Title: Negative test case - View Profile when the user is not logged in
+
+Preconditions:
+    - The user is logged out
+
+Inputs: None
+
+Expected Results:
+    - The page should redirect to the login page 
+
+Test Steps:
+    1. Navigate to the profile page via the url and hit enter.
+    
+Actual Results:
+    - The page redirects to the login page.
+
+Validations:
+    - Verify current page is the login page.
+
+Test Result: Pass

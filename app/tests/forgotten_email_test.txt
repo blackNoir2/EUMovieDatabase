@@ -1,0 +1,198 @@
+------------------------------------ FORGOTTEN EMAIL TEST SUITES ------------------------------
+
+Goal: The goal of the forgotten password testing is to ensure that users can successfully reset 
+their passwords when they forget or need to change them. The testing aims to verify that the 
+forgotten password functionality works as intended, providing a reliable and secure process
+for users to reset their passwords. 
+
+The goal is to validate that users can initiate the password reset process through the 
+provided mechanisms by entering their registered email address.
+
+The testing should verify that the system recognize a valid email address 
+which then allows the user to channge their password. Additionally, 
+the testing should cover scenarios where users encounter errors or issues during the 
+password reset process, such as entering an incorrect email address or invalid email. 
+
+The goal is to ensure that appropriate error messages are displayed,
+guiding users towards resolving any issues they may encounter. 
+ 
+Furthermore, the testing should validate that the password reset functionality properly 
+validates the new password and securely updates the user's account with the new password. 
+Overall, the testing aims to provide a smooth and user-friendly experience for users 
+who need to reset their passwords.
+
+
+
+------------------------------------------------------------------------
+Test case 1 - Email successfully located for password reset
+------------------------------------------------------------------------
+
+Title: Email successfully located for password reset
+
+Preconditions:
+  - The user is not logged in.
+  - The user has already registered an account with a valid email address.
+
+Inputs:
+  - Registered Email: [Enter the email address used to register the account]
+
+Expected Results:
+  - A success message with a green background is displayed, indicating that the user can change their password.
+  - The page is redirected to the change password form, which includes fields for entering a new password and confirming the new password.
+  - The change password form contains a save button.
+
+Test Steps:
+  1. Navigate to the login page.
+  2. Click on the "Forgotten password?" link.
+  3. Enter the registered email address in the provided input field.
+  4. Click the "Reset Password" button.
+
+Actual Results:
+  - A green popup banner appears, informing the user that they can now change their password.
+  - The page is redirected to the change password form.
+
+Validations:
+  - Verify that the message informs the user that they can change their password.
+  - Verify that the message background is green.
+  - Verify that the page is redirected to the change password form.
+  - Verify that the change password form includes fields for entering a new password and confirming the new password.
+  - Verify that the change password form contains a save button.
+
+Test Result: Pass
+
+
+------------------------------------------------------------------------
+Test case 2 - Unregistered email address used for reset password form
+------------------------------------------------------------------------
+
+Title: Unregistered email address used for reset password form
+
+Preconditions:
+  - The user is not logged in.
+  - The user enters an unregistered but valid email address.
+
+Inputs:
+  - Unregistered Email: [Enter the unregistered but valid email address]
+
+Expected Results:
+  - A message with a red background should be displayed, indicating that the user's email cannot be found.
+  - The page remains unchanged.
+
+Test Steps:
+  1. Navigate to the login page.
+  2. Click on the "Forgotten password?" link.
+  3. Enter the unregistered but valid email address in the provided input field.
+  4. Click the "Reset Password" button.
+
+Actual Results:
+  - A message with a red background is displayed, informing the user that the email address is not found.
+  - The page remains unchanged.
+
+Validations:
+  - Verify that the message informs the user that the email cannot be located.
+  - Verify that the page remains on the forgotten email page.
+  - Verify that the message background is red.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------------------------
+Test case 3 - Verify that email field in the forgotten form only accepts valid email
+-------------------------------------------------------------------------------------------
+
+Title: Verify that email field in the forgotten form only accepts valid email
+
+Preconditions:
+  - The user is not logged in
+  - The user enters an invalid email.
+
+Inputs:
+  - Invalid email: testemail.com
+
+Expected Results:
+  - A popup message should pop up underneath the email input field informing the user that email is invalid
+  - The page remains unchanged.
+
+Test Steps:
+  1. Navigate to the login page.
+  2. Click on the "Forgotten password?" link.
+  3. Enter the invalid email "testemail.com"
+  4. Click the "Reset Password" button.
+
+Actual Results:
+  - A popup message pop up underneath the email input field informing the user that email is invalid
+  - The page remains unchanged.
+
+Validations:
+  - Verify that the message informing the user of the invalid email is displayed
+  - Verify that the page remains on the forgotten email page.
+ 
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 4 - Verify that email field in the forgotten form only accepts valid email
+------------------------------------------------------------------------
+
+Title: Verify that email field in the forgotten form only accepts valid email
+
+Preconditions:
+  - The user is not logged in.
+  - The user enters an invalid email.
+
+Inputs:
+  - Invalid email: testemail.com
+
+Expected Results:
+  - A message should appear underneath the email input field indicating that the email is invalid.
+  - The page remains unchanged.
+
+Test Steps:
+  1. Navigate to the login page.
+  2. Click on the "Forgotten password?" link.
+  3. Enter the invalid email "testemail.com".
+  4. Click the "Reset Password" button.
+
+Actual Results:
+  - A message appears underneath the email input field indicating that the email is invalid.
+  - The page remains unchanged.
+
+Validations:
+  - Verify that the message indicating the invalid email is displayed.
+  - Verify that the page remains on the forgotten email page.
+
+Test Result: Pass
+
+
+
+------------------------------------------------------------------------
+Test case 5 - Empty email field in the forgotten form
+------------------------------------------------------------------------
+
+Title: Empty email field in the forgotten form
+
+Preconditions:
+  - The user is not logged in.
+  - The email field in the forgotten password form is empty.
+
+Expected Results:
+  - A message should appear underneath the email input field indicating that the email field is required.
+  - The page remains unchanged.
+
+Test Steps:
+  1. Navigate to the login page.
+  2. Click on the "Forgotten password?" link.
+  3. Leave the email field empty.
+  4. Click the "Reset Password" button.
+
+Actual Results:
+  - A message appears underneath the email input field indicating that the email field is required.
+  - The page remains unchanged.
+
+Validations:
+  - Verify that the message indicating the required email field is displayed.
+  - Verify that the page remains on the forgotten email page.
+
+Test Result: Pass

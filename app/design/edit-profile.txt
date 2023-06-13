@@ -1,0 +1,191 @@
+
+------------------------------------------------------------------------------------------
+                             Edit Profile
+-------------------------------------------------------------------------------------------
+
+
+1. Old Username field:
+   - field is disabled
+   - field shows the current username
+   - Field type: Text
+
+2. Username field:
+   - Minimum characters: N/A
+   - Maximum characters: 20
+   - Field Required: no
+   - Field type: Text
+
+
+3. Firstname field:
+   - Minimum characters: N/A
+   - Maximum characters: 20
+   - Field Required: no
+   - Field type: Text
+
+
+4. Surname field:
+   - Minimum characters: N/A
+   - Maximum characters: 20
+   - Field Required: no
+   - Field type: Text
+
+5. Description field:
+   - Minimum length: 40
+   - Maximum length: 1000
+   - Field Required: no
+   - Field type: Textarea
+   - Field: Required (no)
+
+6. Birthday field:
+   - select field
+   - default: none
+   - min: "1910-01-01" 
+   - max: "2223-12-31"
+   - Field Required: no
+
+7. Gender
+    - select field
+    - Male
+    - Female
+    - default: none
+    - Field Required: no
+
+8. Countries
+    - List of Countries (195)
+    - Default: Afghanstan 
+    - Field Required: no
+
+9. Socials
+    - Instagram
+        - Minimum length: N/A
+        - Maximum length: 200
+        - Field type: url
+        - Field Required: no
+        
+
+    - Facebook
+        - Minimum length: N/A
+        - Maximum length: 200
+        - Field type: url
+        - Field Required: no
+        
+
+    - TikTok
+        - Minimum length: N/A
+        - Maximum length: 200
+        - Field type: url
+        - Field required: no
+        
+    - Youtube
+        - Minimum length: N/A
+        - Maximum length: 200
+        - Field required: no
+        
+
+10. Rating field:
+   - Minimum value: 0
+   - Maximum value: 10
+   - Field required: no
+   - Field type: Number (no decimals)
+
+11. Year field:
+   - Field required: no
+   - Field type: Number (no decimals)
+   - Validate that the entered year is within a reasonable range, e.g., not a future year or too far in the past.
+
+
+12. Current email field:
+   - field is disabled
+   - field shows the current email
+   - Field type: email
+
+13. New email field:
+   - Minimum characters: n/a
+   - Maximum characters: 20
+   - Field required: no
+   - Field type: Email
+
+
+14. Old password field:
+   - field is disabled
+   - field shows the old password but is hidden
+   - Field type: password
+   - Field required: no
+
+15. Password field:
+   - Minimum characters: 6
+   - Maximum characters: 20
+   - Field required: no
+   - Field type: password
+
+16. Confirm password field:
+   - Minimum characters: 6
+   - Maximum characters: 20
+   - Field required: no
+   - Field type: password
+
+
+17. Save button 
+
+--------------------------------------------------
+                      Edit Profile
+--------------------------------------------------
+
+1. Personal Information:
+   - When the user creates an account, they are given the option to fill in their details.
+   - Each field is not required, allowing the user to fill in the information at their convenience.
+   - Display the user's current username, email address, and current password (read-only).
+   - Allow the user to edit their username, password, and email address:
+     - Validate the entered username and email address for uniqueness and format.
+     - Display an error message if the entered username or email address is already in use or invalid.
+     - If the username is changed display message of the change
+
+2. Additional non required personal information:
+   - Allow the user to update additional information such as:
+     - First name
+     - Surname
+     - Description
+     - Birthday
+     - Gender
+     - Country
+   - Provide appropriate input fields for each piece of information.
+   - Validate the entered information in real time if necessary.
+
+3. Socials:
+   - Allow the user to add, modify their social media links:
+     - Instagram
+     - Facebook
+     - TikTok
+     - Youtube
+   - Validate each social media link to ensure it matches the correct field.
+     For example, if a Youtube link is placed in a Facebook field, display an error message asking the user to use the correct link.
+
+4 Input Field Validation:
+   - Implement real-time or on-submit validation for each input field to provide immediate feedback to the user regarding any validation errors.
+   - Clearly highlight any validation errors next to the respective input fields and display an error message explaining the issue.
+
+4. Password Complexity:
+   - Define specific requirements for password complexity (e.g., minimum length) 
+
+5. Field Labels and Instructions:
+   - Clearly label each input field and provide brief instructions or examples to guide users on the expected input format or content.
+
+6. User Feedback:
+    - Include success messages or notifications to confirm when profile changes have been saved successfully.
+    - Display a general error message if there is a failure during the profile update process, along with any specific error details.
+
+
+7. Change Password:
+   - Provide fields to enter the current password, new password, and confirm new password.
+   - Validate the entered passwords to ensure they meet the required criteria (e.g., minimum length, complexity).
+   - Display an error message if the entered current password is incorrect or if the new passwords do not match.
+   - When the user changes their password a message should inform the user of the change
+
+8. Save Changes:
+   - Provide a "Save Changes" button.
+   - Validate all the entered information before saving.
+   - Display error messages if any required fields are incorrect or if there are validation errors.
+   - If all the entered information is valid, save the changes to the user's profile.
+
+9. Additional Measures:
+   - Make the user interface as intuitive as possible

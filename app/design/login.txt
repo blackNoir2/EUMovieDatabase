@@ -1,0 +1,45 @@
+------------------------------------------------------------------------------------------
+                                Login
+-------------------------------------------------------------------------------------------
+
+1. Username field -> minimum characters = 6, maximum characters = 20, field = required
+2. Password field -> minimum characters = 6, maximum characters = 20, field = required
+3. Login button
+4. Forgot Password link
+5. Sign up link
+
+
+--------------------------------------------------------------------------------------------
+                                Authentication & Security handling
+----------------------------------------------------------------------------------------------
+
+1. When the user submits the login form:
+   - Validate the entered username and password fields.
+   - Implement client side validation to verify that the credentials match the records securely stored in the local storage.
+
+2. Password Storage:
+   - Passwords should are stored in the local storage.
+   - Password are not hashed and her stored as plain text in the local storage
+ 
+3. Session Management:
+   - Once the user is successfully authenticated:
+     - The user's username is stored in a session token.
+     - The user's token should validate the user when logged, allow them to access page and not log them out each time go to a different page or refresh.
+
+
+4. Forgotten Password:
+   - Provide a "Forgot Password" link on the login page.
+   - When the user clicks the link:
+     - Display an email reset form with a field for the user to enter their email address.
+     - Validate the email format and check if it is associated with a registered account.
+     - If the email is valid and registered:
+       - Generate a password change form
+       - The form should be active until the user change their password meaning that if
+         the user hit refresh or change the page they should be able to access the change form through the URL
+       - The email should contain instructions on how to reset the password securely.
+       - Once the user has successfully changed their password the page is not accessible anymore and if the user does traverse to that page
+         through the URL, back button a forbidden page should be displayed
+     - If the email is not valid or not associated with a registered account:
+       - Display an appropriate error message informing the user.
+
+
