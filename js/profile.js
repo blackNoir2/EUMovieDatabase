@@ -241,7 +241,7 @@ if (window.location.pathname.includes("/edit-profile.html")) {
 
         if (url && !isFacebookLink(url)) {
             disableEnterKey();  // Disable the enter key to prevent the user from submitting an incorrect URL when Enter is pressed
-            alert("The link should be in the form of Facebook URL, e.g., https://facebook.com/<username>");
+            alert("The link should be in the form of Facebook URL, e.g., https://facebook.com/<username>/");
             event.target.value = "";  // Clear the field
         }
     });
@@ -259,7 +259,7 @@ if (window.location.pathname.includes("/edit-profile.html")) {
 
         if (url && !isTikTokLink(url)) {
             disableEnterKey();  // Disable the enter key to prevent the user from submitting an incorrect URL when Enter is pressed
-            alert("The link should be in the form of TikTok URL, e.g., https://tiktok.com/@<username>");
+            alert("The link should be in the form of TikTok URL, e.g., https://tiktok.com/@<username>/");
             event.target.value = "";  // Clear the field
         }
     });
@@ -281,7 +281,8 @@ if (window.location.pathname.includes("/edit-profile.html")) {
         event.preventDefault();
         toggleSpinner(spinner, saveBtn, true, 2000)
 
-        let formEdited = false;
+        let formEdited      = false;
+        let usernameChanged = false;
 
         // form elements after the form is submitte
         let aboutMe            = sanitizeInput(getQuery("#about-me").value);
@@ -358,7 +359,8 @@ if (window.location.pathname.includes("/edit-profile.html")) {
 
         if (profileNewUsername && profileNewUsername.toLowerCase() != myProfile.username) {
             setUsername(profileNewUsername.toLowerCase());
-            formEdited = true;
+            formEdited      = true;
+            usernameChanged = true;
         }
 
    
@@ -372,6 +374,16 @@ if (window.location.pathname.includes("/edit-profile.html")) {
             logHistory.add("You successfully edited your profile : ");
             logHistory.save();
 
+        } 
+        
+        if (usernameChanged) {
+            displayMsg(".profile-message", "Your username has been successfully changed. Please log in again using your new username", "blue");
+                 
+            logHistory.add("You successfully changed your username : ");
+            logHistory.save();
+                 
+            logUserOut();
+            redirectPage("login.html", 2000);
         } else {
             displayMsg(successMsg, "No data was saved because you didn't make any changes or add any new details", "orange");
         }
