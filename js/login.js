@@ -41,30 +41,30 @@ import { LocalStorage } from "./database.js";
 import { UserSession } from "./database.js";
 
 
-const confirmButtonSelector = "#confirm-delete-btn"
-const registrationUsernameSelector = "#register-username";
-const registrationPasswordSelector = "#register-password";
-const registerEmailSelector = "#register-email";
+const confirmButtonSelector           = "#confirm-delete-btn"
+const registrationUsernameSelector    = "#register-username";
+const registrationPasswordSelector    = "#register-password";
+const registerEmailSelector           = "#register-email";
 const registerConfirmPasswordSelector = "#register-confirm-password";
-const usernameFieldSelector = "#login-username";
+const usernameFieldSelector           = "#login-username";
 
 
-const closeRegistrationForm = getQuery(".registration-close-icon");
-const cancelButton = getQuery("#cancel-btn");
-const confirmButton = getQuery(confirmButtonSelector);
-const deletePopAccountPopAlert = getQuery(".delete-registered-account-alert");
-const footerSelector = 'footer .container .copy-right';
+const closeRegistrationForm         =  getQuery(".registration-close-icon");
+const cancelButton                  = getQuery("#cancel-btn");
+const confirmButton                 = getQuery(confirmButtonSelector);
+const deletePopAccountPopAlert      = getQuery(".delete-registered-account-alert");
+const footerSelector                = 'footer .container .copy-right';
 const forgottenPasswordLinkSelector = ".forgotten-password-link";
-const loginBtn = "#login-btn";
-const loginForm = getQuery("#login-form");
-const loginUsernameField = getQuery("#login-username");
-const registerAccountLink = getQuery(".register-account-link");
-const registrationConfirmPassword = getQuery(registerConfirmPasswordSelector);
-const registrationForm = getQuery("#registration-form");
-const registrationFormDiv = getQuery(".hidden-registration");
-const registrationPasswordField = getQuery(registrationPasswordSelector);
-const registrationUsernameField = getQuery(registrationUsernameSelector);
-const registrationEmailField = getQuery(registerEmailSelector);
+const loginBtn                      = "#login-btn";
+const loginForm                     = getQuery("#login-form");
+const loginUsernameField            = getQuery("#login-username");
+const registerAccountLink           = getQuery(".register-account-link");
+const registrationConfirmPassword   = getQuery(registerConfirmPasswordSelector);
+const registrationForm              = getQuery("#registration-form");
+const registrationFormDiv           = getQuery(".hidden-registration");
+const registrationPasswordField     = getQuery(registrationPasswordSelector);
+const registrationUsernameField     = getQuery(registrationUsernameSelector);
+const registrationEmailField        = getQuery(registerEmailSelector);
 
 
 
@@ -79,9 +79,9 @@ handleUnauthorizedAccess();
 
 // Initialization of the classess
 const logHistory = new History();
-const user = new User();
-const session = new UserSession();
-const dbStorage = new LocalStorage("user");
+const user       = new User();
+const session    = new UserSession();
+const dbStorage  = new LocalStorage("user");
 
 logHistory.initialize();
 
@@ -128,8 +128,7 @@ loginForm.addEventListener("submit", (event) => {
 
   const username = loginUsernameField.value;
   const password = getQuery("#password").value;
-
-  const account = user.getByUsername(username);
+  const account  = user.getByUsername(username);
 
   if (account && isPasswordsAMatch(password, account.password)) {
 
@@ -250,10 +249,10 @@ registers the user details
 */
 registrationForm.addEventListener("submit", (event) => {
 
-  const userData = dbStorage.getData();
-  const username = sanitizeInput(getQuery(registrationUsernameSelector).value);
-  const email = registrationEmailField.value;
-  const password = getQuery(registrationPasswordSelector).value;
+  const userData        = dbStorage.getData();
+  const username        = sanitizeInput(getQuery(registrationUsernameSelector).value);
+  const email           = registrationEmailField.value;
+  const password        = getQuery(registrationPasswordSelector).value;
   const confirmPassword = getQuery(registerConfirmPasswordSelector).value;
 
   event.preventDefault();
@@ -278,6 +277,7 @@ registrationForm.addEventListener("submit", (event) => {
 
       // log the history of the registration event
       const registrationMsg = "You successfully created an account";
+      
       logHistory.add(registrationMsg);
       logHistory.save();
 
