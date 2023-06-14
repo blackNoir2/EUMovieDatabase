@@ -242,8 +242,8 @@ function showMovies() {
 const fieldSelectors = [
 
   movieCastSelector,
-  movieDescriptionSelector,   // Surname field
-  movieTitleSelector         // About me field
+  movieDescriptionSelector,   
+  movieTitleSelector         
 ];
 
 fieldSelectors.forEach((fieldSelector) => {
