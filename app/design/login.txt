@@ -19,7 +19,7 @@
 
 2. Password Storage:
    - Passwords should are stored in the local storage.
-   - Password are not hashed and her stored as plain text in the local storage
+   - Password are not hashed and are stored as plain text in the local storage
  
 3. Session Management:
    - Once the user is successfully authenticated:
