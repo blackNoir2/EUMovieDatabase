@@ -241,7 +241,7 @@ if (window.location.pathname.includes("/edit-profile.html")) {
 
         if (url && !isFacebookLink(url)) {
             disableEnterKey();  // Disable the enter key to prevent the user from submitting an incorrect URL when Enter is pressed
-            alert("The link should be in the form of Facebook URL, e.g., https://facebook.com/<username>/");
+            alert("The link should be in the form of Facebook URL, e.g., https://facebook.com/<username>");
             event.target.value = "";  // Clear the field
         }
     });
@@ -259,7 +259,7 @@ if (window.location.pathname.includes("/edit-profile.html")) {
 
         if (url && !isTikTokLink(url)) {
             disableEnterKey();  // Disable the enter key to prevent the user from submitting an incorrect URL when Enter is pressed
-            alert("The link should be in the form of TikTok URL, e.g., https://tiktok.com/@<username>/");
+            alert("The link should be in the form of TikTok URL, e.g., https://tiktok.com/@<username>");
             event.target.value = "";  // Clear the field
         }
     });
