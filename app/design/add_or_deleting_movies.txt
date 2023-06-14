@@ -74,5 +74,4 @@
    - Implement secure deletion mechanisms to prevent unauthorized deletion of movies.
    - Ensure that appropriate checks are in place to verify the user's identity and authorization before any movie is deleted.
 
-Remember to handle all user data securely, sanitize inputs, validate and authorize user actions, and implement appropriate security measures to protect against potential vulnerabilities or unauthorized access to movie data.
 
