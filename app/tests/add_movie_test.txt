@@ -391,8 +391,6 @@ Validations:
 
 Test -> Pass
 
-
-
 ------------------------------------------------------------------------
 Test case 9 -  Adding a Movie with an invalid rating
 ------------------------------------------------------------------------
@@ -408,13 +406,13 @@ Inputs:
      Description        : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo similique in labore at
      Cast               : Cast 1"
      Runtime            : "125"
-     Rating (out of 10) : "1.25"
+     Rating (out of 10) : "ee"
      Year               : "2001"
    
    
 Expected Results: 
 
-     - An error message pops up informing the user that ratings must be an integer
+     - An error message pops up informing the user that ratings must be an integer or a float
      - The movie is not added to the application.
 
 
@@ -429,23 +427,21 @@ Test Steps:
     6.  Enter the movie description.
     7.  Enter the "cast 1" into the cast field.
     8.  Enter the runtime "125" in the runtime field
-    9.  Enter the invalid rating "1.25" into the rating field.
+    9.  Enter the invalid rating "ee" into the rating field.
     10. Enter the year "2001" in the year field.
     11. Click the "Add" button to add the movie.
 
 Actual Results: 
 
-   - An error message is displayed indicating that the rating must be an integer.
+   - An error message is displayed indicating that the rating must be an integer or float.
    - The movie is not added to the application.
 
 Validations:
 
-    - Verify that the error message is displayed when the user enters an integer
+    - Verify that the error message is displayed when the user enters enters anything other than a float or integer
     - Verify that the movie is not added to the application.
 
 Test -> Pass
-
-
 
 
 ------------------------------------------------------------------------
